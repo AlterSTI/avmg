@@ -1,0 +1,79 @@
+/* -------------------------------------------------------------------- */
+/* --------------------------- clear style ---------------------------- */
+/* -------------------------------------------------------------------- */
+.av-catalog-section-list a,
+.av-catalog-section-list a:visited,
+.av-catalog-section-list a:hover,
+.av-catalog-section-list a:active,
+.av-catalog-section-list a:focus {color: inherit !important;text-decoration: none}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- list ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-catalog-section-list
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+.av-catalog-section-list .item
+	{
+	align-items: center;
+	border-right:  1px solid #EFEFEF;
+	border-bottom: 1px solid #EFEFEF;
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+	text-align: center;
+	width: calc(100% / 3);
+	}
+.av-catalog-section-list .item:hover,
+.av-catalog-section-list .item:active,
+.av-catalog-section-list .item:focus
+	{
+	background: #FFF;
+	box-shadow: 0 4px 8px rgba(76, 82, 85, 0.25);
+	}
+.av-catalog-section-list .item .image-link
+	{
+	margin-bottom: 25px;
+	overflow: hidden;
+	text-align: left;
+	height: 120px;
+	}
+.av-catalog-section-list > .item .image-link img
+	{
+	height: 100%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- media ------------------------------ */
+/* -------------------------------------------------------------------- */
+@media(min-width: 992px)
+	{
+	.av-catalog-section-list                                .item:nth-child(3n),
+	.av-catalog-section-list                                .item:last-child           {border-right: none}
+	.av-catalog-section-list[data-division-remainder-3="1"] .item:last-child,
+	.av-catalog-section-list[data-division-remainder-3="2"] .item:nth-last-child(-n+2),
+	.av-catalog-section-list[data-division-remainder-3="0"] .item:nth-last-child(-n+3) {border-bottom: none}
+	}
+@media(max-width: 991px) and (min-width: 768px)
+	{
+	.av-catalog-section-list                                .item                      {width: calc(100% / 2)}
+	.av-catalog-section-list                                .item:nth-child(2n),
+	.av-catalog-section-list[data-division-remainder-3="1"] .item:last-child           {border-right: none}
+	.av-catalog-section-list[data-division-remainder-3="1"] .item:last-child,
+	.av-catalog-section-list[data-division-remainder-3="0"] .item:nth-last-child(-n+2) {border-bottom: none}
+	}
+@media(max-width: 767px)
+	{
+	.av-catalog-section-list .item
+		{
+		border-right: none;
+		margin-left:  auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: 400px;
+		}
+	.av-catalog-section-list .item:last-child {border-bottom: none}
+	}

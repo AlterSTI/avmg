@@ -1,0 +1,2 @@
+<?
+$sSectionName = "Customer support";

@@ -1,0 +1,19 @@
+.av-form-radio       {align-items: center;display: flex}
+.av-form-radio label {cursor: pointer}
+.av-form-radio input {display: none}
+
+.av-form-radio input + label
+	{
+	background: url(images/unchecked.svg) center center no-repeat;
+	background-size: contain;
+	margin-right: 6px;
+	width:  18px;
+	height: 18px;
+	}
+.av-form-radio input + label + label
+	{
+	font-size: calc(1em - 2px);
+	max-width: calc(100% - 24px);
+	}
+.av-form-radio             input:checked       + label {background-image: url(images/checked.svg)}
+.av-form-radio.alert-input input:not(:checked) + label {background-image: url(images/alert.svg)}

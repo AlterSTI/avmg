@@ -1,0 +1,24 @@
+.av-cargo-navigation                      {display: flex;justify-content: center}
+.av-cargo-navigation > *                  {line-height: 18px;text-align: center}
+.av-cargo-navigation > *:not(:last-child) {margin-right: 4px}
+.av-cargo-navigation > *:not(.separator)  {font-size: 85%;padding: 0 4px}
+.av-cargo-navigation > *.separator        {letter-spacing: 2px}
+.av-cargo-navigation > *:not(.current):not(.separator)
+	{
+	background: #FFF;
+	border: 1px solid #717A84;
+	border-radius: 2px;
+	color: #717A84;
+	transition: .3s;
+	cursor: pointer;
+	}
+.av-cargo-navigation > *:not(.current):not(.separator):hover,
+.av-cargo-navigation > *:not(.current):not(.separator):active,
+.av-cargo-navigation > *:not(.current):not(.separator):focus {border-color: #2fc6f7;color: #2fc6f7}
+.av-cargo-navigation > *.current
+	{
+	background: #2fc6f7;
+	border: 1px solid #2fc6f7;
+	border-radius: 2px;
+	color: #FFF;
+	}

@@ -1,0 +1,21 @@
+.av-form-styled-select-radio-flat
+	{
+	display: flex;
+	flex-wrap: wrap;
+	}
+.av-form-styled-select-radio-flat > label
+	{
+	color: #B6C0C6;
+	font-size: calc(1em - 2px);
+	padding: 5px;
+	width: 100%;
+	}
+.av-form-styled-select-radio-flat.required > label::after
+	{
+	color: #CC0000;
+	content: "*";
+	display: inline-block;
+	margin-left: 3px;
+	}
+.av-form-styled-select-radio-flat > div                  {margin-top:   6px}
+.av-form-styled-select-radio-flat > div:not(:last-child) {margin-right: 26px}

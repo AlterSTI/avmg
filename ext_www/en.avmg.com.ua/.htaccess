@@ -1,0 +1,66 @@
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://en.avmg.com.ua/$1 [R,L]
+
+RedirectMatch 301 ^/about/blog/(.*)$       /
+RedirectMatch 301 ^/directory/(.*)$        /
+RedirectMatch 301 ^/metallobaza/(.+)/(.*)$ /metallobaza/
+RedirectMatch 301 ^/career/(.*)$           /
+
+RedirectMatch 301 ^/products/black-metal/(.*)$                  /products/
+RedirectMatch 301 ^/products/stainless-steel-metal/(.*)$        /products/
+RedirectMatch 301 ^/products/galvanized-metal/(.*)$             /products/
+RedirectMatch 301 ^/products/ironwares/(.*)$                    /products/
+RedirectMatch 301 ^/products/profnastil-metallocherepitsa/(.*)$ /products/
+RedirectMatch 301 ^/products/building-hardware/(.*)$            /products/
+RedirectMatch 301 ^/products/elektrody-svarochnye/(.*)$         /products/
+RedirectMatch 301 ^/products/setka/(.*)$                        /products/
+
+Redirect 301 /proizvodstvo/armatura-proizvoditel/         /proizvodstvo/hot-rolled-rebar/
+Redirect 301 /proizvodstvo/provoloka-proizvoditel/        /proizvodstvo/wire/
+Redirect 301 /proizvodstvo/krug-proizvoditel/             /proizvodstvo/round-bar/
+Redirect 301 /proizvodstvo/profilnaya-truba-proizvoditel/ /proizvodstvo/electro-welded-tube/
+Redirect 301 /proizvodstvo/proflist-proizvoditel/         /proizvodstvo/profiled-metal-sheets/
+Redirect 301 /proizvodstvo/polosa-proizvoditel/           /proizvodstvo/flat-bar-and-square-billet/
+Redirect 301 /proizvodstvo/setka-proizvoditel/            /proizvodstvo/metal-mesh/
+Redirect 301 /proizvodstvo/prosechno-vytyazhnoy-list/     /proizvodstvo/expanded-metal-sheet/
+
+Redirect 301 /uslugi/gazovaya-rezka-metalla/      /uslugi/oxy-fuel-cutting/
+Redirect 301 /uslugi/plazmennaya-rezka-metalla/   /uslugi/plasma-cutting/
+Redirect 301 /uslugi/rezka-na-lentopilnom-stanke/ /uslugi/metal-cutting-belt-saw-machine/
+Redirect 301 /uslugi/prodolnaya-rezka-metalla/    /uslugi/longitudinal-cutting/
+Redirect 301 /uslugi/dostavka/                    /uslugi/cargo-transportation/
+Redirect 301 /uslugi/gruzoperevozka/              /uslugi/cargo-transportation/
+
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  #php_value display_errors 1
+  #php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>

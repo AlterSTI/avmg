@@ -1,0 +1,2 @@
+<?
+$sSectionName = "AV metal group";

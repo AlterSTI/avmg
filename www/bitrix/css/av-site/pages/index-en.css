@@ -1,0 +1,5 @@
+.av-index-products-block {justify-content: center}
+@media (min-width: 992px)
+	{
+	.av-index-products-block > div {width: calc((100% - 2px)/3)}
+	}

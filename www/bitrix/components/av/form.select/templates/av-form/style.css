@@ -1,0 +1,94 @@
+/* -------------------------------------------------------------------- */
+/* --------------------------- clear styles --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-styled-select select {display: none}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- title ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-form-styled-select
+	{
+	font-size: calc(1em - 2px);
+	margin-top: 30px;
+	}
+.av-form-styled-select .title-block
+	{
+	align-items: center;
+	border-bottom: 1px solid #868B8D;
+	cursor: pointer;
+	display: flex;
+	height: 30px;
+	position: relative;
+	}
+.av-form-styled-select.alert-input .title-block {border-color: #CC0000}
+
+.av-form-styled-select .title-block .title,
+.av-form-styled-select .title-block .value
+	{
+	overflow: hidden;
+	padding: 0 5px;
+	text-overflow: ellipsis;
+	width: calc(100% - 24px);
+	white-space: nowrap;
+	}
+.av-form-styled-select .title-block .title
+	{
+	color: #B6C0C6;
+	position: absolute;
+	top:  0;
+	left: 0;
+	transition: .3s;
+	}
+.av-form-styled-select.required .title-block .title::after
+	{
+	color: #CC0000;
+	content: "*";
+	display: inline-block;
+	margin-left: 3px;
+	}
+.av-form-styled-select.value-seted       .title-block .title,
+.av-form-styled-select.active            .title-block .title {left: -5px;top: -30px}
+.av-form-styled-select:not(.value-seted) .title-block .value {visibility: hidden}
+
+.av-form-styled-select .title-block .arrow
+	{
+	line-height: 24px;
+	font-size: 18px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-form-styled-select.active      .title-block .arrow {transform: rotate(-180deg)}
+.av-form-styled-select.alert-input .title-block .arrow {color: #CC0000}
+/* -------------------------------------------------------------------- */
+/* -------------------------- drop-down menu -------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-styled-select .list
+	{
+	background: #FFF;
+	border-right:  1px solid #868B8D;
+	border-bottom: 1px solid #868B8D;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius:  2px;
+	display: none;
+	max-height: 200px;
+	margin-top: 10px;
+	position: absolute;
+	z-index: 10;
+	}
+.av-form-styled-select .list .list-item
+	{
+	border-left: 1px solid #868B8D;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+.av-form-styled-select                   .list .list-item.selected,
+.av-form-styled-select                   .list .list-item:hover,
+.av-form-styled-select                   .list .list-item:active,
+.av-form-styled-select                   .list .list-item:focus   {background: #FAFAFA}
+.av-form-styled-select.alert-input       .list,
+.av-form-styled-select.alert-input       .list .list-item         {border-color: #CC0000}
+.av-form-styled-select:not(.value-seted) .list .list-item.default {display: none}

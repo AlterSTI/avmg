@@ -1,0 +1,9 @@
+<?
+$sSectionName    = "Flat bar and square billet";
+$arDirProperties = array
+	(
+   "TITLE_BACKGROUND"     => "/upload/medialibrary/c45/1.png",
+   "TITLE_BACKGROUND_ALT" => "/upload/medialibrary/b65/polosa.png",
+   "NOT_SHOW_NAV_CHAIN"   => "N",
+   "NOT_SHOW_LEFT_MENU"   => "N"
+	);

@@ -1,0 +1,2 @@
+<?
+$sSectionName = "Confirmation of registration";

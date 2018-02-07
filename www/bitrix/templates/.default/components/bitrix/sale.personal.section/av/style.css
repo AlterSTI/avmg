@@ -1,0 +1,90 @@
+.item-wrap {
+	border-right: 1px solid #ECEFF1;
+	border-bottom: 1px solid #ECEFF1;
+}
+.item-wrap:nth-child(4),
+.item-wrap:nth-child(8),
+.item-wrap:nth-child(12) {
+	border-right: none;
+}
+.sale-personal-section-row-flex hr{
+	width: 100%;
+	position: relative;
+	top: -21px;
+	background-color: #fff;
+	height: 1px;
+	border: none;
+}
+
+.item-wrap:hover {
+	background: #FFF;
+	box-shadow: 0 4px 8px rgba(76, 82, 85, 0.25);
+}
+.item-wrap h2 {
+	border:none;
+	background-color: transparent !important;
+	color: #4C5255;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+}
+.sale-personal-section-index-block{
+
+	margin: 25px 0;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@media (max-width: 992px)
+{
+	.sale-personal-section-index-block {
+		height: auto;
+		margin: 8px 0;
+	}
+}
+
+.sale-personal-section-index-block.bx-theme-green{
+	background: url(images/wt_green.png) center top;
+}
+.sale-personal-section-index-block.bx-theme-blue{
+	background: url(images/wt_blue.png) center top;
+}
+.sale-personal-section-index-block.bx-theme-red{
+	background: url(images/wt_red.png) center top;
+}
+.sale-personal-section-index-block.bx-theme-yellow{
+	background: url(images/wt_yellow.png) center top;
+}
+.sale-personal-section-index-block.bx-theme-black{
+	background: url(images/wt_black.png) center top;
+}
+.sale-personal-section-index-block:hover{
+	opacity: 1;
+}
+.sale-personal-section-index-block-link,
+.sale-personal-section-index-block-link:hover,
+.sale-personal-section-index-block-link:active,
+.sale-personal-section-index-block-link:focus,
+.sale-personal-section-index-block-link:visited{
+	text-decoration: none;
+	display: block;
+	padding:50px 0;
+	color: #fff;
+}
+.sale-personal-section-index-block-link{color: #fff;}
+.sale-personal-section-index-block-ico {font-size: 64px;}
+.sale-personal-section-index-block-name{font-size: 16px;}
+.sale-personal-section-account-sub-header{
+	margin-top:40px;
+}
+
+.sale-personal-section-row-flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 40px;
+
+}

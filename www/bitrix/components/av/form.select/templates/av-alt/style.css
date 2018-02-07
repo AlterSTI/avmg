@@ -1,0 +1,33 @@
+.av-form-select-alt select {display: none}
+
+.av-form-select-alt .list-item
+	{
+	cursor: pointer;
+	display: flex;
+	padding: 13px 6px 13px 26px;
+	transition: .3s;
+	}
+.av-form-select-alt .list-item.selected,
+.av-form-select-alt .list-item:hover,
+.av-form-select-alt .list-item:focus            {color: #CC0000}
+.av-form-select-alt .list-item:hover,
+.av-form-select-alt .list-item:focus            {box-shadow: 0 2px 4px rgba(76, 82, 85, 0.25)}
+.av-form-select-alt .list-item:active           {background: #CC0000;border-color: #CC0000;color: #FFF}
+.av-form-select-alt .list-item:not(:last-child) {border-bottom: 1px solid #B6C0C6}
+
+.av-form-select-alt .list-item .title
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: calc(100% - 24px);
+	}
+.av-form-select-alt .list-item .arrow
+	{
+	line-height: 24px;
+	font-size: 18px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}

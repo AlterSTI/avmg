@@ -1,0 +1,65 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-input-search input,
+.av-form-input-search label
+	{
+	background: transparent;
+	border: none;
+	color: inherit;
+	font-weight: normal;
+	margin:  0;
+	padding: 0;
+	outline: none;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ input ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-input-search
+	{
+	align-items: center;
+	border: 1px solid #B6C0C6;
+	border-radius: 2px;
+	display: flex;
+	padding: 12px 2px 12px 10px;
+	transition: .3s;
+	}
+.av-form-input-search.active,
+.av-form-input-search:hover,
+.av-form-input-search:active,
+.av-form-input-search:focus {border-color: #868B8D}
+
+.av-form-input-search label
+	{
+	color: #868B8D;
+	cursor: text;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: calc(100% - 24px);
+	}
+.av-form-input-search input
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: calc(100% - 24px);
+	}
+.av-form-input-search .icon
+	{
+	color: #B6C0C6;
+	cursor: text;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-form-input-search.active .icon,
+.av-form-input-search:hover  .icon,
+.av-form-input-search:active .icon,
+.av-form-input-search:focus  .icon {color: #868B8D}
+
+.av-form-input-search.placeholder-on  input,
+.av-form-input-search.placeholder-off label {display: none}

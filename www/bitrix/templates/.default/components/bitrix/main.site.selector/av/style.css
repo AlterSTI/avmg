@@ -1,0 +1,10 @@
+.av-lang-switcher                      {display: flex}
+.av-lang-switcher a,
+.av-lang-switcher a:visited            {color: inherit}
+.av-lang-switcher > span               {color: #CC0000}
+.av-lang-switcher > *:not(:last-child) {margin-right: 5px}
+
+@media (max-width: 991px)
+	{
+	.av-lang-switcher {font-weight: bold}
+	}

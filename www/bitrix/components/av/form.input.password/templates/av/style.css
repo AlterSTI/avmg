@@ -1,0 +1,40 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-input-password input,
+.av-form-input-password label
+	{
+	background: transparent;
+	border: none;
+	color: inherit;
+	font-weight: normal;
+	margin:  0;
+	padding: 0;
+	outline: none;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ input ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-input-password
+	{
+	border: 1px solid #B6C0C6;
+	border-radius: 2px;
+	display: flex;
+	height: 34px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+.av-form-input-password input,
+.av-form-input-password label
+	{
+	cursor: text;
+	line-height: 34px;
+	padding: 0 10px;
+	width: 100%;
+	}
+
+.av-form-input-password:not(.alert-input):not(.disabled):hover,
+.av-form-input-password:not(.alert-input):not(.disabled).active {border-color: #868B8D}
+.av-form-input-password.alert-input                             {border-color: #CC0000}
+.av-form-input-password.disabled                                {background: #F5F6F7}

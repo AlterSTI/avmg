@@ -1,0 +1,97 @@
+.av-catalog.section
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+.av-catalog.section > .page-controller-cell     {margin-bottom: 10px;width: 100%}
+.av-catalog.section > .menu-cell                {width: calc(100% / 3 - 50px)}
+.av-catalog.section > .body-cell                {width: calc(100% / 3 * 2)}
+.av-catalog.section > .body-cell > .filter-cell {margin-bottom: 20px}
+
+.av-catalog.section > .body-cell > .subsections-cell::after
+	{
+	background: #EFEFEF;
+	content: "";
+	display: block;
+	margin: 10px auto 30px auto;
+	width:  90%;
+	height: 1px;
+	}
+/* -------------------------------------------------------------------- */
+/* ----------------------- page type controller ----------------------- */
+/* -------------------------------------------------------------------- */
+.av-catalog.section > .page-controller-cell
+	{
+	align-items: center;
+	color: #78909C;
+	display: flex;
+	font-size: 12px;
+	justify-content: flex-end;
+	}
+.av-catalog.section > .page-controller-cell > *:not(:last-child) {margin-right: 10px}
+
+.av-catalog.section > .page-controller-cell .type-selector
+	{
+	display: flex;
+	}
+.av-catalog.section > .page-controller-cell .type-selector > *
+	{
+	border: 1px solid #B6C0C6;
+	color: #B6C0C6;
+	font-size: 20px;
+	line-height: 24px;
+	padding: 0 2px;
+	transition: .3s;
+	width: 26px;
+	height: 24px;
+	}
+.av-catalog.section > .page-controller-cell .type-selector > *.selected,
+.av-catalog.section > .page-controller-cell .type-selector > *:hover,
+.av-catalog.section > .page-controller-cell .type-selector > *:active,
+.av-catalog.section > .page-controller-cell .type-selector > *:focus
+	{
+	color: #78909C;
+	border-color: #78909C;
+	}
+.av-catalog.section > .page-controller-cell .type-selector > *:not(:last-child) {margin-right: 5px}
+.av-catalog.section > .page-controller-cell .type-selector > *:not(.selected)   {cursor: pointer}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- media ------------------------------ */
+/* -------------------------------------------------------------------- */
+@media (max-width: 991px)
+	{
+	.av-catalog.section > .menu-cell {display: none}
+
+	.av-catalog.section > .page-controller-cell
+		{
+		justify-content: flex-start;
+		order: 2;
+		}
+	.av-catalog.section > .body-cell
+		{
+		order: 3;
+		width: 100%;
+		}
+	}
+@media (max-width: 767px)
+	{
+	.av-catalog.section > .page-controller-cell {display: none}
+
+	.av-catalog.section > .body-cell
+		{
+		margin-left:  auto;
+		margin-right: auto;
+		max-width: 500px;
+		}
+	.av-catalog.section > .body-cell > .subsections-cell
+		{
+		margin: auto;
+		width: calc(100% - 37px * 2);
+		}
+	.av-catalog.section > .body-cell > .subsections-cell::after
+		{
+		margin: 26px -37px;
+		width: calc(100% + 37px * 2);
+		}
+	}

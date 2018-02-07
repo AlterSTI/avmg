@@ -1,0 +1,2 @@
+<?
+$sSectionName = "Password Recovery";

@@ -1,0 +1,2 @@
+<p>Making a registration on the website, you get your account (login), with which you will manage the partner’s card, complete the order with partner discount, get an access to the private topics of the forum and the partner site.</p>
+<p>Log in as a partner and you will be able to contact our technical support with the high priority.</p>

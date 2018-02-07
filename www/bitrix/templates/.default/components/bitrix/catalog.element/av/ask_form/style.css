@@ -1,0 +1,47 @@
+.av-catalog-element-ask-form-origin {display: none}
+.av-catalog-element-ask-form
+	{
+	background: #FFF;
+	padding: 20px;
+	width: 400px;
+	min-height: 600px;
+	}
+.av-catalog-element-ask-form > .title
+	{
+	font-weight: bold;
+	line-height: 24px;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:  calc(100% - 24px);
+	}
+.av-catalog-element-ask-form > .separator
+	{
+	background: #EFEFEF;
+	margin: 6px auto;
+	width: 70%;
+	height: 1px;
+	}
+.av-catalog-element-ask-form > .close
+	{
+	color: #B6BDC3;
+	cursor: pointer;
+	float: right;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-catalog-element-ask-form .close:hover,
+.av-catalog-element-ask-form .close:active,
+.av-catalog-element-ask-form .close:focus {color: #CC0000}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ media ------------------------------- */
+/* -------------------------------------------------------------------- */
+@media (max-width: 767px)
+	{
+	.av-catalog-element-ask-form {width: 100%;max-width: 350px}
+	}

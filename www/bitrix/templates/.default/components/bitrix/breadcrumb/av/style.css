@@ -1,0 +1,10 @@
+.av-breadcrumb            {font-size: calc(1em - 3px)}
+.av-breadcrumb .item,
+.av-breadcrumb .separator {display: inline-block}
+.av-breadcrumb .separator {margin: 0 5px}
+
+.av-breadcrumb a,
+.av-breadcrumb a:visited {color: inherit;text-decoration: none}
+.av-breadcrumb a:hover,
+.av-breadcrumb a:active,
+.av-breadcrumb a:focus   {color: #CC0000;text-decoration: underline}

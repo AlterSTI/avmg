@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+Host: https://en.avmg.com.ua/
+Sitemap: https://en.avmg.com.ua/sitemap.xml

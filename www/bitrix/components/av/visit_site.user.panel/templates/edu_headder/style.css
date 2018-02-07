@@ -1,0 +1,13 @@
+#av-auth-user-panel {display: inline-flex; align-items: center;}
+#av-auth-user-panel .user-bg {
+	width: 40px;
+	height: 40px;
+	background-size: cover !important;
+	border-radius: 100%;
+	display: inline-block;
+	margin: 5px 10px;
+}
+.user-exit {
+	width: 20px;
+	cursor: pointer;
+}
