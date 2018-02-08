@@ -11,3 +11,15 @@ function getFolder($folder)
 
 	return DIRECTORY_SEPARATOR.implode(DIRECTORY_SEPARATOR, $folderExplodeArray).DIRECTORY_SEPARATOR;
 	}
+function pre($array){
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+    return;
+}
+function _pre($array){
+    echo '<pre>';
+    var_dump($array);
+    echo '</pre>';
+    return;
+}

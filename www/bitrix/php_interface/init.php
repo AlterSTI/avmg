@@ -13,18 +13,6 @@ define("SITE_NAME",                  $siteName);
 define("GOOGLE_RECAPTCHA_SITEKEY",   "6LdWqCkTAAAAABTDuDaNXUub1rFqK-o0aSPjK5_W");
 define("GOOGLE_RECAPTCHA_SECRETKEY", "6LdWqCkTAAAAAM_AshmUWM-yG1IWAicM8oAgmK6-");
 /* -------------------------------------------------------------------- */
-function pre($array){
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-    return;
-}
-function _pre($array){
-    echo '<pre>';
-    var_dump($array);
-    echo '</pre>';
-    return;
-}
 /* ---------------------------- includings ---------------------------- */
 /* -------------------------------------------------------------------- */
 include "js_libaries_registration.php";
@@ -36,7 +24,9 @@ CModule::AddAutoloadClasses
 	(
 	"", 
 		[
-		"AvComponentsIncludings"                         => "/bitrix/php_interface/av_classes/components_includings/AvComponentsIncludings.php",
-		"av\image_processing\watermarks\WatermarkAdding" => "/bitrix/php_interface/av_classes/image_processing/watermarks/WatermarkAdding.php"
+		"AvComponentsIncludings"                           => "/bitrix/php_interface/av_classes/components_includings/AvComponentsIncludings.php",
+		"Av\\ImageProcessing\\Watermarks\\WatermarkAdding" => "/bitrix/php_interface/av_classes/image_processing/watermarks/WatermarkAdding.php",
+		"Av\\Client\\ClientInfoInterface"                  => "/bitrix/php_interface/av_classes/client/ClientInfoInterface.php",
+		"Av\\Client\\ClientInfo"                           => "/bitrix/php_interface/av_classes/client/ClientInfo.php"
 		]
 	);
