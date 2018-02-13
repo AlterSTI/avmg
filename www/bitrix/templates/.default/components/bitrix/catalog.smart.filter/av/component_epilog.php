@@ -3,15 +3,11 @@ use \Bitrix\Main\Page\Asset;
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-$serverRootArray = explode("/", $_SERVER["DOCUMENT_ROOT"]);
-unset($serverRootArray[count($serverRootArray) - 1]);
-$templateFolderArray = explode("/", str_replace(implode("/", $serverRootArray), "", __DIR__));
-unset($templateFolderArray[0]);
-unset($templateFolderArray[1]);
-$templateFolder = "/".implode("/", $templateFolderArray);
+$templateFolder     = getFolder(__DIR__);
+$templateFolderHttp = CURRENT_PROTOCOL."://".SITE_NAME.str_replace(DIRECTORY_SEPARATOR, "/", $templateFolder);
 
 CJSCore::Init(["av", "font_awesome"]);
-Asset::getInstance()->addString("<script>AvCatalogSmartFilterResult = \"".CURRENT_PROTOCOL."://".$_SERVER["SERVER_NAME"].$templateFolder."/ajax.php\";</script>");
+Asset::getInstance()->addString("<script>AvCatalogSmartFilterResult = \"".$templateFolderHttp."ajax.php\";</script>");
 
 AvComponentsIncludings::getInstance()
 	->setIncludings("av", "form.button", "av-shop")

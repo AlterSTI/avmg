@@ -107,7 +107,7 @@ $price = count($arResult["PRICES_VALUES_ARRAY"])
 					<?else:?><?=$price?>
 					<?endif?>
 				<?else:?>
-					<?=Loc::getMessage("AV_CATALOG_ITEM_LIST_PRICE_EMPTY")?>
+                    <div class="no-price"><?=Loc::getMessage("AV_CATALOG_ITEM_LIST_PRICE_EMPTY")?></div>
 				<?endif?>
 			</div>
 

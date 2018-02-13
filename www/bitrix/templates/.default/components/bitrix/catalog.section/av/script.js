@@ -36,6 +36,7 @@ function AvCatalogSectionChangeViewType(type)
 			$sectionRoot
 				.html(result)
 				.attr("class", sectionClassArray.join(" "));
+                $(document).trigger("avCatalogSectionViewTypeChanged");
 			},
 		complete: function() {AvWaitingScreen("off")}
 		});

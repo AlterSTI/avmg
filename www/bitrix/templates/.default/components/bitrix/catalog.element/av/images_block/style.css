@@ -31,9 +31,8 @@
 .av-catalog-element .images-block .slider .slider-block
 	{
 	display: flex;
-	height: 70px;
-	overflow: hidden;
 	width: calc(100% - 24px * 2);
+	height: 70px;
 	}
 .av-catalog-element .images-block .slider .slider-block .slider-image
 	{
@@ -122,9 +121,7 @@
 
 .av-catalog-element-image-viewer .slider-main .slider-block
 	{
-	align-items: center;
 	display: flex;
-	overflow: hidden;
 	width:  calc(100% - 48px * 2);
 	height: calc(100% - 24px * 2);
 	}
@@ -155,8 +152,8 @@
 	{
 	color: #999;
 	cursor: pointer;
-	line-height: 24px;
 	font-size: 32px;
+	line-height: 24px;
 	text-align: center;
 	transition: .3s;
 	width:  24px;
@@ -168,11 +165,9 @@
 
 .av-catalog-element-image-viewer .slider-vertical .slider-block
 	{
-	align-items: center;
 	border-left: 1px solid #EFEFEF;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	overflow: hidden;
 	width:  100%;
 	height: calc(100% - 24px * 2);
@@ -186,9 +181,15 @@
 	width:  100%;
 	height: 25%;
 	}
-.av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image:hover
+.av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image:hover,
+.av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image:active,
+.av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image:focus
 	{
 	border-color: #999;
+	}
+.av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image.active
+	{
+	border-color: #CC0000;
 	}
 .av-catalog-element-image-viewer .slider-vertical .slider-block .slider-image img
 	{

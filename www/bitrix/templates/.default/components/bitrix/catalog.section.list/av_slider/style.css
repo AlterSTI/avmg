@@ -34,7 +34,6 @@
 	{
 	align-items: center;
 	display: flex;
-	overflow: hidden;
 	width: calc(100% - 24px * 2);
 	height: 115px;
 	}

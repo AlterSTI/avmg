@@ -73,6 +73,9 @@
 	text-align: center;
 	width: 100%;
 	}
+.av-ctatalog-item-list .price .no-price {
+	color: #bec0c7;
+}
 .av-ctatalog-item-list .price.mobile {display: none}
 
 .av-ctatalog-item-list .read-more

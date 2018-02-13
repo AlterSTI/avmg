@@ -11,12 +11,7 @@ foreach($arResult["SECTIONS"] as $sectionInfo)
 /* -------------------------- sections list --------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
-<div
-	class="av-catalog-section-list-slider"
-	data-slides-count="3"
-	data-slides-count-tablet="2"
-	data-slides-count-mobile="1"
->
+<div class="av-catalog-section-list-slider">
 	<i class="navigation prev fa fa-angle-left"></i>
 
 	<div class="slider-block">

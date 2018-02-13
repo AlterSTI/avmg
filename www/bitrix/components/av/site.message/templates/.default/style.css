@@ -1,0 +1,41 @@
+.old_browser_message{
+    text-align:center;
+    background-color:#FEE757;
+    height: 50px;
+    padding-top:10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.close_old_browser_message .fa-times {
+    opacity: .5;
+    transition: all .1s linear;
+    position: absolute;
+    top:15px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close_old_browser_message .fa-times:hover{
+    opacity: 1;
+}
+
+@keyframes slidein {
+
+    from{
+        /*height:  50px;*/
+        top:0;
+    }
+    to{
+        /*height:  0px;*/
+        top: -50px;
+
+    }
+}
+
+.old_browser_message_close {
+    animation: slidein 1.5s;
+    animation-fill-mode: forwards;
+}

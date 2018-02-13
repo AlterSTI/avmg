@@ -59,7 +59,10 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 					"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
 					"ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
 
-					"PAGE_ELEMENT_COUNT" => 99,
+					"PROPERTY_CODE"        => $arParams["LIST_PROPERTY_CODE"],
+					"OFFERS_FIELD_CODE"    => $arParams["LIST_OFFERS_FIELD_CODE"],
+					"OFFERS_PROPERTY_CODE" => $arParams["LIST_OFFERS_PROPERTY_CODE"],
+					"PAGE_ELEMENT_COUNT"   => 99,
 
 					"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
 					"DETAIL_URL"  => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],

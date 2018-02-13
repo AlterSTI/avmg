@@ -3,15 +3,11 @@ use \Bitrix\Main\Page\Asset;
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-$serverRootArray = explode("/", $_SERVER["DOCUMENT_ROOT"]);
-unset($serverRootArray[count($serverRootArray) - 1]);
-$templateFolderArray = explode("/", str_replace(implode("/", $serverRootArray), "", __DIR__));
-unset($templateFolderArray[0]);
-unset($templateFolderArray[1]);
-$templateFolder = "/".implode("/", $templateFolderArray);
+$templateFolder     = getFolder(__DIR__);
+$templateFolderHttp = CURRENT_PROTOCOL."://".SITE_NAME.str_replace(DIRECTORY_SEPARATOR, "/", $templateFolder);
 
 CJSCore::Init(["av_form_elements"]);
-Asset::getInstance()->addString("<script>AvFormAjaxHandler = \"".CURRENT_PROTOCOL."://".$_SERVER["SERVER_NAME"].$templateFolder."/ajax/form_handler.php\";</script>");
+Asset::getInstance()->addString("<script>AvFormAjaxHandler = \"".$templateFolderHttp."ajax/form_handler.php\";</script>");
 
 AvComponentsIncludings::getInstance()
 	->setIncludings("av", "form.input",       "av-form")

@@ -47,10 +47,24 @@
 	margin-bottom: 5px;
 	overflow: hidden;
 	text-align: center;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	white-space: normal;
+	word-break: break-all;
+	padding: 0 15px;
 	width: 100%;
+	position: relative;
+	min-height: 47px;
 	}
+.av-ctatalog-item-tablet .element-title::after {
+	content: '';
+}
+.av-ctatalog-item-tablet .element-title.title-after::after {
+	content: '...';
+	display: block;
+	position: absolute;
+	bottom: -5px;
+	right: 0;
+	font-family: initial;
+}
 .av-ctatalog-item-tablet .price
 	{
 	font-weight: bold;
@@ -58,6 +72,9 @@
 	text-align: center;
 	width: 100%;
 	}
+.av-ctatalog-item-tablet .no-price {
+	color: #bec0c7;
+}
 .av-ctatalog-item-tablet .sku-info
 	{
 	font-size: 12px;

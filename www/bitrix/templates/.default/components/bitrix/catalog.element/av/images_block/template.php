@@ -22,11 +22,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 </div>
 
 <?if(count($arResult["IMAGES"]) > 1):?>
-<div
-	class="slider"
-	data-slides-count="3"
-	data-slides-count-mobile="2"
->
+<div class="slider">
 	<i class="navigation prev fa fa-angle-left"></i>
 
 	<div class="slider-block">
@@ -54,7 +50,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 	<i class="close fa fa-times"></i>
 	<div class="title"><?=$arResult["NAME"]?></div>
 	<div class="body">
-		<div class="slider-main" data-slides-count="1" data-slides-count-mobile="1">
+		<div class="slider-main">
 			<i class="navigation prev fa fa-angle-left"></i>
 
 			<div class="slider-block">
@@ -69,15 +65,11 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<?endfor?>
 			</div>
 
-			<i class="navigation prev fa fa-angle-right"></i>
+			<i class="navigation next fa fa-angle-right"></i>
 		</div>
 
 		<?if(count($arResult["IMAGES"]) > 1):?>
-		<div
-			class="slider-vertical"
-			data-slides-count="5"
-			data-slides-count-mobile="3"
-		>
+		<div class="slider-vertical">
 			<i class="navigation prev fa fa-angle-up"></i>
 
 			<div class="slider-block">

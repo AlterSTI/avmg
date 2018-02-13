@@ -23,10 +23,10 @@ include "av_functions.php";
 CModule::AddAutoloadClasses
 	(
 	"", 
-		[
+		array(
 		"AvComponentsIncludings"                           => "/bitrix/php_interface/av_classes/components_includings/AvComponentsIncludings.php",
 		"Av\\ImageProcessing\\Watermarks\\WatermarkAdding" => "/bitrix/php_interface/av_classes/image_processing/watermarks/WatermarkAdding.php",
 		"Av\\Client\\ClientInfoInterface"                  => "/bitrix/php_interface/av_classes/client/ClientInfoInterface.php",
 		"Av\\Client\\ClientInfo"                           => "/bitrix/php_interface/av_classes/client/ClientInfo.php"
-		]
+        )
 	);

@@ -33,18 +33,18 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 		/* ------------------ price ------------------ */
 		/* ------------------------------------------- */
 		?>
-		<div class="price">
-			<?if(count($arResult["PRICES_VALUES_ARRAY"])):?>
-				<?
-				$price = $arResult["PRICES_TITLES_ARRAY"][array_search(min($arResult["PRICES_VALUES_ARRAY"]), $arResult["PRICES_VALUES_ARRAY"])];
-				?>
-				<?if(count($arResult["PRICES_VALUES_ARRAY"]) > 1):?><?=Loc::getMessage("AV_CATALOG_ITEM_TABLET_PRICE_FROM", ["#PRICE#" => $price])?>
-				<?else:?><?=$price?>
-				<?endif?>
-			<?else:?>
-				<?=Loc::getMessage("AV_CATALOG_ITEM_TABLET_PRICE_EMPTY")?>
-			<?endif?>
-		</div>
+        <div class="price">
+            <?if(count($arResult["PRICES_VALUES_ARRAY"])):?>
+                <?
+                $price = $arResult["PRICES_TITLES_ARRAY"][array_search(min($arResult["PRICES_VALUES_ARRAY"]), $arResult["PRICES_VALUES_ARRAY"])];
+                ?>
+                <?if(count($arResult["PRICES_VALUES_ARRAY"]) > 1):?><?=Loc::getMessage("AV_CATALOG_ITEM_TABLET_PRICE_FROM", ["#PRICE#" => $price])?>
+                <?else:?><?=$price?>
+                <?endif?>
+            <?else:?>
+                <div class="no-price"><?=Loc::getMessage("AV_CATALOG_ITEM_TABLET_PRICE_EMPTY")?></div>
+            <?endif?>
+        </div>
 		<?
 		/* ------------------------------------------- */
 		/* ---------------- sku props ---------------- */

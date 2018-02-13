@@ -29,7 +29,10 @@
 /* -------------------------------------------------------------------- */
 /* ------------------------ first level items ------------------------- */
 /* -------------------------------------------------------------------- */
-.av-shop-menu .first-level-item {padding: 0 10px}
+.av-shop-menu .first-level-item {
+	padding: 0 10px;
+	min-width: 160px;
+}
 .av-shop-menu .first-level-item > a
 	{
 	align-items: center;
@@ -94,3 +97,14 @@
 .av-shop-menu .third-level-item  a:active,
 .av-shop-menu .second-level-item a:focus,
 .av-shop-menu .third-level-item  a:focus {text-decoration: underline}
+
+
+/* -------------------------------------------------------------------- */
+/* ------------------------------- media ------------------------------ */
+/* -------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+	.av-shop-menu .first-level-item {
+		padding: 0 10px;
+		min-width: auto;
+	}
+}

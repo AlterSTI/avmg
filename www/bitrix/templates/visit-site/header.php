@@ -1,5 +1,7 @@
 <?
-use \Bitrix\Main\Page\Asset;
+use
+    \Bitrix\Main\Page\Asset,
+    \Av\Client\ClientInfo;
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /* ============================================================================================= */
@@ -52,6 +54,24 @@ $shopLink = ob_get_contents();
 ob_end_clean();
 
 $hasLeftColumn = $leftMenu || (file_exists($_SERVER["DOCUMENT_ROOT"].$currentDirectory."sect_inc.php") && $dirProperty["NOT_SHOW_LEFT_MENU"] != "Y") ? true : false;
+
+$clientBrowserIsOld = false;
+try{
+    $ClientInfo = new ClientInfo();
+    $ClientInfo->setBrowserChecking('firefox', 50.0);
+    $ClientInfo->setBrowserChecking('chrome', 50.0);
+    $ClientInfo->setBrowserChecking('opera', 40.0);
+    $ClientInfo->setBrowserChecking('safari', 5.0);
+    $ClientInfo->setBrowserChecking('yandex', 15.0);
+    $ClientInfo->setBrowserChecking('internet explorer', 10.0);
+    $ClientInfo->setBrowserChecking('edge', 14.0);
+    $ClientInfo->setBrowserChecking('android', 5.0);
+
+    $clientBrowserIsOld = $ClientInfo->isOld();
+}
+catch (Exception $e){
+
+}
 /* ============================================================================================= */
 /* ========================================== DOCUMENT ========================================= */
 /* ============================================================================================= */
@@ -69,12 +89,11 @@ $hasLeftColumn = $leftMenu || (file_exists($_SERVER["DOCUMENT_ROOT"].$currentDir
 		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 		<title><?$APPLICATION->ShowTitle()?></title>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
 		<?$APPLICATION->ShowHead()?>
 		<?CJSCore::Init(["av"])?>
 		<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/scripts/main.js")?>
 		<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/scripts/".LANGUAGE_ID."/google_analytics.js")?>
-		<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/scripts/".LANGUAGE_ID."/yandex_metrika.js")?>
+		<?/*Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/scripts/".LANGUAGE_ID."/yandex_metrika.js")*/?>
 	</head>
 	<?
 	/* -------------------------------------------------------------------- */
@@ -82,8 +101,17 @@ $hasLeftColumn = $leftMenu || (file_exists($_SERVER["DOCUMENT_ROOT"].$currentDir
 	/* -------------------------------------------------------------------- */
 	?>
 	<body>
+        <?
+        if ($clientBrowserIsOld)
+            $APPLICATION->IncludeComponent(
+                'av:site.message',
+                '',
+                array('MESSAGE_TYPE' => 'oldBrowser')
+            );
+        ?>
 		<?$APPLICATION->ShowPanel()?>
 		<span itemprop="headline" content="<?$APPLICATION->ShowTitle(false)?>"></span>
+
 		<?
 		/* ------------------------------------------- */
 		/* ------------------ header ----------------- */
