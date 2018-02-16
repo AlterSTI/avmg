@@ -1,0 +1,73 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-cargo-traffic-light-filter h3
+	{
+	background: transparent;
+	border: none;
+	font-size: 100%;
+	font-weight: normal;
+	outline: none;
+	padding: 0;
+	margin:  0;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- form ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-cargo-traffic-light-filter {color: #717A84}
+.av-cargo-traffic-light-filter > h3
+	{
+	align-items: center;
+	background-color: #717A84;
+	color: #FFF;
+	display: flex;
+	font-weight: bold;
+	justify-content: space-between;
+	padding: 15px 40px 15px 15px;
+	}
+.av-cargo-traffic-light-filter > h3 .title.active::after
+	{
+	background: url(images/filter_active.svg) center center no-repeat;
+	background-size: cover;
+	content: '';
+	display: inline-block;
+	margin: -6px 0 -6px 15px;
+	width:  25px;
+	height: 25px;
+	}
+.av-cargo-traffic-light-filter > h3 > .open-button
+	{
+	background: url(images/open_button.svg);
+	background-size: cover;
+	cursor: pointer;
+	margin: -15px;
+	transition: .3s;
+	width:  25px;
+	height: 25px;
+	}
+.av-cargo-traffic-light-filter > h3 > .open-button.active {transform: rotate(-45deg)}
+.av-cargo-traffic-light-filter > .body
+	{
+	background: #FFF;
+	display: flex;
+	font-size: 85%;
+	justify-content: space-between;
+	padding: 15px;
+	}
+
+.av-cargo-traffic-light-filter > .body > *:nth-child(1) {width: calc(100% - (140px*2 + 15px) - 30px)}
+.av-cargo-traffic-light-filter > .body > *:nth-child(2) {width: calc(140px*2 + 15px)}
+
+.av-cargo-traffic-light-filter > .body .fields-row:not(:last-of-type)         {margin-bottom: 15px}
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell              {display: inline-block}
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell:not(.double) {width: calc((100% - 30px*3)/4)}
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell.double       {width: calc((100% - 30px*3)/4*2 + 30px)}
+.av-cargo-traffic-light-filter > .body .fields-row > *:not(:last-child)       {margin-right: 26px}
+
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell.double > *              {display: inline-block;float: left}
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell.double > *:nth-child(1),
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell.double > *:nth-child(3) {width: calc((100% - 30px)/2)}
+.av-cargo-traffic-light-filter > .body .fields-row > .field-cell.double > *:nth-child(2) {color: #B6CBD0;font-size: 150%;text-align: center;width: 29px}
+
+.av-cargo-traffic-light-filter .buttons-row > [type=submit]        {float: left; width: 140px}
+.av-cargo-traffic-light-filter .buttons-row > *:not([type=submit]) {float: right;width: 124px}

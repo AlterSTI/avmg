@@ -1,0 +1,28 @@
+#workarea-content {background-color: transparent !important;color: #535C69}
+/* -------------------------------------------------------------------- */
+/* ----------------------------- toolbar ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-cargo-traffic-light-toolbar                        {height: 28px;font-size: 85%;margin-bottom: 15px}
+.av-cargo-traffic-light-toolbar > *:not(.excel-export) {float: left;margin-right: 15px;width: 124px}
+
+.av-cargo-traffic-light-toolbar .excel-export
+	{
+	align-items: center;
+	color: #717A84;
+	display: flex;
+	font-weight: bold;
+	float: right;
+	margin-right: 50px;
+	}
+.av-cargo-traffic-light-toolbar .excel-export::before
+	{
+	background: url(images/excel.svg) left center no-repeat;
+	background-size: contain;
+	content: '';
+	margin-right: 7px;
+	width:  28px;
+	height: 28px;
+	}
+.av-cargo-traffic-light-toolbar .excel-export:hover,
+.av-cargo-traffic-light-toolbar .excel-export:active,
+.av-cargo-traffic-light-toolbar .excel-export:focus {text-decoration: underline}
