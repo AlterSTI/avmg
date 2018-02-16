@@ -1,25 +1,25 @@
 <?
 require $_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php";
 
-$APPLICATION->SetTitle("Electro-welded tube");
+$APPLICATION->SetTitle("Pipes steel electrowelded");
 $APPLICATION->SetPageProperty("title",       "Profile pipe from the manufacturer | AV Metal Group Ukraine, Dnepr manufacturer of round, square, rectangular steel pipe | Buy a profile pipe in bulk: phone for order ☎ (056) 790-01-22");
 $APPLICATION->SetPageProperty("description", "Need a profile pipe from the manufacturer? We produce and deliver ➨ AB metal groups: ✓Quality ✓Low price ☎ (056) 790-01-22 Call!");
 ?>
-<h3>Tube production</h3>
+<h3>Pipe production</h3>
 <p>
-	Tubes can be produced in several ways
+	Pipes can be produced in several ways
 </p>
 Depending on the raw materials and the method of production, there are:
 <ul>
-	<li>Longitudinal electro-welded tube</li>
-	<li>Helical electro-welded tube</li>
-	<li>Seamless hot-wrought tube</li>
-	<li>Seamless cold-rolled tube</li>
+	<li>Longitudinal pipes steel electrowelded</li>
+	<li>Helical pipes steel electrowelded</li>
+	<li>Seamless hot-wrought pipe</li>
+	<li>Seamless cold-rolled pipe</li>
 </ul><br>
 <p>
 	Main phases of production:
 </p>
-Longitudinal electro-welded tube
+Longitudinal pipes steel electrowelded
 <ul>
 	<li>The strip is a rolled up steel sheet which is drawn off and cut into longitudinal flat bars</li>
 	<li>The flat bars are welded into an endless strand, which is necessary for ensuring the continuous operation</li>
@@ -30,40 +30,41 @@ Longitudinal electro-welded tube
 	There are two the most used welding methods: gas tungsten arc welding (GTAW) - is an arc welding process that uses a non-consumable tungstenelectrode to produce the weld and high frequency (HF) welding - is the joining of materials by supplying HF energy in the form of an electromagnetic field.
 </p>
 <p>
-	The weld made with the first method is stronger but the second method of welding is about 20 times faster, respectively, HF welded tubes are much cheaper.
+	The weld made with the first method is stronger but the second method of welding is about 20 times faster, respectively, HF welded pipes are much cheaper.
 </p>
 <ul>
-	<li>Then, the steel round tube is calibrated with roll mills</li>
+	<li>Then, the steel round pipe is calibrated with roll mills</li>
 	<li>The weld is got under the non-destructive inspection with whirling currents or ultrasound</li>
-	<li>Next, the tube is cut on the sections with needed length and stored.</li>
+	<li>Next, the pipe is cut on the sections with needed length and stored.</li>
 </ul><br>
-<h3>Helical electro-welded tube</h3>
+<h3>Helical pipes steel electrowelded</h3>
 <p>
-	Production of this type of the tubes is the same as the production of the longitudinal electro-welded tubes but the strand is rolled up with roll mills, turning not into the tube, but into the spiral. Spiral weld provides the tube with great tensile strength.
+	Production of this type of the pipes is the same as the production of the longitudinal&nbsp;pipes steel electrowelded&nbsp;but the strand is rolled up with roll mills, turning not into the pipe, but into the spiral.
+	Spiral weld provides the pipe with great tensile strength.
 </p>
-<h3>Seamless hot-wrought tube</h3>
-The seamless tube (it is also called weldless drawn tube) is produced from the cylindrical solid-cast stock material with the hot deformation method:
+<h3>Seamless hot-wrought pipe</h3>
+The seamless pipe (it is also called weldless drawn pipe) is produced from the cylindrical solid-cast stock material with the hot deformation method:
 <ul>
 	<li>The stock material is heated in the furnace</li>
 	<li>Next, it is passed into the sleeve (quill cylinder) with the piercing machine</li>
 	<li>The hot sleeve passes through several roll mills, stretching and getting the required diameter and walls thickness</li>
-	<li>Then, the finished round tube is cooled, cut and sent to the warehouse of finished products.</li>
+	<li>Then, the finished round pipe is cooled, cut and sent to the warehouse of finished products.</li>
 </ul><br>
-<h3>Seamless cold-rolled tube</h3>
-There are only two differences from the production of the previous tube type:
+<h3>Seamless cold-rolled pipe</h3>
+There are only two differences from the production of the previous pipe type:
 <ul>
 	<li>After the piercing mill, the sleeve is cooled and all subsequent operations are carried out in a cold state</li>
-	<li>The tube must be annealed after the forming. It is heated to the recrystallization temperature of the steel and cooled</li>
+	<li>The pipe must be annealed after the forming. It is heated to the recrystallization temperature of the steel and cooled</li>
 </ul><br>
 <p>
 	This process makes the steel more ductile, also unavoidable internal stresses leave the metal.
 </p>
 <p>
-	The market offers seamless cold-rolled tubes with wall thickness of 0.3 to 24mm, diameter from 5 to 250mm.
+	The market offers seamless cold-rolled pipes with wall thickness of 0.3 to 24mm, diameter from 5 to 250mm.
 </p>
 <h3>AV metal group produces</h3>
 <p>
-	Round tubes:
+	Round pipes:
 </p>
 Wall thickness from 1mm to 2.5mm<br>
 <ul>
@@ -79,7 +80,7 @@ Wall thickness up to 3mm
 <ul>
 	<li>Ø 48mm (nominal bore 40)</li>
 </ul><br>
-Shaped tubes:
+Shaped pipes:
 <ul>
 	<li>10х10 — 0.8-1-1.2-2.0mm</li>
 	<li>15х15 (20х10) — 0.8-1-1.2-2.0mm</li>
@@ -97,495 +98,988 @@ Shaped tubes:
 	<li>80х40х1.8-2.0-3mm</li>
 </ul><br>
 <p>
+	The production of AV metal group corresponds to the European certificate of factory production control in accordance with the DIN EN 102-12-1: 2006.
+	For more information follow <a href="/upload/manufacture_electro-welded%20tube/Zert-WPK_0090-CPR-0528_2017-07_en.pdf">the link</a>.
+	This standard regulates the production of welded circular and shaped pipes that are manufactured in a cold way.
+</p>
+<p>
+	Our products are subject to internal factory control, which is inspected by the supervision web-site of construction products in the TÜV Thüringen e. V.
+</p>
+The range of pipes that is certified according to the DIN EN 102-12-1: 2006 and includes:
+<ul>
+	<li>Welded rounds manufactured in the cold way DIN 102-19-1, using S 235JRH steel grade with a diameter in the range from 21,3 to 76,1, mm and with the thickness in the range from 2 to 3 mm.</li>
+</ul>
+<ul>
+	<li>Welded square sections manufactured in the cold way DIN 102-19-1, using S 235JRH steel grade with the side dimension in the range from 20 x 20 to 60 x 60 mm and thickness in the range from 2 to 3 mm.</li>
+</ul>
+<ul>
+	<li>Welded rectangular profiles manufactured in the cold way DIN 102-19-1, using S 235JRH steel grade with the side dimension in the range from 40х20 to 80х40 mm and thickness in the range from 2 to 3 mm.</li>
+</ul>
+<p>
 	<img alt="3.jpg" src="/upload/medialibrary/39b/3.jpg" style="width: 100%" title="3.jpg">
 </p>
 <h3>Range of products:</h3>
 <table width="100%">
 	<tbody>
+		<tr>
+			<td>
+				 Size, mm
+			</td>
+			<td>
+				 Wall thickness, mm
+			</td>
+			<td>
+				 Size, mm
+			</td>
+			<td>
+				 Wall thickness, mm
+			</td>
+			<td>
+				 Size, mm
+			</td>
+			<td>
+				 Wall thickness, mm
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 15х15<br>
+				 15х15<br>
+				 15х15
+			</td>
+			<td>
+				 1 (1.2)<br>
+				 1.0<br>
+				 1.2
+			</td>
+			<td>
+				 30х30
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 1.5
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 15х15
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 30х30
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 1.7
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 15х15
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 30х30
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 1.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 15х15
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 40х20
+			</td>
+			<td>
+				 1.2
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 15х15
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 40х20
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 2.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 17х17<br>
+				 20х20<br>
+				 20х20
+			</td>
+			<td>
+				 1 (1.2-2)<br>
+				 1.0<br>
+				 1.2
+			</td>
+			<td>
+				 40х20
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 50х30
+			</td>
+			<td>
+				 3
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 20х20
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 40х20
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 1.5
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 20х20
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 40х20
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 1.7
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 20х20
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 40х25
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 1.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 20х20
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 40х25
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 25х25
+			</td>
+			<td>
+				 1.2
+			</td>
+			<td>
+				 40х25
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 2.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 25х25
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 40х25
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 50х50
+			</td>
+			<td>
+				 3
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 25х25
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 60х40
+			</td>
+			<td>
+				 1.5
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 25х25
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 60х40
+			</td>
+			<td>
+				 1.7
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 25х25
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 60х40
+			</td>
+			<td>
+				 1.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х20
+			</td>
+			<td>
+				 1.2
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 60х40
+			</td>
+			<td>
+				 2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х20
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 2.8
+			</td>
+			<td>
+				 60х40<tbody>
 	<tr>
 		<td>
-			Size, mm
+			 Size, mm
 		</td>
 		<td>
-			Wall thickness, mm
+			 Wall thickness, mm
 		</td>
 		<td>
-			Size, mm
+			 Size, mm
 		</td>
 		<td>
-			Wall thickness, mm
+			 Wall thickness, mm
 		</td>
 		<td>
-			Size, mm
+			 Size, mm
 		</td>
 		<td>
-			Wall thickness, mm
+			 Wall thickness, mm
 		</td>
 	</tr>
 	<tr>
 		<td>
-			15х15<br>
-			15х15<br>
-			15х15
+			 15х15<br>
+			 15х15<br>
+			 15х15
 		</td>
 		<td>
-			1 (1.2)<br>
-			1.0<br>
-			1.2
+			 1 (1.2)<br>
+			 1.0<br>
+			 1.2
 		</td>
 		<td>
-			30х30
+			 30х30
 		</td>
 		<td>
-			1.7
+			 1.7
 		</td>
 		<td>
-			50х30
+			 50х30
 		</td>
 		<td>
-			1.5
-		</td>
-	</tr>
-	<tr>
-		<td>
-			15х15
-		</td>
-		<td>
-			1.5
-		</td>
-		<td>
-			30х30
-		</td>
-		<td>
-			1.8
-		</td>
-		<td>
-			50х30
-		</td>
-		<td>
-			1.7
+			 1.5
 		</td>
 	</tr>
 	<tr>
 		<td>
-			15х15
+			 15х15
 		</td>
 		<td>
-			1.7
+			 1.5
 		</td>
 		<td>
-			30х30
+			 30х30
 		</td>
 		<td>
-			2
+			 1.8
 		</td>
 		<td>
-			50х30
+			 50х30
 		</td>
 		<td>
-			1.8
-		</td>
-	</tr>
-	<tr>
-		<td>
-			15х15
-		</td>
-		<td>
-			1.8
-		</td>
-		<td>
-			40х20
-		</td>
-		<td>
-			1.2
-		</td>
-		<td>
-			50х30
-		</td>
-		<td>
-			2
+			 1.7
 		</td>
 	</tr>
 	<tr>
 		<td>
-			15х15
+			 15х15
 		</td>
 		<td>
-			2
+			 1.7
 		</td>
 		<td>
-			40х20
+			 30х30
 		</td>
 		<td>
-			1.5
+			 2
 		</td>
 		<td>
-			50х30
+			 50х30
 		</td>
 		<td>
-			2.8
-		</td>
-	</tr>
-	<tr>
-		<td>
-			17х17<br>
-			20х20<br>
-			20х20
-		</td>
-		<td>
-			1 (1.2-2)<br>
-			1.0<br>
-			1.2
-		</td>
-		<td>
-			40х20
-		</td>
-		<td>
-			1.7
-		</td>
-		<td>
-			50х30
-		</td>
-		<td>
-			3
+			 1.8
 		</td>
 	</tr>
 	<tr>
 		<td>
-			20х20
+			 15х15
 		</td>
 		<td>
-			1.5
+			 1.8
 		</td>
 		<td>
-			40х20
+			 40х20
 		</td>
 		<td>
-			1.8
+			 1.2
 		</td>
 		<td>
-			50х50
+			 50х30
 		</td>
 		<td>
-			1.5
-		</td>
-	</tr>
-	<tr>
-		<td>
-			20х20
-		</td>
-		<td>
-			1.7
-		</td>
-		<td>
-			40х20
-		</td>
-		<td>
-			2
-		</td>
-		<td>
-			50х50
-		</td>
-		<td>
-			1.7
+			 2
 		</td>
 	</tr>
 	<tr>
 		<td>
-			20х20
+			 15х15
 		</td>
 		<td>
-			1.8
+			 2
 		</td>
 		<td>
-			40х25
+			 40х20
 		</td>
 		<td>
-			1.5
+			 1.5
 		</td>
 		<td>
-			50х50
+			 50х30
 		</td>
 		<td>
-			1.8
-		</td>
-	</tr>
-	<tr>
-		<td>
-			20х20
-		</td>
-		<td>
-			2
-		</td>
-		<td>
-			40х25
-		</td>
-		<td>
-			1.7
-		</td>
-		<td>
-			50х50
-		</td>
-		<td>
-			2
+			 2.8
 		</td>
 	</tr>
 	<tr>
 		<td>
-			25х25
+			 17х17<br>
+			 20х20<br>
+			 20х20
 		</td>
 		<td>
-			1.2
+			 1 (1.2-2)<br>
+			 1.0<br>
+			 1.2
 		</td>
 		<td>
-			40х25
+			 40х20
 		</td>
 		<td>
-			1.8
+			 1.7
 		</td>
 		<td>
-			50х50
+			 50х30
 		</td>
 		<td>
-			2.8
-		</td>
-	</tr>
-	<tr>
-		<td>
-			25х25
-		</td>
-		<td>
-			1.5
-		</td>
-		<td>
-			40х25
-		</td>
-		<td>
-			2
-		</td>
-		<td>
-			50х50
-		</td>
-		<td>
-			3
+			 3
 		</td>
 	</tr>
 	<tr>
 		<td>
-			25х25
+			 20х20
 		</td>
 		<td>
-			1.7
+			 1.5
 		</td>
 		<td>
-			40х40
+			 40х20
 		</td>
 		<td>
-			1.5
+			 1.8
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			1.5
+			 1.5
 		</td>
 	</tr>
 	<tr>
 		<td>
-			25х25
+			 20х20
 		</td>
 		<td>
-			1.8
+			 1.7
 		</td>
 		<td>
-			40х40
+			 40х20
 		</td>
 		<td>
-			1.7
+			 2
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			1.7
+			 1.7
 		</td>
 	</tr>
 	<tr>
 		<td>
-			25х25
+			 20х20
 		</td>
 		<td>
-			2
+			 1.8
 		</td>
 		<td>
-			40х40
+			 40х25
 		</td>
 		<td>
-			1.8
+			 1.5
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			1.8
+			 1.8
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х20
+			 20х20
 		</td>
 		<td>
-			1.2
+			 2
 		</td>
 		<td>
-			40х40
+			 40х25
 		</td>
 		<td>
-			2
+			 1.7
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			2
+			 2
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х20
+			 25х25
 		</td>
 		<td>
-			1.5
+			 1.2
 		</td>
 		<td>
-			40х40
+			 40х25
 		</td>
 		<td>
-			2.8
+			 1.8
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			2.8
+			 2.8
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х20
+			 25х25
 		</td>
 		<td>
-			1.7
+			 1.5
 		</td>
 		<td>
-			40х40
+			 40х25
 		</td>
 		<td>
-			3
+			 2
 		</td>
 		<td>
-			60х40
+			 50х50
 		</td>
 		<td>
-			3
+			 3
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х20
+			 25х25
 		</td>
 		<td>
-			1.8
+			 1.7
 		</td>
 		<td>
-			50х25
+			 40х40
 		</td>
 		<td>
-			1.5
+			 1.5
 		</td>
 		<td>
-			60х60
+			 60х40
 		</td>
 		<td>
-			1.8
+			 1.5
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х20
+			 25х25
 		</td>
 		<td>
-			2
+			 1.8
 		</td>
 		<td>
-			50х25
+			 40х40
 		</td>
 		<td>
-			1.7
+			 1.7
 		</td>
 		<td>
-			60х60
+			 60х40
 		</td>
 		<td>
-			2
+			 1.7
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х30
+			 25х25
 		</td>
 		<td>
-			1.2
+			 2
 		</td>
 		<td>
-			50х25
+			 40х40
 		</td>
 		<td>
-			1.8
+			 1.8
 		</td>
 		<td>
-			60х60
+			 60х40
 		</td>
 		<td>
-			2.8
+			 1.8
 		</td>
 	</tr>
 	<tr>
 		<td>
-			30х30
+			 30х20
 		</td>
 		<td>
-			1.5
+			 1.2
 		</td>
 		<td>
-			50х25
+			 40х40
 		</td>
 		<td>
-			2
+			 2
 		</td>
 		<td>
-			60х60<br>
-			80х60<br>
-			80х40<br>
-			80х40
+			 60х40
 		</td>
 		<td>
-			3<br>
-			1.8<br>
-			1,8<br>
-			2.8 (3)
+			 2
 		</td>
 	</tr>
+	<tr>
+		<td>
+			 30х20
+		</td>
+		<td>
+			 1.5
+		</td>
+		<td>
+			 40х40
+		</td>
+		<td>
+			 2.8
+		</td>
+		<td>
+			 60х40
+		</td>
+		<td>
+			 2.8
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 30х20
+		</td>
+		<td>
+			 1.7
+		</td>
+		<td>
+			 40х40
+		</td>
+		<td>
+			 3
+		</td>
+		<td>
+			 60х40
+		</td>
+		<td>
+			 3
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 30х20
+		</td>
+		<td>
+			 1.8
+		</td>
+		<td>
+			 50х25
+		</td>
+		<td>
+			 1.5
+		</td>
+		<td>
+			 60х60
+		</td>
+		<td>
+			 1.8
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 30х20
+		</td>
+		<td>
+			 2
+		</td>
+		<td>
+			 50х25
+		</td>
+		<td>
+			 1.7
+		</td>
+		<td>
+			 60х60
+		</td>
+		<td>
+			 2
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 30х30
+		</td>
+		<td>
+			 1.2
+		</td>
+		<td>
+			 50х25
+		</td>
+		<td>
+			 1.8
+		</td>
+		<td>
+			 60х60
+		</td>
+		<td>
+			 2.8
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 30х30
+		</td>
+		<td>
+			 1.5
+		</td>
+		<td>
+			 50х25
+		</td>
+		<td>
+			 2
+		</td>
+		<td>
+			 60х60<br>
+			 80х60<br>
+			 80х40<br>
+			 80х40
+		</td>
+		<td>
+			 3<br>
+			 1.8<br>
+			 1,8<br>
+			 2.8 (3)
+		</td>
+	</tr>
+			</td>
+			<td>
+				 2.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х20
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 40х40
+			</td>
+			<td>
+				 3
+			</td>
+			<td>
+				 60х40
+			</td>
+			<td>
+				 3
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х20
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 50х25
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 60х60
+			</td>
+			<td>
+				 1.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х20
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 50х25
+			</td>
+			<td>
+				 1.7
+			</td>
+			<td>
+				 60х60
+			</td>
+			<td>
+				 2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х30
+			</td>
+			<td>
+				 1.2
+			</td>
+			<td>
+				 50х25
+			</td>
+			<td>
+				 1.8
+			</td>
+			<td>
+				 60х60
+			</td>
+			<td>
+				 2.8
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 30х30
+			</td>
+			<td>
+				 1.5
+			</td>
+			<td>
+				 50х25
+			</td>
+			<td>
+				 2
+			</td>
+			<td>
+				 60х60<br>
+				 80х60<br>
+				 80х40<br>
+				 80х40
+			</td>
+			<td>
+				 3<br>
+				 1.8<br>
+				 1,8<br>
+				 2.8 (3)
+			</td>
+		</tr>
 	</tbody>
-</table>
-<br>
-<b>It is planned to develop tubes with the existing capacity:</b>
+</table><br>
+<b>It is planned to develop pipes with the existing capacity:</b>
 <ul>
 	<li>60х30х1.8;2;3</li>
 </ul><br>
 <b>General characteristic of production Birlik Makine ВТМ 120Н</b>
 <p>
-	Up to date, Birlik Makine has been installed and put into operation, on which electro-welded round and shaped tubes are produced. The type of welding is high-frequency welding. Also, square and rectangular welded shaped tubes, round tubes for gas and water conveyance, structural tubes from hot-rolled and cold-rolled coiled steel are produced.
+	Up to date, Birlik Makine has been installed and put into operation, on which electro-welded round and shaped pipes are produced.
+	The type of welding is high-frequency welding.
+	Also, square and rectangular welded shaped pipes, round pipes for gas and water conveyance, structural pipes from hot-rolled and cold-rolled coiled steel are produced.
 </p>
 <p>
 	<img alt="2.jpg" src="/upload/medialibrary/77f/2.jpg" style="width: 100%" title="2.jpg">

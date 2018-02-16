@@ -5,11 +5,11 @@ $(function()
 		if($(this).val()) {$(this).prev(".av-form-wrap-4 span[title]").attr("up", true)}
 	});
 
-	$('body').on('focus', '.av-form-wrap-4  input, .av-form-wrap-4 textarea', function() { 
-		$(this).prev(".av-form-wrap-4 span[title]").attr("up", true); 
+	$('body').on('focus', '.av-form-wrap-4  input, .av-form-wrap-4 textarea, av-form input, av-form textarea', function() {
+		$(this).prev(".av-form-wrap-4 span[title]").attr("up", true);
 	});
 
-	$('body').on('focusout', '.av-form-wrap-4 input, .av-form-wrap-4 textarea', function() { 
+	$('body').on('focusout', '.av-form-wrap-4 input, .av-form-wrap-4 textarea,  av-form input, av-form textarea', function() {
 		if(!$(this).val()){ $(this).prev(".av-form-wrap-4 span[title]").removeAttr("up")}
 	});
 

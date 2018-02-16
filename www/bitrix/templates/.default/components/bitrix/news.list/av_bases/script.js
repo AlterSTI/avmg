@@ -13,7 +13,7 @@ function initGoogleMap($mapObject)
 				(
 				$mapObject[0],
 					{
-					zoom                  :12,
+					zoom                  :14,
 					draggable             : true,
 					disableDefaultUI      : true,
 					disableDoubleClickZoom: true,

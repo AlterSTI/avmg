@@ -25,6 +25,8 @@
 .av-career-detail .info-cell .share-block-title {font-weight: bold;margin: 13px 0}
 
 .av-career-detail .form-cell .support-text      {border-top: 1px solid #B6C0C6;margin-top: 52px;padding-top: 13px}
+.av-career-detail .descr-cell > p:empty			{display: none}
+.av-career-detail .descr-cell > p				{padding: 0}
 /* -------------------------------------------------------------------- */
 /* ------------------------------ media ------------------------------- */
 /* -------------------------------------------------------------------- */

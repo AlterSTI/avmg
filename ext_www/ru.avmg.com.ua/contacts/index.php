@@ -16,6 +16,7 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/contacts.css");
 		<p>
 			Украина, Днепр,<br>
 			ул.Шолом-Алейхема, 5<br>
+			а/я 2763, инд. 49044 <br>
 			тел.: +38 (056) 790-01-22<br>
 			тел.: +38 (056) 790-73-00<br>
 			e-mail: <a href="mailto:office@avmg.com.ua">office@avmg.com.ua</a>

@@ -39,6 +39,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 /* ----------------------------- geo block ---------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
+<!--
 <div class="geo-block-cell">
 	<div class="page-active-block av-shop-popup-call-block" data-type="geo-block" data-call-type="onclick" tabindex="0">
 		<img
@@ -53,6 +54,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 		#GEO BLOCK#
 	</div>
 </div>
+-->
 <?
 /* -------------------------------------------------------------------- */
 /* ---------------------------- user block ---------------------------- */

@@ -16,6 +16,7 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/contacts.css");
 		<p>
 			Україна, Дніпро,<br>
 			вул.Шолом-Алейхема, 5<br>
+			а/с 2763, інд. 49044 <br>
 			тел.: +38 (056) 790-01-22<br>
 			тел.: +38 (056) 790-73-00<br>
 			e-mail: <a href="mailto:office@avmg.com.ua">office@avmg.com.ua</a>

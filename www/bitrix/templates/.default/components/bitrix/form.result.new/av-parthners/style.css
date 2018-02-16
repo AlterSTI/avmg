@@ -113,4 +113,5 @@
 	.av-form-parthners-work-button              > *:nth-child(2) {padding: 0 5px;text-align: center}
 	.av-form-parthners-work-button.passed       > *:nth-child(3) {height: 24px}
 	.av-form-parthners-work-button:not(.passed) > *:nth-child(3) {display: none}
+	.av-form-parthners-text > * 								 {width: 100%}
 	}

@@ -1,7 +1,7 @@
 <p>
-	We make a decision on the partnering possibility, based on the data from the application form.
-	Also,we would like to see your corporate website with contact details and list of the offered services.
+	If applicable, attach the link for your corporate website, add a list of services offered and provide a contact information.
+	AV metal group makes a decision on the partnering possibility based on the data from the application form.
 </p>
 <p>
-	After checking the  application form, from our side you immediately get the opportunity to make order with the partner discount.
+	After approving the application form, your company (you) will immediately receive an opportunity to make the order with a special partner discount.
 </p>

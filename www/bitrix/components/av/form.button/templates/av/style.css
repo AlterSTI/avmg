@@ -30,6 +30,7 @@
 	padding: 7px 10px;
 	transition: .3s;
 	text-align: center;
+	min-width: 100px;
 	}
 .av-form-button:visited {color: #FFF}
 .av-form-button:hover,

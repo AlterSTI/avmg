@@ -45,8 +45,20 @@
 	transition: .3s;
 	width:  24px;
 	height: 24px;
+	position: relative;
+	z-index: 9;
 	}
-.av-links-list.active .title-block .arrow {transform: rotate(-180deg)}
+.av-links-list.active .title-block .arrow {
+	transform: rotate(-180deg);
+	position: relative;
+	z-index: 9;
+}
+.av-links-list.active .title-block .arrow.fa-angle-down::before {
+	content: "\f107";
+	padding: 3px 7px;
+	position: relative;
+	z-index: 8;
+}
 /* -------------------------------------------------------------------- */
 /* -------------------------- drop-down menu -------------------------- */
 /* -------------------------------------------------------------------- */

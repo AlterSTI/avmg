@@ -1,2 +1,5 @@
-<p>Making a registration on the website, you get your account (login), with which you will manage the partner’s card, complete the order with partner discount, get an access to the private topics of the forum and the partner site.</p>
-<p>Log in as a partner and you will be able to contact our technical support with the high priority.</p>
+<u>Step 1</u>. Click on “Login” button in the right top corner of the website.<br>
+<u>Step 2</u>. Enter your login, password, e-mail, Name, Last name and Mobile phone number.<br>
+<u>Step 3</u>. Use your partner`s card number to complete the order with the discount.<br>
+<u>Step 4</u>. Share your ideas through the private topics on the forum and the partner website section.<br><br>
+Note: Log in as a partner to contact our technical support assistant.

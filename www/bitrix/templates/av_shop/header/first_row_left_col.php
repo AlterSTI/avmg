@@ -56,6 +56,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 /* ------------------------ languages selector ------------------------ */
 /* -------------------------------------------------------------------- */
 ?>
+<!--
 <div class="language-selector-cell">
 	<?
 	$APPLICATION->IncludeComponent
@@ -70,6 +71,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 		);
 	?>
 </div>
+-->
 <?
 /* -------------------------------------------------------------------- */
 /* ------------------------------- bases ------------------------------ */

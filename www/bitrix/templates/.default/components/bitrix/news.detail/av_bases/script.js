@@ -15,7 +15,7 @@ $(function()
 			(
 			$googleMap[0],
 				{
-				zoom     : 12,
+				zoom     : 15,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				center   : new google.maps.LatLng(coordinateX, coordinateY)
 				}

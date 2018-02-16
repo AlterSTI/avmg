@@ -24,10 +24,6 @@ class ClientInfo implements ClientInfoInterface {
         }
         return false;
     }
-
-    public function getBrowserObj(){
-        return $this->browserObj;
-    }
     public function __construct(){
         if (!$this->browserObj = get_browser(null, false)) {
             throw new Exception('PHP library browscap.ini is not install');

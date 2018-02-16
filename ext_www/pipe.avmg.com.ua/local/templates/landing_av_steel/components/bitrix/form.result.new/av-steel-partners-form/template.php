@@ -1,10 +1,12 @@
 <?
+use \Bitrix\Main\Localization\Loc;
+
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 
 <?if($arResult["isFormNote"] == "Y"):?>
 	<div id="form-anwer123" hidden>
 		<span id="popUp-text-fromForm" back-url >
-			<br><span>Спасибо за заявку!<br>Наш эксперт свяжется с вами в течении дня.</span><br>
+			<br><span><?=Loc::getMessage('AV_FORM_THANKS')?></span><br>
 		</span>
 	</div>
 	<script>
@@ -12,8 +14,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 	</script>
 <?endif?> 
 
-<div class="text-uppercase text-center title-form-1"><span>стать дилером</span><p>заполните форму и мы свяжемся с<br>Вами в ближайшее время</p></div>
-<?=$arResult["FORM_HEADER"]?><div class="av-form-wrap-2">
+<div class="text-uppercase text-center title-form-1"><span><?=Loc::getMessage('AV_FORM_MAKE_DILER')?></span><p><?=Loc::getMessage('AV_FORM_FILL')?></p></div>
+<?=$arResult["FORM_HEADER"]?><div class="av-form-wrap-2 clearfix">
 
 	<?
 	/* --------------------------------------------------------------------- */
@@ -22,7 +24,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 	?>
 	<?if($arResult["isFormErrors"] == "Y"):?>
 		<?=$arResult["FORM_ERRORS_TEXT"]?>
-<script> 
+<script>
 
 
 
@@ -32,7 +34,7 @@ $('[partners-form] .inputtext').each(function() {
 	//,CreateAvAlertPopup2($("[call-back-form]").html(),"").positionCenter(99999).on("remove",function(){AvBlurScreen("off"),$("body").removeClass("stop-scrolling"))}
 </script>
 	<?endif?>
-	<span data-form-input-error-123 >Пожалуйста, введите корректные данные!</span>
+	<span data-form-input-error-123 ><?=Loc::getMessage('AV_FORM_ENTER_CORRECT_DATA')?></span>
 	<?
 	/* --------------------------------------------------------------------- */
 	/* ------------------------------- поля -------------------------------- */
@@ -44,19 +46,19 @@ $('[partners-form] .inputtext').each(function() {
 		foreach($arQuestion["STRUCTURE"] as $fieldInfo) $fieldTypes[] = $fieldInfo["FIELD_TYPE"];
 		?>
 		<div
-			class="fom-row <?if($arQuestion["REQUIRED"] == "Y"):?>required<?endif?>"
+			class="col-md-6 fom-row <?if($arQuestion["REQUIRED"] == "Y"):?>required<?endif?>"
 			<?if($arResult['FORM_ERRORS'][$FIELD_SID]):?>form-error<?endif?>
 		>
 			<span title><?=$arQuestion["CAPTION"]?></span>
 			<?=$arQuestion["HTML_CODE"]?>
 		</div>
 	<?endforeach?>
-	<div class="text-center" data-security-text-form>Ваши персональные данные<br>в безопасности</div>
+	<div class="text-center" style="display: none;" data-security-text-form><?=Loc::getMessage('AV_FORM_PERSONAL_SECURE_DATA')?></div>
 	<?
 	/* --------------------------------------------------------------------- */
 	/* ------------------------------ Submit ------------------------------- */
 	/* --------------------------------------------------------------------- */
 	?>
-<div class="text-center">
+<div class="col-md-12 diler-form-submit">
 				<input <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(strlen(trim($arResult["arForm"]["BUTTON"])) <= 0 ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
 </div></div><?=$arResult["FORM_FOOTER"]?>

@@ -110,6 +110,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 	/* ----------- lanfuages selector ------------ */
 	/* ------------------------------------------- */
 	?>
+	<!--
 	<div class="language-selector-block">
 		<?
 		$APPLICATION->IncludeComponent
@@ -124,6 +125,7 @@ Loc::loadMessages($filePathExplode[0].SITE_TEMPLATE_PATH."/template.php");
 			);
 		?>
 	</div>
+	-->
 	<?
 	/* ------------------------------------------- */
 	/* --------------- links block --------------- */

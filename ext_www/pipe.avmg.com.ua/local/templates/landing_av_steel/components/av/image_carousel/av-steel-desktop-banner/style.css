@@ -4,8 +4,8 @@
 .center-slider-title {text-align: center}
 .center-slider-title {border-top: 1px solid rgba(119,127,140, 0.4)}
 .center-slider-title h2 {font-size: 220%}
-#av-steel-banner .slick-slide img  {filter: brightness(50%) !important;width: 100%;}
-#av-steel-banner .slick-center img {filter: brightness(100%)!important;margin-top: -23px;}
+#av-steel-banner .pipe-prod-banner .slick-slide img  {filter: brightness(40%) !important;width: 100%;}
+#av-steel-banner .pipe-prod-banner .slick-center img {filter: brightness(100%)!important;}
 #av-steel-banner .slick-slide    {text-align: center}
 #av-steel-banner .slick-slide h2  {display:none;}
 #av-steel-banner .slick-center h2 {
@@ -22,21 +22,34 @@
 	position: relative;
 	z-index: 2;
 }
+#av-steel-banner .pipe-prod-banner .slick-slide:hover {
+	cursor: pointer;
+}
+#av-steel-banner .slick-arrow.slick-prev {
+	background: url(/upload/av_site/landings/pipe/arrow-left-pipe.svg) center center no-repeat;
+}
+#av-steel-banner .slick-arrow.slick-next {
+	background: url(/upload/av_site/landings/pipe/arrow-right-pipe.svg) center center no-repeat;
+}
 #av-steel-banner .slick-arrow {
-	background: url(/upload/av_site/landings/av-steel/arrow-banner.svg) center center no-repeat;
 	background-size: contain;
-	width: 40px;
-	height: 40px;
+	width: 200px;
+	height: 112px;
 	position: absolute;
-	z-index: 1;
+	z-index: 9;
 	cursor: pointer;
 	transition: .4s;
-	top: 45% !important;
+	top: 50%;
+	transform: translateY(-50%);
 	border:none;
 	outline: none;
 }
-#av-steel-banner .slick-arrow:hover {
-	background: url(/upload/av_site/landings/av-steel/arrow-banner-hover.svg) center center no-repeat;
+#av-steel-banner .slick-arrow.slick-prev:hover {
+	background: url(/upload/av_site/landings/pipe/arrow-left-pipe-hover.svg) center center no-repeat;
+	transition: .4s;
+}
+#av-steel-banner .slick-arrow.slick-next:hover {
+	background: url(/upload/av_site/landings/pipe/arrow-right-pipe-hover.svg) center center no-repeat;
 	transition: .4s;
 }
 #av-steel-banner .slick-prev {
@@ -46,8 +59,6 @@
     display: block;
     float: right;
     right: 15%;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 @media (max-width: 600px) {
 #av-steel-banner .slick-center h2 {
@@ -57,5 +68,8 @@
 	font-weight: bold;
 	top: 25px;
 	}
-#av-steel-banner .slick-center img {margin-top: -20px;}
+	#av-steel-banner .slick-arrow {
+		width: 150px;
+		height: 80px;
+	}
 }

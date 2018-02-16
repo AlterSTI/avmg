@@ -6,6 +6,7 @@
 .av-blog-index-list a:focus,
 .av-blog-index-list a:active,
 .av-blog-index-list a:visited {color: inherit;text-decoration: none}
+.av-blog-index-list a 		  {padding: 0 10px 20px}
 /* -------------------------------------------------------------------- */
 /* ----------------------------- elements ----------------------------- */
 /* -------------------------------------------------------------------- */

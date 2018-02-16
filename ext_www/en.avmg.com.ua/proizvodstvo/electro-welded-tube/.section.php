@@ -1,5 +1,5 @@
 <?
-$sSectionName    = "Electro-welded tube";
+$sSectionName    = "Pipes steel electrowelded";
 $arDirProperties = array
 	(
    "TITLE_BACKGROUND"     => "/upload/medialibrary/c45/1.png",

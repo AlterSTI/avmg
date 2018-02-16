@@ -4,7 +4,6 @@ use \Bitrix\Main\Page\Asset;
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 $templateFolder = getFolder(__DIR__);
-//echo '34543 '.$templateFolder."two_level.css";
 
 CJSCore::Init(["av"]);
     if($arParams["MAX_LEVEL"] == 1) Asset::getInstance()->addCss($templateFolder."one_level.css");

@@ -8,3 +8,9 @@
 .av-breadcrumb a:hover,
 .av-breadcrumb a:active,
 .av-breadcrumb a:focus   {color: #CC0000;text-decoration: underline}
+
+@media (max-width: 400px) {
+    .av-breadcrumb {
+        font-size: calc(1em - 5px);
+    }
+}

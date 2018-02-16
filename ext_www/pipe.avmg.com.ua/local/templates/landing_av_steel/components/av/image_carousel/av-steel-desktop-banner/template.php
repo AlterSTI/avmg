@@ -6,12 +6,11 @@ $APPLICATION->SetAdditionalCss($templateFolder."/slick.css");
 $APPLICATION->SetAdditionalCss($templateFolder."/styles.css");
 $APPLICATION->AddHeadScript($templateFolder."/slick.min.js");
 ?>
-<br><br>
-<div class="av-center">
+<div class="av-center pipe-prod-banner">
 
 <?foreach($arResult["IMAGES_INFO"] as $arrayInfo):?>
 	<div>
-		<h2><?=$arrayInfo["link"]?></h2>
+<!--		<h2>--><?//=$arrayInfo["link"]?><!--</h2>-->
 		<img src="<?=$arrayInfo["url"]?>" alt="<?=$arrayInfo["alt"]?>" title="<?=$arrayInfo["title"]?>">
 	</div>
 <?endforeach?>

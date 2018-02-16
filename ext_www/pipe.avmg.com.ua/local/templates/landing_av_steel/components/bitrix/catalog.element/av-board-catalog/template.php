@@ -1,4 +1,4 @@
-<div class=" av-steel-catalog-wrap" data-element-id="<?=$arElement["ID"]?>">
+<div class=" av-steel-catalog-wrap col-md-4" data-element-id="<?=$arElement["ID"]?>">
 	<div class="text-uppercase text-center "><span name><strong><?=$arResult["SECTION"]["NAME"]?><br><?=$arResult["NAME"]?></strong></span></div>
 			<div class="catalog-img"  style="background: url('<? echo $arResult['PREVIEW_PICTURE']['SRC']; ?>') no-repeat center center;width: 100%;margin-bottom: 15px;"></div>
 

@@ -204,3 +204,11 @@ p
 	.av-responsive-block {width: calc(100% - 40px)}
 	.av-page-title       {font-size: 24px;line-height: 24px;margin: 26px 0}
 	}
+@media (max-width: 400px)
+	{
+		h1                   {font-size: 18px}
+	}
+@media (max-width: 400px)
+	{
+		p                   {text-align: left}
+	}

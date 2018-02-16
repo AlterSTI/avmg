@@ -1,108 +1,199 @@
+/* -------------------------------------------------------------------- */
+/* --------------------- autolide interval object --------------------- */
+/* -------------------------------------------------------------------- */
+avSlideresInterval = {};
+/* -------------------------------------------------------------------- */
+/* --------------------------- params info ---------------------------- */
+/* -------------------------------------------------------------------- */
+avSliderParamsInfo =
+	[
+		{
+		"name"         : "slidesCount",
+		"attributeName": "data-slides-count",
+		"type"         : "integer",
+		"defaultValue" : 1
+		},
+		{
+		"name"         : "slidesPerIteration",
+		"attributeName": "data-slides-per-iteration",
+		"type"         : "integer",
+		"defaultValue" : 1
+		},
+		{
+		"name"         : "slideAnimation",
+		"attributeName": "data-slide-animation",
+		"type"         : "array",
+		"values"       : ["slide", "fade"],
+		"defaultValue" : "slide"
+		},
+		{
+		"name"         : "direction",
+		"attributeName": "data-direction",
+		"type"         : "array",
+		"values"       : ["horizontal", "vertical"],
+		"defaultValue" : "horizontal"
+		},
+		{
+		"name"         : "cyclicity",
+		"attributeName": "data-cyclicity",
+		"type"         : "boolean",
+		"defaultValue" : false
+		}
+	];
+/* -------------------------------------------------------------------- */
+/* ----------------------------- methods ------------------------------ */
+/* -------------------------------------------------------------------- */
 (function($)
 	{
-	/* -------------------------------------------------------------------- */
-	/* -------------------------- create slider --------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.setAvSlider = function()
+	/* =========================================== */
+	/* =============== set slider ================ */
+	/* =========================================== */
+	$.fn.setAvSlider = function(params)
 		{
 		return this.each(function()
 			{
-			var randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-
 			$(this)
 				.addClass("av-slider")
-				.attr("data-slider-id",    randomString)
-				.attr("data-slides-count", 1)
-				.attr("data-direction",    "horizontal")
-				.attr("data-cyclicity",    "N");
-			});
-		};
-	/* -------------------------------------------------------------------- */
-	/* ----------------------- set navigation item ------------------------ */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.setAvSliderNavigationItem = function(direction)
-		{
-		var slideDirection = $.inArray(direction, ["back", "forward"]) == -1 ? "forward" : direction;
+				.children()
+					.addClass("av-slider-slide");
 
-		return this.each(function()
-			{
-			var $slider = $(this).closest(".av-slider");
-			if(!$slider.length) return;
-
-			$(this)
-				.addClass("av-slider-navigation-item")
-				.attr("data-navigation-direction", slideDirection)
-				.on("vclick", function()
-					{
-					$slider.slideAvSlider(slideDirection);
-					});
+			if(typeof params === "object") $(this).setAvSliderParams(params);
 			});
 		};
-	/* -------------------------------------------------------------------- */
-	/* ------------------------- set slides block ------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.setAvSliderSlidesBlock = function()
-		{
-		return this.each(function()
-			{
-			var $slider = $(this).closest(".av-slider");
-			if($slider.length) $(this).addClass("av-slider-slides-block");
-			});
-		};
-	/* -------------------------------------------------------------------- */
-	/* ---------------------------- set params ---------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.setAvSliderParams = function(params)
+	/* =========================================== */
+	/* ================ set params =============== */
+	/* =========================================== */
+	$.fn.setAvSliderParams = function(params)
 		{
 		var
-			sliderParams           = typeof params === "object"                                                 ? params                         : {},
-		    slidesCount            = Number.isInteger(sliderParams.slidesCount) && sliderParams.slidesCount > 0 ? sliderParams.slidesCount       : 1,
-			slidesBreakpoints      = typeof sliderParams.slidesBreakpoints === "object"                         ? sliderParams.slidesBreakpoints : {},
-			direction              = sliderParams.direction == "vertical"                                       ? "vertical"                     : "horizontal",
-			cyclicity              = sliderParams.cyclicity == "Y"                                              ? "Y"                            : "N",
-			slidesBreakpointsArray = [];
+			sliderParams            = typeof params                         === "object" ? params                         : {},
+			slidesBreakpoints       = typeof sliderParams.slidesBreakpoints === "object" ? sliderParams.slidesBreakpoints : {},
+			slidesBreakpointsArray  = [],
+			result                  = [];
+		/* ---------------------------- */
+		/* --------- checking --------- */
+		/* ---------------------------- */
+		avSliderParamsInfo.forEach(function(paramInfo)
+			{
+			if(typeof paramInfo != "object" || !paramInfo.name || !paramInfo.attributeName) return;
 
+			var
+				getedValue      = sliderParams[paramInfo.name],
+			    checkedValue    = null,
+				arrayValues     = Array.isArray(paramInfo.values) ? paramInfo.values : [],
+				defaultValue    = paramInfo.defaultValue;
+
+			switch(paramInfo.type)
+				{
+				case "integer":
+					checkedValue = parseInt(getedValue);
+					if(!checkedValue)                                       checkedValue = parseInt(defaultValue);
+					if(!checkedValue || typeof checkedValue !== "number")   checkedValue = 1;
+					break;
+				case "array":
+					checkedValue = getedValue;
+					if($.inArray(checkedValue, arrayValues) == -1)          checkedValue = defaultValue;
+					if(!checkedValue || typeof checkedValue !== "string")   checkedValue = "";
+					break;
+				case "boolean":
+					checkedValue = getedValue === true ? "Y" : "N";
+					break;
+				default:
+					break;
+				}
+
+			result.push
+				({
+				"attr" : paramInfo.attributeName,
+				"value": checkedValue
+				});
+			});
+		/* ---------------------------- */
+		/* ----- breakpoints param ---- */
+		/* ---------------------------- */
 		$.each(slidesBreakpoints, function(index, value)
 			{
 			slidesBreakpointsArray.push(index+":"+value);
 			});
-
+		result.push
+			({
+			"attr" : "data-slides-breakpoints",
+			"value": slidesBreakpointsArray.join(";")
+			});
+		/* ---------------------------- */
+		/* --------- setting ---------- */
+		/* ---------------------------- */
 		return this.each(function()
 			{
-			$(this).filter(".av-slider")
-				.attr("data-slides-count",       slidesCount)
-				.attr("data-slides-breakpoints", slidesBreakpointsArray.join(";"))
-				.attr("data-direction",          direction)
-				.attr("data-cyclicity",          cyclicity);
+			var $slider = $(this).filter(".av-slider");
+
+			result.forEach(function(attrInfo)
+				{
+				$slider.attr(attrInfo.attr, attrInfo.value);
+				});
+
+			$slider.buildAvSlider();
 			});
 		};
-	/* -------------------------------------------------------------------- */
-	/* ---------------------------- get params ---------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.getAvSliderParams = function()
+	/* =========================================== */
+	/* ================ get params =============== */
+	/* =========================================== */
+	$.fn.getAvSliderParams = function()
 		{
 		var
-			$slider                = this.filter(".av-slider"),
-		    result                 =
-			    {
-			    slidesCount      : parseInt($slider.attr("data-slides-count")),
-			    slidesBreakpoints: {},
-			    direction        : $slider.attr("data-direction"),
-			    cyclicity        : $slider.attr("data-cyclicity")
-			    },
-			windowWidth            = $(window).width(),
-			slidesBreakpointsArray = [];
+			$slider                 = this.filter(".av-slider"),
+			result                  = {"slidesBreakpoints": {}},
+			windowWidth             = $(window).width(),
+			slidesBreakpointsArray  = [],
+			breakpointsValues       = $slider.attr("data-slides-breakpoints").split(";");
+		/* ---------------------------- */
+		/* --------- checking --------- */
+		/* ---------------------------- */
+		avSliderParamsInfo.forEach(function(paramInfo)
+			{
+			if(typeof paramInfo != "object" || !paramInfo.name || !paramInfo.attributeName || !paramInfo.type) return;
+			var
+				getedValue      = $slider.attr(paramInfo.attributeName),
+				checkedValue    = null,
+				arrayValues     = Array.isArray(paramInfo.values) ? paramInfo.values : [],
+				defaultValue    = paramInfo.defaultValue;
 
-		if(!result.slidesCount || result.slidesCount <= 0)                result.slidesCount = 1;
-		if($.inArray(result.direction, ["horizontal", "vertical"]) == -1) result.direction   = "horizontal";
-		if($.inArray(result.cyclicity, ["Y", "N"])                 == -1) result.cyclicity   = "N";
+			switch(paramInfo.type)
+				{
+				case "integer":
+					checkedValue = parseInt(getedValue);
+					if(!checkedValue)                                       checkedValue = defaultValue;
+					if(!checkedValue || typeof checkedValue !== "number")   checkedValue = 1;
+					break;
+				case "array":
+					checkedValue = getedValue;
+					if($.inArray(checkedValue, arrayValues) == -1)          checkedValue = defaultValue;
+					if(!checkedValue || typeof checkedValue !== "string")   checkedValue = "";
+					break;
+				case "boolean":
+					checkedValue = getedValue == "Y";
+					break;
+				default:
+					break;
+				}
 
-		$slider.attr("data-slides-breakpoints").split(";").forEach(function(value)
+			result[paramInfo.name] =
+				{
+				"value"       : checkedValue,
+				"values"      : arrayValues,
+				"defaultValue": defaultValue
+				};
+			});
+		/* ---------------------------- */
+		/* ----- breakpoints param ---- */
+		/* ---------------------------- */
+		if(!Array.isArray(breakpointsValues)) breakpointsValues = [];
+		breakpointsValues.forEach(function(value)
 			{
 			var
-				valueExplode           = value.split(":"),
-				breakpouintValue       = parseInt(valueExplode[0]),
-				breakpouintSlidesCount = parseInt(valueExplode[1]);
+				valueExplode            = value.split(":"),
+				breakpouintValue        = parseInt(valueExplode[0]),
+				breakpouintSlidesCount  = parseInt(valueExplode[1]);
 			if(!breakpouintValue || !breakpouintSlidesCount) return;
 
 			result.slidesBreakpoints[breakpouintValue] = breakpouintSlidesCount;
@@ -116,264 +207,460 @@
 			.forEach(function(value)
 				{
 				if(windowWidth <= value)
-					result.slidesCount = result.slidesBreakpoints[value];
+					result.slidesCount.value = result.slidesBreakpoints[value];
 				});
-
+		/* ---------------------------- */
+		/* ---------- result ---------- */
+		/* ---------------------------- */
 		return result;
 		};
-	/* -------------------------------------------------------------------- */
-	/* -------------------------- prepare slider -------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.prepareAvSlider = function()
+	/* =========================================== */
+	/* ============== build slider =============== */
+	/* =========================================== */
+	$.fn.buildAvSlider = function()
 		{
 		return this.each(function()
 			{
 			var
-				$slider      = $(this).filter(".av-slider"),
-				$slidesBlock = $slider.find(".av-slider-slides-block");
+				$slider         = $(this).filter(".av-slider"),
+			    $slides         = $slider.find(".av-slider-slide"),
+				sliderParams    = $slider.getAvSliderParams(),
+				randomString    = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
-			if($slider.getAvSliderParams().direction == "horizontal")
-				$slidesBlock.css
-					({
-					"align-items": "center",
-					"display"    : "flex",
-					"overflow"   : "hidden"
+			$slides
+				.each(function()
+					{
+					$(this).attr("data-slide-id", $(this).index() + 1);
 					});
-			else
-				$slidesBlock.css
+			$slider
+				.css
 					({
-					"display"        : "flex",
-					"flex-direction" : "column",
-					"justify-content": "column",
-					"overflow"       : "hidden"
-					});
-
-			$slidesBlock.children().each(function()
-				{
-				$(this).attr("data-slide-id", $(this).index() + 1);
-				});
-			$slider.setAvSliderSlidesCount();
+					"display"           : "flex",
+					"overflow"          : "hidden",
+					"flex-direction"    : sliderParams.direction.value == "vertical" ? "column" : "row"
+					})
+				.attr("data-slides-display-type", $slides.css("display"))
+				.attr("data-slider-id", randomString)
+				.setAvSliderSlidesCount();
 			});
 		};
-	/* -------------------------------------------------------------------- */
-	/* ------------------------- set slides count ------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.setAvSliderSlidesCount = function(value)
+	/* =========================================== */
+	/* ============= set slides count ============ */
+	/* =========================================== */
+	$.fn.setAvSliderSlidesCount = function(value)
 		{
 		var valueSeted = parseInt(value);
 
 		return this.each(function()
 			{
 			var
-				$slider           = $(this).filter(".av-slider"),
-				$slidesBlock      = $slider.find(".av-slider-slides-block"),
-				$slides           = $slidesBlock.children(),
-				$slideFirstActive = $slides.filter(":visible").first(),
-				sliderParams      = $slider.getAvSliderParams(),
-				slidesCount       = valueSeted ? valueSeted : sliderParams.slidesCount,
-				slideSize         = sliderParams.direction == "horizontal"
-					? ($slidesBlock.width()  - (parseFloat($slideFirstActive.css("margin-left")) + parseFloat($slideFirstActive.css("margin-right")))  * slidesCount) / slidesCount
-					: ($slidesBlock.height() - (parseFloat($slideFirstActive.css("margin-top"))  + parseFloat($slideFirstActive.css("margin-bottom"))) * slidesCount) / slidesCount;
-			if($slider.attr("data-in-process") == "Y") return;
+				$slider             = $(this).filter(".av-slider"),
+				$slides             = $slider.find(".av-slider-slide"),
+				$slideFirstActive   = $slides.filter(".slide-active").length ? $slides.filter(".slide-active").first() : $slides.first(),
+				slideDisplayType    = $slider.attr("data-slides-display-type"),
+				sliderParams        = $slider.getAvSliderParams(),
+				slidesCount         = valueSeted ? valueSeted : sliderParams.slidesCount.value,
+				slideWidth          = 0,
+				slideHeight         = 0,
+				slideWidthArray     = [],
+				slideHeightArray    = [],
+				slidesActiveNew     = [];
+			if($slider.attr("data-in-process") == "Y" || !$slider.is(":visible")) return;
+			/* ---------------------------- */
+			/* ---------- start ----------- */
+			/* ---------------------------- */
+			$slides
+				.css
+					({
+					"display": slideDisplayType,
+					"width"  : "",
+					"height" : ""
+					})
+				.each(function()
+					{
+					slideWidthArray .push($(this).width());
+					slideHeightArray.push($(this).height());
+					});
+			/* ---------------------------- */
+			/* ----- slide size calc ------ */
+			/* ---------------------------- */
+			if(sliderParams.direction.value == "horizontal")
+				{
+				slideWidth  = ($slider.width()  - (parseFloat($slideFirstActive.css("margin-left")) + parseFloat($slideFirstActive.css("margin-right")))  * slidesCount) / slidesCount;
+				slideHeight = Math.max.apply(Math, slideHeightArray);
+				}
+			else
+				{
+				slideHeight = ($slider.height() - (parseFloat($slideFirstActive.css("margin-top"))  + parseFloat($slideFirstActive.css("margin-bottom"))) * slidesCount) / slidesCount;
+				slideWidth  = Math.max.apply(Math, slideWidthArray);
+				}
+			/* ---------------------------- */
+			/* -- new active slides calc -- */
+			/* ---------------------------- */
+			var $currentSlide = $slideFirstActive;
+
+			while(slidesActiveNew.length < slidesCount && $currentSlide.length)
+				{
+				slidesActiveNew.push($currentSlide.attr("data-slide-id"));
+				$currentSlide = $currentSlide.next();
+				if(!$currentSlide.length) $currentSlide = $slideFirstActive.prev();
+				}
+			/* ---------------------------- */
+			/* ----------- end ------------ */
+			/* ---------------------------- */
+			$slides
+				.css
+					({
+					"width" : slideWidth,
+					"height": slideHeight
+					})
+				.addClass("slide-active")
+				.each(function()
+					{
+					if($.inArray($(this).attr("data-slide-id"), slidesActiveNew) == -1)
+						$(this)
+							.hide()
+							.removeClass("slide-active");
+					});
+			$slider
+				.controlAvSliderCondition();
+			});
+		};
+	/* =========================================== */
+	/* ============ control condition ============ */
+	/* =========================================== */
+	$.fn.controlAvSliderCondition = function()
+		{
+		return this.each(function()
+			{
+			var
+				$slider                 = $(this).filter(".av-slider"),
+				$slides                 = $slider.find(".av-slider-slide"),
+				$slidesActive           = $slides.filter(".slide-active"),
+				sliderParams            = $slider.getAvSliderParams(),
+				slidingForwardUnable    = !sliderParams.cyclicity.value && $slidesActive.last() .next().length <= 0,
+				slidingBackUnable       = !sliderParams.cyclicity.value && $slidesActive.first().prev().length <= 0,
+			    notEnoughSlides         = $slides.length < sliderParams.slidesCount.value;
+
+			$slider
+				.attr("data-sliding-forward-enable",  slidingForwardUnable  || notEnoughSlides ? "N" : "Y")
+				.attr("data-sliding-back-enabled",    slidingBackUnable     || notEnoughSlides ? "N" : "Y");
+
+			if(slidingForwardUnable)    $slider.trigger("slidingForwardUnable");
+			else                        $slider.trigger("slidingForwardEnable");
+			if(slidingBackUnable)       $slider.trigger("slidingBackUnable");
+			else                        $slider.trigger("slidingBackEnable");
+			});
+		};
+	/* =========================================== */
+	/* ================== slide ================== */
+	/* =========================================== */
+	$.fn.slideAvSlider = function(direction, animation, count, autoplay)
+		{
+		var
+			slideDirection  = $.inArray(direction, ["back", "forward"]) == -1 ? "forward" : direction,
+			slidesCount     = parseInt(count),
+			caledByAutoplay = autoplay === true;
+
+		return this.each(function()
+			{
+			var
+				$slider                 = $(this).filter(".av-slider"),
+				$slides                 = $slider.find(".av-slider-slide"),
+				$slidesActive           = $slides.filter(".slide-active"),
+				sliderParams            = $slider.getAvSliderParams(),
+				slideDisplayType        = $slider.attr("data-slides-display-type"),
+				slidesPerIteration      = slidesCount ? slidesCount : sliderParams.slidesPerIteration.value,
+				slideAnimationType      = $.inArray(animation, sliderParams.slideAnimation.values) == -1
+					? sliderParams.slideAnimation.value
+					: animation,
+				slideSize               = sliderParams.direction.value == "horizontal"
+					? parseFloat($slider.width())  / sliderParams.slidesCount.value
+					: parseFloat($slider.height()) / sliderParams.slidesCount.value,
+				newActiveSlidesArray    = [],
+				triggerNameStart        = "",
+				triggerNameEnd          = "";
+			/* ---------------------------- */
+			/* ------ breaking action ----- */
+			/* ---------------------------- */
+			if(!$slider.length || !$slides.length || $slider.attr("data-in-process") == "Y")        return;
+			if(!sliderParams.cyclicity.value && $slides.length < sliderParams.slidesCount.value)    return;
+			if(slideDirection == "forward" && $slider.attr("data-sliding-forward-enabled")  == "N") return;
+			if(slideDirection == "back"    && $slider.attr("data-sliding-back-enabled")     == "N") return;
+			/* ---------------------------- */
+			/* -------- action name ------- */
+			/* ---------------------------- */
+			if(slideDirection == "forward"      && !caledByAutoplay)
+				{
+				triggerNameStart   = "sliding-forward-start";
+				triggerNameEnd     = "sliding-forward-end";
+				}
+			else if(slideDirection == "forward" &&  caledByAutoplay)
+				{
+				triggerNameStart   = "sliding-forward-autoplay-start";
+				triggerNameEnd     = "sliding-forward-autoplay-end";
+				}
+			else if(slideDirection == "back"    && !caledByAutoplay)
+				{
+				triggerNameStart   = "sliding-back-start";
+				triggerNameEnd     = "sliding-back-end";
+				}
+			else if(slideDirection == "back"    &&  caledByAutoplay)
+				{
+				triggerNameStart   = "sliding-back-autoplay-start";
+				triggerNameEnd     = "sliding-back-autoplay-end";
+				}
+			/* ---------------------------- */
+			/* ------ cyclicity case ------ */
+			/* ---------------------------- */
+			if(sliderParams.cyclicity.value)
+				{
+				var $currentSlide = slideDirection == "forward" ? $slides.first() : $slides.last();
+
+				for(var $i = 1;$i <= slidesPerIteration;$i++)
+					{
+					var $newSlide = $currentSlide.clone();
+
+					$newSlide.hide().removeClass("slide-active");
+					if(slideDirection == "forward") $newSlide.appendTo($slider);
+					else                            $newSlide.prependTo($slider);
+
+					$currentSlide.addClass("av-slider-slide-temp");
+					$currentSlide = slideDirection == "forward" ? $currentSlide.next() : $currentSlide.prev();
+					}
+
+				$slides = $slider.find(".av-slider-slide");
+				}
+			/* ---------------------------- */
+			/* -- new active slides calc -- */
+			/* ---------------------------- */
+			var
+				newActiveSlideFirstIndex = slideDirection == "forward"
+					? $slidesActive.first().index() + slidesPerIteration
+					: $slidesActive.last() .index() - slidesPerIteration - sliderParams.slidesCount.value + 1,
+				newActiveSlideLastIndex  = slideDirection == "forward"
+					? $slidesActive.first().index() + slidesPerIteration + sliderParams.slidesCount.value
+					: $slidesActive.last() .index() - slidesPerIteration + 1;
+
+			if(newActiveSlideFirstIndex < 0)
+				{
+				newActiveSlideFirstIndex = 0;
+				newActiveSlideLastIndex  = sliderParams.slidesCount.value;
+				slidesPerIteration       = $slidesActive.first().index();
+				}
+			if(newActiveSlideLastIndex > $slides.last().index())
+				{
+				newActiveSlideFirstIndex = $slides.last().index() - sliderParams.slidesCount.value + 1;
+				newActiveSlideLastIndex  = $slides.last().index() + 1;
+				slidesPerIteration       = $slides.last().index() - $slidesActive.last().index();
+				}
 
 			$slides
-				.show()
+				.slice(newActiveSlideFirstIndex, newActiveSlideLastIndex)
 				.each(function()
 					{
-					if(sliderParams.direction == "horizontal") $(this).width(slideSize);
-					else                                       $(this).height(slideSize);
-
-					if($(this).index() < $slideFirstActive.index() || $(this).index() >= $slideFirstActive.index() + slidesCount)
-						$(this).hide();
+					newActiveSlidesArray.push($(this).attr("data-slide-id"));
 					});
-			$slider
-				.controlAvSliderNavigationItemActivity();
-			});
-		};
-	/* -------------------------------------------------------------------- */
-	/* ----------------- control navigation item activity ----------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.controlAvSliderNavigationItemActivity = function()
-		{
-		return this.each(function()
-			{
-			var
-				$slider         = $(this).filter(".av-slider"),
-				$slides         = $slider.find(".av-slider-slides-block").children(),
-				$navItemForward = $slider.find(".av-slider-navigation-item[data-navigation-direction=\"forward\"]"),
-				$navItemBack    = $slider.find(".av-slider-navigation-item[data-navigation-direction=\"back\"]");
-			if(!$slider.length || $slider.getAvSliderParams().cyclicity == "Y") return;
-
-			if($slides.filter(":visible").last().next().length <= 0)
-				{
-				$navItemForward.css("visibility", "hidden");
-				$slider
-					.trigger("last-slide-reached")
-					.attr("data-last-slide-reached", "Y");
-				}
-			else
-				{
-				$navItemForward.css("visibility", "visible");
-				$slider.removeAttr("data-last-slide-reached");
-				}
-			if($slides.filter(":visible").first().prev().length <= 0)
-				{
-				$navItemBack.css("visibility", "hidden");
-				$slider
-					.trigger("first-slide-reached")
-					.attr("data-first-slide-reached", "Y");
-				}
-			else
-				{
-				$navItemBack.css("visibility", "hidden");
-				$slider.removeAttr("data-first-slide-reached");
-				}
-			});
-		};
-	/* -------------------------------------------------------------------- */
-	/* ------------------------------ slide ------------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.slideAvSlider = function(direction)
-		{
-		var slideDirection = $.inArray(direction, ["back", "forward"]) == -1 ? "forward" : direction;
-
-		return this.each(function()
-			{
-			var
-				$slider         = $(this).filter(".av-slider"),
-				$slidesBlock    = $slider.find(".av-slider-slides-block"),
-				$slidesActive   = $slidesBlock.children().filter(":visible"),
-				sliderParams    = $slider.getAvSliderParams(),
-				slideSize       = sliderParams.direction == "horizontal"
-					? parseFloat($slidesBlock.width())  / sliderParams.slidesCount
-					: parseFloat($slidesBlock.height()) / sliderParams.slidesCount,
-				slideOffsetType = sliderParams.direction == "horizontal" ? "left" : "top",
-				slidesActiveNew = [];
-			/* ------------------------------------------- */
-			/* ------------- breaking action ------------- */
-			/* ------------------------------------------- */
-			if(!$slider.length || $slider.attr("data-in-process") == "Y")
-				return;
-			if(slideDirection == "forward" && $slider.attr("data-last-slide-reached") == "Y")
-				{
-				$slider.trigger("last-slide-reached");
-				return;
-				}
-			if(slideDirection == "back" && $slider.attr("data-first-slide-reached") == "Y")
-				{
-				$slider.trigger("first-slide-reached");
-				return;
-				}
-			/* ------------------------------------------- */
-			/* --------------- slides calc --------------- */
-			/* ------------------------------------------- */
-			$slidesActive.each(function()
-				{
-				slidesActiveNew.push($(this).attr("data-slide-id"));
-				});
-			if(slideDirection == "forward")
-				{
-				slidesActiveNew.shift();
-				slidesActiveNew.push($slidesActive.last().next().attr("data-slide-id"));
-				}
-			else
-				{
-				slidesActiveNew.pop();
-				slidesActiveNew.unshift($slidesActive.first().prev().attr("data-slide-id"));
-				}
-			/* ------------------------------------------- */
-			/* ---------------- changings ---------------- */
-			/* ------------------------------------------- */
-			if(sliderParams.cyclicity == "Y")
-				{
-				if(slideDirection == "forward") $slidesBlock.children().first().clone() .appendTo($slidesBlock);
-				else                            $slidesBlock.children().last() .clone().prependTo($slidesBlock);
-				}
-
+			/* ---------------------------- */
+			/* ----------- start ---------- */
+			/* ---------------------------- */
 			$slider
 				.attr("data-in-process", "Y")
-				.trigger("sliding-start")
-				.trigger("sliding-"+slideDirection);
-			$slidesBlock
-				.css("position", "relative");
-			$slidesBlock.children()
-				.each(function()
+				.trigger(triggerNameStart)
+				.css
+					({
+					"position"  : "relative",
+					"width"     : $slider.width(),
+					"height"    : $slider.height()
+					});
+			/* ---------------------------- */
+			/* ------ animation slide ----- */
+			/* ---------------------------- */
+			if(slideAnimationType == "slide")
+				$slides.each(function()
 					{
-					var index = $(this).index() - $slidesActive.first().index();
+					var
+						cssParamType    = sliderParams.direction.value == "horizontal" ? "left" : "top",
+						valueStart      = slideSize * ($(this).index() - $slidesActive.first().index()),
+						valueEnd        = valueStart,
+						startCss        =
+							{
+							"display" : slideDisplayType,
+							"position": "absolute"
+							},
+						animateCss      = {};
+
+					for($i = 1;$i <= slidesPerIteration;$i++)
+						{
+						if(slideDirection == "forward") valueEnd -= slideSize;
+						else                            valueEnd += slideSize;
+						}
+
+					startCss  [cssParamType] = valueStart+"px";
+					animateCss[cssParamType] = valueEnd  +"px";
 
 					$(this)
-						.show()
-						.css("position", "absolute")
-						.css(slideOffsetType, (slideSize * index)+"px");
+						.css(startCss)
+						.animate(animateCss, 600);
 					});
-			/* ------------------------------------------- */
-			/* ------------ sliding animation ------------ */
-			/* ------------------------------------------- */
-			$slidesBlock.children().each(function()
+			/* ---------------------------- */
+			/* ------ animation fade ------ */
+			/* ---------------------------- */
+			if(slideAnimationType == "fade")
 				{
-				var
-					animateCss  = {},
-					offsetValue = parseFloat($(this).css(slideOffsetType));
+				var $slidesToShow = $();
 
-				if(slideDirection == "forward") offsetValue -= slideSize;
-				else                            offsetValue += slideSize;
+				newActiveSlidesArray.forEach(function(slideId, index)
+					{
+					var
+						$newSlide       = $slides.filter("[data-slide-id=\""+slideId+"\"]").clone(),
+						cssParamType    = sliderParams.direction.value == "horizontal" ? "left" : "top",
+						cssParams       =
+							{
+							"display" : slideDisplayType,
+							"opacity" : 0,
+							"position": "absolute"
+							};
+					cssParams[cssParamType] = slideSize * index;
 
-				animateCss[slideOffsetType] = offsetValue;
-				$(this).animate(animateCss, 600);
-				});
-			/* ------------------------------------------- */
-			/* ------------------- end ------------------- */
-			/* ------------------------------------------- */
+					$newSlide
+						.css(cssParams)
+						.addClass("av-slider-slide-temp")
+						.appendTo($slider);
+					$slidesToShow = $slidesToShow.add($newSlide);
+					});
+
+				$slides = $slider.find(".av-slider-slide");
+				$slidesActive.animate({"opacity": 0}, 600);
+				$slidesToShow.animate({"opacity": 1}, 600);
+				}
+			/* ---------------------------- */
+			/* ----------- end ------------ */
+			/* ---------------------------- */
 			setTimeout(function()
 				{
-				if(sliderParams.cyclicity == "Y")
-					{
-					if(slideDirection == "forward") $slidesBlock.children().first().remove();
-					else                            $slidesBlock.children().last() .remove();
-					}
-				$slidesBlock.children()
+				$slides.filter(".av-slider-slide-temp")
+					.remove();
+				$slides
+					.removeClass("slide-active")
+					.css
+						({
+						"display" : "none",
+						"opacity" : "",
+						"position": "",
+						"top"     : "",
+						"left"    : ""
+						})
 					.each(function()
 						{
-						if($.inArray($(this).attr("data-slide-id"), slidesActiveNew) == -1)
-							$(this).hide();
-						$(this)
-							.css("position",      "")
-							.css(slideOffsetType, "");
+						if($.inArray($(this).attr("data-slide-id"), newActiveSlidesArray) != -1)
+							$(this)
+								.css("display", slideDisplayType)
+								.addClass("slide-active");
 						});
 				$slider
-					.controlAvSliderNavigationItemActivity()
-					.removeAttr("data-in-process");
-				$slidesBlock
-					.css("position", "");
+					.css
+						({
+						"position"  : "",
+						"width"     : "",
+						"height"    : ""
+						})
+					.controlAvSliderCondition()
+					.removeAttr("data-in-process")
+					.trigger(triggerNameEnd);
 				}, 700);
 			});
 		};
-	/* -------------------------------------------------------------------- */
-	/* ---------------------------- autoslide ----------------------------- */
-	/* -------------------------------------------------------------------- */
-	jQuery.fn.autoSlideAvSlider = function(direction, delay)
+	/* =========================================== */
+	/* ============== jump to slide ============== */
+	/* =========================================== */
+	$.fn.jumpToSlideAvSlider = function($slide, animation)
+		{
+		var $slideNeed = $slide instanceof jQuery ? $slide.filter(".av-slider-slide") : $();
+		if(!$slideNeed.length) return this;
+
+		return this.each(function()
+			{
+			var
+				$slider                 = $(this).filter(".av-slider"),
+				slideActiveFirstIndex   = $slider.find(".av-slider-slide").filter(".slide-active").first().index(),
+				slideNeedIndex          = $slideNeed.index(),
+				slideDirection          = slideActiveFirstIndex < slideNeedIndex ? "forward" : "back",
+				slidesCount             = Math.abs(slideActiveFirstIndex - slideNeedIndex);
+
+			if(slideActiveFirstIndex !== slideNeedIndex)
+				$slider.slideAvSlider(slideDirection, animation, slidesCount);
+			});
+		};
+	/* =========================================== */
+	/* ================ autoslide ================ */
+	/* =========================================== */
+	$.fn.slideAutoAvSlider = function(direction, delay, animation, slidesCount)
 		{
 		var
-			slideDirection = $.inArray(direction, ["back", "forward"]) == -1 ? "forward" : direction,
-		    autoSlideDelay = parseInt(delay);
+			slideDirection  = $.inArray(direction, ["back", "forward"]) == -1 ? "forward" : direction,
+		    autoSlideDelay  = parseInt(delay);
 
 		if(!autoSlideDelay || autoSlideDelay < 100) autoSlideDelay = 100;
-		if(!window.avSlideresInterval) avSlideresInterval = {};
 
 		return this.each(function()
 			{
 			var
 				$slider  = $(this).filter(".av-slider"),
 			    sliderId = $slider.attr("data-slider-id");
-			if(!$slider.length || !sliderId) return;
+			if(!$slider.length || $slider.attr("data-autoslide-enable") == "Y" || !sliderId) return;
 
+			$slider.attr("data-autoslide-enable", "Y");
 			avSlideresInterval[sliderId] = setInterval(function()
 				{
-				$slider.slideAvSlider(slideDirection);
+				$slider
+					.slideAvSlider(slideDirection, animation, slidesCount, true)
+					.on("slidingBackUnable slidingForwardUnable", function()
+						{
+						$(this).stopSlideAutoAvSlider();
+						});
 				}, autoSlideDelay);
 			});
 		};
-	})(jQuery);
+	/* =========================================== */
+	/* ============= autoslide stop ============== */
+	/* =========================================== */
+	$.fn.stopSlideAutoAvSlider = function()
+		{
+		return this.each(function()
+			{
+			var $slider = $(this).filter(".av-slider");
+
+			$slider.removeAttr("data-autoslide-enable");
+			clearInterval(avSlideresInterval[$slider.attr("data-slider-id")]);
+			});
+		};
+	/* =========================================== */
+	/* ================ get slide ================ */
+	/* =========================================== */
+	$.fn.getAvSliderSlide = function(value)
+		{
+		var
+			$slider         = $(this).filter(".av-slider"),
+			$slides         = $slider.find(".av-slider-slide"),
+			showFirst       = value == "first",
+		    showFirstActive = value == "first-active",
+			showLast        = value == "last",
+			showLastActive  = value == "last-active",
+		    slideIndex      = parseInt(value),
+			$result         = $();
+
+		if(!slideIndex) slideIndex = 1;
+
+		     if(showFirst)       $result = $slides.first();
+		else if(showFirstActive) $result = $slides.filter(".slide-active").first();
+		else if(showLast)        $result = $slides.last();
+		else if(showLastActive)  $result = $slides.filter(".slide-active").last();
+		else                     $result = $slides.filter("[data-slide-id=\""+slideIndex+"\"]");
+
+		return $result;
+		};
+	})($);
 /* -------------------------------------------------------------------- */
 /* ----------------------------- handlers ----------------------------- */
 /* -------------------------------------------------------------------- */

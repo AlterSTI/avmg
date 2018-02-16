@@ -6,6 +6,8 @@ $('.av-center').slick({
   centerMode: true,
   centerPadding: '520px',
   slidesToShow: 1,
+    speed: 500,
+    touchMove: true,
   responsive: [
 	{
       breakpoint: 1500,
@@ -46,8 +48,19 @@ $('.av-center').slick({
       }
     }
   ]
+})
+//---------------------- ON HOVER MOVE SLIDE ---------------------//
+    .mouseover(function () {
+        $(this)
+            .slick('slickPlay')
+            .slick('setOption', 'autoplay', true)
+            .slick('setOption', 'speed', 1500)
+            .slick('setOption', 'autoplaySpeed', 500);
+    })
+    .mouseout(function () {
+        $(this)
+            .slick('setOption', 'autoplay', false, false)
+            .slick('slickPause');
+    });
+
 });
-
-
-
-	});

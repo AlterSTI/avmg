@@ -1,21 +1,22 @@
 $(function()
-	{
+{
 
-$('.av-form-wrap-2  input,.av-form-wrap-2 textarea').each(function() {
-	if($(this).val()) {$(this).prev(".av-form-wrap-2 span[title]").attr("up", true)}
-});
+	$('.av-form-wrap-2  input,.av-form-wrap-2 textarea').each(function() {
+		if($(this).val()) {$(this).prev(".av-form-wrap-2 span[title]").attr("up", true)}
+	});
 
-$('body').on('focus', '.av-form-wrap-2  input, .av-form-wrap-2 textarea', function() { 
-$(this).prev(".av-form-wrap-2 span[title]").attr("up", true); 
-});
+	$('body').on('focus', '.av-form-wrap-2  input, .av-form-wrap-2 textarea', function() {
+	$(this).prev(".av-form-wrap-2 span[title]").attr("up", true);
+	});
 
-		$('body').on('focusout', '.av-form-wrap-2 input, .av-form-wrap textarea', function() { 
-if(!$(this).val()){ $(this).prev(".av-form-wrap-2 span[title]").removeAttr("up")}});
+	$('body').on('focusout', '.av-form-wrap-2 input, .av-form-wrap textarea', function() {
+		if(!$(this).val()){ $(this).prev(".av-form-wrap-2 span[title]").removeAttr("up")}
+	});
 
 // проверка формы на заполненность////////
 	$('body').on('click', '.av-form-wrap-2 [name=web_form_submit]', function()
 	{
-		$('[data-form-input-error]').remove();
+        $('[data-form-input-error]').remove();
 		var
 			$form     = $(this).closest('form'),
 			formError = false,
@@ -39,8 +40,12 @@ if(!$(this).val()){ $(this).prev(".av-form-wrap-2 span[title]").removeAttr("up")
 //---------------------------УДАЛЕНИЕ КРАСНЫХ ПОЛЕЙ ПРИ ВВОДЕ В INPUT-------------------------// 
 	$('body').on('input', '.av-form-wrap-2 .required input, .av-form-wrap-2 form .required textarea', function()
 		{
-		if($(this).val().length > 0 ) $(this).removeAttr("form-error");
-		else                          $(this).attr("form-error", true);
+		if($(this).val().length > 0 ){
+            $(this).removeAttr("form-error");
+		}
+		else {
+            $(this).attr("form-error", true);
+		}
 		});
 //---------------------------ОТМЕНА ВВОДА КИРИЛЛИЦИ В ПОЛЕ ЕMAIL-------------------------// 
 	$('body').on('input', '.av-form-wrap-2 .required[field-types=email] input', function()

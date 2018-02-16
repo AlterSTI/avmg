@@ -36,7 +36,7 @@ $basketLineHtml = "";
 ob_start();
 $APPLICATION->IncludeComponent
 	(
-	"bitrix:sale.basket.basket.line", "av-shop",
+	"bitrix:sale.basket.basket.line", "av-shop-old",
 		[
 		"PATH_TO_BASKET"    => "/personal/cart/",
 		"PATH_TO_ORDER"     => "/personal/orders/make/",

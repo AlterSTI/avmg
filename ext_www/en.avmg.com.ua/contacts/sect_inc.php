@@ -2,6 +2,7 @@
 <p>
 	Ukraine, Dnepr,<br>
 	Sholom-Aleikhema str., 5<br>
+	PO Box 2763, index 49044 <br>
 	+38 (056) 790-01-22<br>
 	+38 (056) 790-73-00<br>
 	e-mail: <a href="mailto:office@avmg.com.ua">office@avmg.com.ua</a>

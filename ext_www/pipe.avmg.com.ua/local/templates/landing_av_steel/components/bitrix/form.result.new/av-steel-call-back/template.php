@@ -1,9 +1,10 @@
 <?
+use \Bitrix\Main\Localization\Loc;
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 <?if($arResult["isFormNote"] == "Y"):?>
 	<div id="form-anwer123">
 		<span id="popUp-text-fromForm" back-url=>
-			<br><span>Спасибо за заявку!<br>Наш эксперт свяжется с вами в течении дня.</span><br>
+			<br><span><?=Loc::getMessage('FORM_CALLBACK_TRANKS')?></span><br>
 		</span>
 	</div>
 	<script>
@@ -14,7 +15,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 	</script>
 <?endif?>   
 
-<div class="text-uppercase text-center title-form-1"><span>заказать звонок</span><p>оставьте свои контактные данные и<br>менеджер свяжется с вами в ближайшее время</p></div>
+<div class="text-uppercase text-center title-form-1"><span><?=Loc::getMessage('FORM_CALLBACK_TRANKS')?></span><p>о<?=Loc::getMessage('FORM_MAKE_CALLBACK_EXPERT')?></p></div>
 <?=$arResult["FORM_HEADER"]?><div class="av-form-wrap-2">
 
 	<?
@@ -35,7 +36,7 @@ $('.av-form-wrap-2  input,.av-form-wrap-2 textarea').each(function() {
 </script>
 		<?=$arResult["FORM_ERRORS_TEXT"]?>
 	<?endif?>
-	<span data-form-input-error-123 >Пожалуйста, введите корректные данные!</span>
+	<span data-form-input-error-123 ><?=Loc::getMessage('FORM_MAKE_CORRECT_DATA')?></span>
 	<?
 	/* --------------------------------------------------------------------- */
 	/* ------------------------------- поля -------------------------------- */
@@ -54,7 +55,7 @@ $('.av-form-wrap-2  input,.av-form-wrap-2 textarea').each(function() {
 			<?=$arQuestion["HTML_CODE"]?>
 		</div>
 	<?endforeach?>
-	<div class="text-center" data-security-text-form>Ваши персональные данные<br>в безопасности</div>
+	<div class="text-center" data-security-text-form><?=Loc::getMessage('FORM_MAKE_PERSONAL_DATA')?></div>
 	<?
 	/* --------------------------------------------------------------------- */
 	/* ------------------------------ Submit ------------------------------- */

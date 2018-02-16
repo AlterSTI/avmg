@@ -1,9 +1,12 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die()?>
+<?
+use \Bitrix\Main\Localization\Loc;
+
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die()?>
 
 <?if($arResult["isFormNote"] == "Y"):?>
 	<div id="form-anwer123" hidden>
 		<span id="popUp-text-fromForm" back-url=>
-			<br><span>Спасибо за заявку!<br>Наш эксперт свяжется с вами в течении дня.</span><br>
+			<br><span><?=Loc::getMessage("FORM_PARTNERS_APPLICATION")?></span><br>
 		</span>
 	</div>
 	<script>
@@ -12,7 +15,10 @@
 <?endif?> 
  
 <div class="av-form-wrap-4">
-<div class="title-form-1 text-uppercase text-center"><h3>заказать расчет материалов для кровли: </h3></div>
+<div class="title-form-1 text-uppercase text-center">
+    <h3 class="form-title-main"><?=Loc::getMessage("FORM_PARTNERS_TITLE")?></h3>
+    <h4 class="form-title-txt"><?=Loc::getMessage("FORM_PARTNERS_TXT")?></h4>
+</div>
 <?=$arResult["FORM_HEADER"]?>
 
 	<?
@@ -30,7 +36,7 @@ $('.av-form-wrap-4 .inputtext').each(function() {
 	//,CreateAvAlertPopup2($("[call-back-form]").html(),"").positionCenter(99999).on("remove",function(){AvBlurScreen("off"),$("body").removeClass("stop-scrolling"))}
 </script>
 	<?endif?>
-	<span data-form-input-error-123 >Пожалуйста, введите корректные данные!</span>
+	<span data-form-input-error-123 ><?=Loc::getMessage("FORM_PARTNERS_ERROR")?></span>
 
 	<?
 	/* --------------------------------------------------------------------- */
@@ -57,7 +63,7 @@ $('.av-form-wrap-4 .inputtext').each(function() {
 	/* ------------------------------ Submit ------------------------------- */
 	/* --------------------------------------------------------------------- */
 	?>
-<div class="text-center">
+<div class="option-btn-submit">
 				<input <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(strlen(trim($arResult["arForm"]["BUTTON"])) <= 0 ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
 </div>
 </form>
