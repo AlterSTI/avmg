@@ -1,0 +1,1 @@
+<img src="/bitrix/images/av/logo_top_ua.svg" alt="" title="" />

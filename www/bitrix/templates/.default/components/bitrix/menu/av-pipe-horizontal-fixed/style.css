@@ -1,0 +1,24 @@
+.av-pipe-horizontal-main-menu-fixed {
+    display: inline-flex;
+    font-size: 120%;
+    justify-content: center;
+    margin: 0;
+}
+
+.av-pipe-horizontal-main-menu-fixed li  {
+    list-style-type: none;
+    padding: 22px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, .5)
+}
+
+.av-pipe-horizontal-main-menu-fixed li:hover {
+    border: none!important;
+    text-decoration: underline
+}
+
+.av-pipe-horizontal-main-menu-fixed a {
+    color: #FFF!important
+}
+.av-pipe-horizontal-main-menu-fixed li {
+    border-bottom: none
+}

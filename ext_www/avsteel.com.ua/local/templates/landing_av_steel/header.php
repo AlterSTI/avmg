@@ -36,7 +36,7 @@ CJSCore::RegisterExt("bootstrap", ["css" => "/bitrix/css/av/bootstrap.supermin.c
 				gtag('config', 'UA-102409654-1');
 			</script>
 
-	        <!--<script type="text/javascript" >
+	        <script type="text/javascript" >
 		        (function (d, w, c)
 			        {
 			        (w[c] = w[c] || []).push(function()
@@ -69,7 +69,7 @@ CJSCore::RegisterExt("bootstrap", ["css" => "/bitrix/css/av/bootstrap.supermin.c
 			        if(w.opera == "[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);}
 			        else                            {f();}
 			        })(document, window, "yandex_metrika_callbacks");
-	        </script>-->
+	        </script>
         </head>
         <div id="panel">
             <?$APPLICATION->ShowPanel()?>
@@ -337,7 +337,7 @@ Array(
                                         <div class="hidden-xs " data-circle-1-img-1="">
                                         </div>
                                         <p>
-                                            <span data-red-text="">3</span> года
+                                            <span data-red-text="">4</span> года
                                             <br> успешной работы
                                         </p>
                                     </div>
@@ -1448,7 +1448,7 @@ $GLOBALS["AV_STEEL_CATALOG_FILTER_ROOF"]["PROPERTY_type_profnastila"] = 336;
                     </div>
                     <div class="col-md-3 col-sm-3 footer-right-col text-center" style="padding: 0px;">
 							<div id="arrow-up">
-								<!--<a href="#upLinks"></a>-->
+								<a href="#upLinks"></a>
 							</div>
 					<div>
 						<ul>

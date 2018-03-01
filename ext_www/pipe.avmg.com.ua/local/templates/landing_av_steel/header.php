@@ -1,7 +1,8 @@
 <?
+use \Bitrix\Main\Page\Asset, \Bitrix\Main\Localization\Loc;
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-IncludeTemplateLangFile(__FILE__);
-$APPLICATION->AddHeadScript('/bitrix/js/main/jquery/jquery-2.1.3.js');
+Loc::loadMessages(__FILE__);
+Asset::getInstance()->addJs('/bitrix/js/main/jquery/jquery-2.1.3.js');
 
 
 CJSCore::RegisterExt("bootstrap", ["css" => "/bitrix/css/av/bootstrap.supermin.css"]);
@@ -28,9 +29,9 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
     <? CJSCore::Init(array("jquery")) ?>
 
     <?
-    $APPLICATION->AddHeadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyA46WZQVEJSS2zf5hZPQW3-oV6P5RSCUDQ&callback=initMap');
-    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/script.js');
-    $APPLICATION->AddHeadScript('/bitrix/js/av_site/main.js');
+    Asset::getInstance()->addJs('https://maps.googleapis.com/maps/api/js?key=AIzaSyA46WZQVEJSS2zf5hZPQW3-oV6P5RSCUDQ&callback=initMap');
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/script.js');
+    Asset::getInstance()->addJs('/bitrix/js/av_site/main.js');
     ?>
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -162,7 +163,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
             s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <? $APPLICATION->AddHeadScript('/bitrix/js/av_site/main.js'); ?>
+    <? Asset::getInstance()->addJs('/bitrix/js/av_site/main.js'); ?>
 </head>
 <div id="panel">
     <? $APPLICATION->ShowPanel() ?>
@@ -187,14 +188,31 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         </div>
 
         <div class="bg-mobile-menu hidden ">
-            <div class="flex-menu">
-                <ul id="mobile-menu" class=" text-center text-uppercase">
+            <div class="flex-menu text-center text-uppercase">
+                <?/*$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "av-pipe-horizontal-mobile",
+                    array(
+                        "ROOT_MENU_TYPE" => "left",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MAX_LEVEL" => "1",
+                        "CHILD_MENU_TYPE" => "left",
+                        "USE_EXT" => "N",
+                        "DELAY" => "N",
+                        "ALLOW_MULTI_SELECT" => "N"
+                    ),
+                    false
+                );*/?>
+                <ul id="mobile-menu">
                     <li><a href="#weUse">Ми виробники</a></li>
                     <li><a href="#product">Продукція</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                     <li><a href="#howWeWork">Як ми працюємо</a></li>
                     <li><a href="#contacts">Контакти</a></li>
-                    <!--							<li class="call-btn"><a href="" onclick="event.preventDefault()">заказать звонок</a></li>-->
                 </ul>
             </div>
         </div>
@@ -487,36 +505,80 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         </div>
 
         <div id="bg-img-1">
-            <ul class="col-md-12 main-menu main-menu-fixed hidden-xs hidden-sm text-center text-uppercase">
-
-                <li data-logo-main-menu=""></li>
-
-                <li><a href="#weUse">Ми виробники</a></li>
-                <li><a href="#product">Продукція</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#howWeWork">Як ми працюємо</a></li>
-                <li><a href="#contacts">Контакти</a></li>
-                <!--                        <li class="call-btn"><a href="" onclick="event.preventDefault()">заказать звонок</a></li>-->
-            </ul>
+            <div class="main-menu-fixed">
+                <div class="av-pipe-horizontal-main-menu-logo">
+                <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/logo.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_LOGO'),
+                            "MODE"  => "html"
+                        )
+                );?>
+                </div>
+                <div>
+                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:menu",
+                                    "av-pipe-horizontal-fixed",
+                                    array(
+                                        "ROOT_MENU_TYPE" => "left",
+                                        "MENU_CACHE_TYPE" => "N",
+                                        "MENU_CACHE_TIME" => "3600",
+                                        "MENU_CACHE_USE_GROUPS" => "Y",
+                                        "MENU_CACHE_GET_VARS" => array(
+                                        ),
+                                        "MAX_LEVEL" => "1",
+                                        "CHILD_MENU_TYPE" => "left",
+                                        "USE_EXT" => "N",
+                                        "DELAY" => "N",
+                                        "ALLOW_MULTI_SELECT" => "N"
+                                    ),
+                                    false
+                );
+                ?>
+                </div>
+            </div>
             <div class="container">
-                <ul class="col-md-12 main-menu hidden-xs hidden-sm text-center text-uppercase">
-                    <li><a href="#weUse">Ми виробники</a></li>
-                    <li><a href="#product">Продукція</a></li>
-                    <li><a href="#gallery">Галерея</a></li>
-                    <li><a href="#howWeWork">Як ми працюємо</a></li>
-                    <li><a href="#contacts">Контакти</a></li>
-                    <li class="top-lang">
-                        <ul class="lang-drop">
-                            <li class="empty"></li>
-                            <li class="lang-drop-list active">
-                                <span class="active-inner-data">UA</span>
-                            </li>
-                            <li class="lang-drop-list">RU</li>
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </ul>
-                    </li>
-                    <!-- <li class="call-btn"><a href="" onclick="event.preventDefault()">заказать звонок</a></li>-->
-                </ul>
+                <div class="col-md-12 hidden-xs hidden-sm text-center text-uppercase av-pipe-navigation-menu-container">
+                    <div class="av-pipe-navigation-menu col-md-9">
+                        <div class="av-pipe-navigation-menu-container-inner">
+                            <?$APPLICATION->IncludeComponent(
+                                                "bitrix:menu",
+                                                "av-pipe-horizontal",
+                                                array(
+                                                    "ROOT_MENU_TYPE" => "left",
+                                                    "MENU_CACHE_TYPE" => "N",
+                                                    "MENU_CACHE_TIME" => "3600",
+                                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                                    "MENU_CACHE_GET_VARS" => array(
+                                                    ),
+                                                    "MAX_LEVEL" => "1",
+                                                    "CHILD_MENU_TYPE" => "left",
+                                                    "USE_EXT" => "N",
+                                                    "DELAY" => "N",
+                                                    "ALLOW_MULTI_SELECT" => "N"
+                                                ),
+                                                    false
+                            );?>
+                        </div>
+                        <div class="av-pipe-navigation-menu-lang">
+                            <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.site.selector",
+                                    "pipe",
+                                    array(
+                                        "SITE_LIST" => array(
+                                            0 => "*all*",
+                                        ),
+                                        "PIPE_SYTE_SELECTOR_DOMAIN" => "pipe.avmg.com.ua",
+                                        "COMPONENT_TEMPLATE" => "pipe",
+                                        "CACHE_TYPE" => "A",
+                                        "CACHE_TIME" => "3600"
+                                    ),
+                                    false
+                                );?>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--Нужно-->
             <div class="container" style="display: none">
@@ -574,42 +636,66 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
             </div>
             <!--/Нужно-->
 
-            <div class="container">
+            <div class="container top-main-logo">
                 <div class="col-md-12" data-main-logo="">
                     <div data-logo="" class="hidden-sm hidden-xs text-center">
-                        <span class="logo-inner"></span>
+                        <span class="logo-inner">
+                            <?$APPLICATION->IncludeFile(
+                                "/".LANGUAGE_ID."/include/logoTop.php",
+                                Array(),
+                                Array(
+                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_LOGO_TOP'),
+                                    "MODE"  => "html"
+                                )
+                            );?>
+                        </span>
                     </div>
                     <div class="hidden-lg hidden-md col-sm-12 col-xs-12 ">
                         <div data-logo="" class="text-center">
-                            <span class="logo-inner"></span>
+                            <span class="logo-inner">
+                             <?$APPLICATION->IncludeFile(
+                                 "/".LANGUAGE_ID."/include/logoTop.php",
+                                 Array(),
+                                 Array(
+                                     "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_LOGO_TOP'),
+                                     "MODE"  => "html"
+                                 )
+                             );?>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/main_h1.php"
-                    )
-                ); ?>
+                <h1 class="text-center header-top-txt">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/logoTegline.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_TAGLINE'),
+                            "MODE"  => "text"
+                        )
+                    );?>
+                </h1>
                 <br class="hidden-sm hidden-xs">
                 <div class="col-lg-7 col-md-7 col-md-offset-2  col-sm-6 hidden-xs header-sort-wrap"
                      data-av-page1-text="">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/page1_text.php"
-                        )
-                    ); ?>
+                    <div class="header-txt-sort">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/objectives.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OBJECTIVES'),
+                                "MODE"  => "text"
+                            )
+                        );?>
+                    </div>
                 </div>
             </div>
             <div class="text-uppercase col-md-12 header-top-btn">
-                <span id="partners-form-btn" class="catalog-btn main-btn" data-red-btn="">Залишити заявку</span>
+                <span id="partners-form-btn" class="catalog-btn main-btn" data-red-btn="">
+                    <?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_SUBMIT_APPLICATION')?>
+                </span>
             </div>
         </div>
         <a id="weUse"></a>
@@ -617,33 +703,41 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
             <div class="container">
                 <div class="col-md-12 made-box clearfix">
                     <div class="col-md-6 col-sm-12 col-xs-12 tube-made-pict-wrap make-to" data-circle-1="" data-circle-2>
-                        <span class="tube-made-pict"></span>
+                        <span class="tube-made-pict">
+                             <?$APPLICATION->IncludeFile(
+                                 "/".LANGUAGE_ID."/include/logoInfo.php",
+                                 Array(),
+                                 Array(
+                                     "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_LOGO_INFO'),
+                                     "MODE"  => "html"
+                                 )
+                             );?>
+                        </span>
                         <span class="border-before" data-circle-up></span>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 make-to">
-                        <h3 class="title-main-next indent-left">Ми виробники</h3>
-                        <p class="main-txt">Ми випускаємо круглі та профільні труби на сучасному високотехнічному обладненні.
-                            Стан Berlik Makine дозволяє використовувати високочастотне зварювання (ВЧЗ).</p>
-                        <ul class="tube-plus-list">
-                            <li><i class="fa fa-check" aria-hidden="true"></i><span class="benefit-list-txt">Власне виробництво</span></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><span class="benefit-list-txt">Постійний товарний запас</span></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><span class="benefit-list-txt">Власна мережа металобаз</span></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><span class="benefit-list-txt">Власна логістика</span></li>
-                        </ul>
-                        <p class="main-txt">Труби виготовляються з рулонної сталі  низьковуглецевих марок.
-                            Також виготовляються квадратні та прямокутні зварні профільні труби та круглі водогазопровідні труби.
-                            Ми пропонуємо широкий вибір, високий рівень сервісу додаткових послуг, продукцію європейської якості. Ми індивідуально підходимо до замовлення кожного клієнта.
-                        </p>
+                    <div class="col-md-6 col-sm-12 col-xs-12 make-to title-main-next indent-left main-txt tube-plus-list benefit-list-txt">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/info1.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_INFO_1'),
+                                "MODE"  => "text"
+                            )
+                        );?>
                     </div>
                 </div>
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/weAreBest.php"
-                    )
-                ); ?>
+                <div class="col-md-12 made-prof-tube main-title-other indent-left main-txt tube-made-bot-txt">
+                    <div class="info2">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/info2.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_INFO_2'),
+                                "MODE"  => "text"
+                            )
+                        );?>
+                    </div>
+                </div>
             </div>
         </div>
         <a id="weUse"></a>
@@ -652,25 +746,186 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         <a id="product"></a>
         <div class="bg-second-box">
             <div class="container">
-                <div class="text-center av-steel-catalog-text-wrap">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
+                <div class="text-center av-steel-catalog-text-wrap main-txt our-product-title">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/info3.php",
+                        Array(),
                         Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/profnastilStenavoy.php"
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_INFO_3'),
+                            "MODE"  => "text"
                         )
-                    ); ?>
+                    );?>
                 </div>
                 <div class="av-center-cetalog av-product-box">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/ourProducts.php"
-                        )
-                    ); ?>
+                    <div class="our-product">
+                        <div class="col-md-12">
+                            <div class="col-sm-12 col-md-4">
+                                <div class="pipe-goods-img">
+                                    <?$APPLICATION->IncludeFile(
+                                        "/".LANGUAGE_ID."/include/ourProductsImg1.php",
+                                        Array(),
+                                        Array(
+                                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_IMG'),
+                                            "MODE"  => "html"
+                                        )
+                                    );?>
+                                </div>
+                                    <span class="our-prod-title">
+                                        <?$APPLICATION->IncludeFile(
+                                            "/".LANGUAGE_ID."/include/ourProductsTitle1.php",
+                                            Array(),
+                                            Array(
+                                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE'),
+                                                "MODE"  => "text"
+                                            )
+                                        );?>
+                                    </span>
+                                    <div class="product-table-data">
+                                        <div class="table-top">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsTitleTable1.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                        <div class="table-middle">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsValueTable1.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_VALUE_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                        <div class="table-bottom">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsBottomTable1.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_BOTTOM_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                    </div>
+                                    <button class="more-btn1"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="pipe-goods-img">
+                                    <?$APPLICATION->IncludeFile(
+                                        "/".LANGUAGE_ID."/include/ourProductsImg2.php",
+                                        Array(),
+                                        Array(
+                                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_IMG'),
+                                            "MODE"  => "html"
+                                        )
+                                    );?>
+                                </div>
+                                    <span class="our-prod-title">
+                                        <?$APPLICATION->IncludeFile(
+                                            "/".LANGUAGE_ID."/include/ourProductsTitle2.php",
+                                            Array(),
+                                            Array(
+                                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE'),
+                                                "MODE"  => "text"
+                                            )
+                                        );?>
+                                    </span>
+                                    <div class="product-table-data">
+                                        <div class="table-top">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsTitleTable2.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                        <div class="table-middle">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsValueTable2.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_VALUE_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                        <div class="table-bottom">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsBottomTable2.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_BOTTOM_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                        </div>
+                                    </div>
+                                    <button class="more-btn2"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="pipe-goods-img">
+                                    <?$APPLICATION->IncludeFile(
+                                        "/".LANGUAGE_ID."/include/ourProductsImg3.php",
+                                        Array(),
+                                        Array(
+                                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_IMG'),
+                                            "MODE"  => "html"
+                                        )
+                                    );?>
+                                </div>
+                                        <span class="our-prod-title">
+                                        <?$APPLICATION->IncludeFile(
+                                            "/".LANGUAGE_ID."/include/ourProductsTitle3.php",
+                                            Array(),
+                                            Array(
+                                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE'),
+                                                "MODE"  => "text"
+                                            )
+                                        );?>
+                                        </span>
+                                        <div class="product-table-data">
+                                            <div class="table-top">
+                                                <?$APPLICATION->IncludeFile(
+                                                    "/".LANGUAGE_ID."/include/ourProductsTitleTable3.php",
+                                                    Array(),
+                                                    Array(
+                                                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE_TABLE'),
+                                                        "MODE"  => "text"
+                                                    )
+                                                );?>
+                                            </div>
+                                            <div class="table-middle">
+                                            <?$APPLICATION->IncludeFile(
+                                                "/".LANGUAGE_ID."/include/ourProductsValueTable3.php",
+                                                Array(),
+                                                Array(
+                                                    "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_VALUE_TABLE'),
+                                                    "MODE"  => "text"
+                                                )
+                                            );?>
+                                            </div>
+                                            <div class="table-bottom">
+                                                <?$APPLICATION->IncludeFile(
+                                                    "/".LANGUAGE_ID."/include/ourProductsBottomTable3.php",
+                                                    Array(),
+                                                    Array(
+                                                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_BOTTOM_TABLE'),
+                                                        "MODE"  => "text"
+                                                    )
+                                                );?>
+                                            </div>
+                                        </div>
+                                        <button class="more-btn3"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                                    </div>
+                                </div>
+                            </div>
                     <?/*
                     $APPLICATION->IncludeComponent
                     (
@@ -699,8 +954,6 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         )
                     );
                     */?>
-                </div>
-
             </div>
         </div>
         <a id="gallery"></a>
@@ -753,14 +1006,24 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         <div class="col-md-12" id="partners-text-wrap">
             <div class="container">
                 <div class="text-center">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/partnersSectionHead.php",
+                        Array(),
                         Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/partnersSectionText.php"
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_SECTION_HEAD'),
+                            "MODE"  => "text"
                         )
-                    ); ?>
+                    );?>
+                    <div class="col-md-12 partners-inner-txt partnersSectionColls benefits-list-wrap tube-plus-list-partner-body">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/partnersSectionBody.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_SECTION_BODY'),
+                            "MODE"  => "text"
+                        )
+                    );?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -768,45 +1031,42 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
             <div class="container">
                 <br>
                 <a id="howWeWork"></a>
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/howWeWorks.php"
-                    )
-                ); ?>
+                <div class="text-center av-steel-catalog-text-wrap main-txt our-product-title hidden-xs">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/howWeWorks.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS'),
+                            "MODE"  => "text"
+                        )
+                    );?>
+                </div>
                 <div class="col-md-12 text-center work-blocks-box clearfix" data-circle-1="" data-circle-3="">
                     <a id="how_we_work"></a>
                     <br class="hidden-md hidden-sm ">
                     <div class="col-sm-6 col-xs-12 work-inner-to make-to">
                         <div data-circle-1-img-1=""></div>
-                        <span class="text-uppercase">1. Оформити<br>
-                                            замовлення</span>
+                        <span class="text-uppercase"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS_1')?></span>
                         <br>
                     </div>
                     <div class="col-sm-6 col-xs-12 work-inner-to make-to">
                         <div data-circle-1-img-2=""></div>
-                        <span class="text-uppercase">2. розрахунок вартості<br>
-                                            замовлення</span>
+                        <span class="text-uppercase"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS_2')?></span>
                         <br>
                     </div>
                     <div class="col-sm-6 col-xs-12 work-inner-to make-to">
                         <div data-circle-1-img-3=""></div>
-                        <span class="text-uppercase">3. узгодження<br>
-                                             та оплата</span>
+                        <span class="text-uppercase"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS_3')?></span>
                         <br>
                     </div>
                     <div class="col-sm-6 col-xs-12 work-inner-to make-to">
                         <div data-circle-1-img-4=""></div>
-                        <span class="text-uppercase">4. комплектація<br>
-                                            замовлення</span>
+                        <span class="text-uppercase"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS_4')?></span>
                         <br>
                     </div>
                     <div class="col-sm-6 col-xs-12 work-inner-to make-to">
                         <div data-circle-1-img-5=""></div>
-                        <span class="text-uppercase">5. доставка<br>
-                                            на об'єкт</span>
+                        <span class="text-uppercase"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_HOW_WE_WORKS_5')?></span>
                         <br>
                     </div>
                 </div>
@@ -1043,26 +1303,36 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         <div class="container">
             <div id="map-wrap" class="map-wrap clearfix">
                 <a id="contacts"></a>
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 made-prof-tube main-title-other indent-left main-txt tube-made-bot-txt">
                     <br>
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/mapText.php",
+                        Array(),
                         Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/mapText.php"
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_MAP_TEXT'),
+                            "MODE"  => "text"
                         )
-                    ); ?>
+                    );?>
                 </div>
                 <div class="contact-data col-md-6">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/addressFooter.php"
-                        )
-                    ); ?>
+                    <div class="address-data-footer">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/addressFooter.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_ADDRESS_FOOTER'),
+                                "MODE"  => "text"
+                            )
+                        );?>
+                        <? /*$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "PATH" => "/include/addressFooter.php"
+                            )
+                        ); */?>
+                    </div>
                 </div>
                 <div class="col-md-6 map-data-inner" data-circle-map>
                     <span class="border-before map-border-before" data-circle-m></span>
@@ -1073,18 +1343,38 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
 
         <div class="col-md-12" id="footer-wrap">
             <div class="container">
-                <div class="col-md-10 col-md-offset-1 col-sm-10 text-center" style="padding: 0px;">
-                    <ul class="text-uppercase hidden-xs">
-                        <li><a href="#weUse">Ми виробники</a></li>
-                        <li><a href="#product">Продукція</a></li>
-                        <li><a href="#gallery">Галерея</a></li>
-                        <li><a href="#howWeWork">Як ми працюємо</a></li>
-                        <li><a href="#contacts">Контакти</a></li>
-                    </ul>
+                <div class="col-md-10 col-md-offset-1 col-sm-10 text-center text-uppercase" style="padding: 0px;">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "av-pipe-horizontal-footer",
+                        array(
+                            "ROOT_MENU_TYPE" => "left",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "MENU_CACHE_GET_VARS" => array(
+                            ),
+                            "MAX_LEVEL" => "1",
+                            "CHILD_MENU_TYPE" => "left",
+                            "USE_EXT" => "N",
+                            "DELAY" => "N",
+                            "ALLOW_MULTI_SELECT" => "N"
+                        ),
+                        false
+                    );?>
                     <div class="text-center col-sm-12 footer-logo" style="color: #FFF">
 
                         <div class="col-md-2 col-sm-3 hidden-xs footer-logo-inner" data-logo>
-                            <span class="logo-inner"></span>
+                            <span class="logo-inner">
+                                <?$APPLICATION->IncludeFile(
+                                    "/".LANGUAGE_ID."/include/logoFooter.php",
+                                    Array(),
+                                    Array(
+                                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_LOGO_FOOTER'),
+                                        "MODE"  => "html"
+                                    )
+                                );?>
+                            </span>
                         </div>
 
                     </div>

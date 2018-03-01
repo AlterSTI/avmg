@@ -1,0 +1,29 @@
+#mobile-menu {
+    padding: 0 !important;
+    margin: 0 auto;
+}
+
+#mobile-menu li {
+    margin: 27px 0;
+    list-style-type: none;
+}
+
+@media screen and (max-height:350px) {
+    #mobile-menu li {
+        margin: 10px
+    }
+}
+
+#mobile-menu li a {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 700
+}
+
+#mobile-menu li:hover a {
+    color: #ff202a
+}
+
+.bg-mobile-menu.hidden {
+    display: none
+}

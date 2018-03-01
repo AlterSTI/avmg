@@ -1,5 +1,4 @@
-<div class="our-product">
-    <div class="col-md-12">
+
         <div class="col-sm-12 col-md-4">
             <span class="our-prod-pict our-prod-img-1"></span>
             <span class="our-prod-title">Труби квадратні<br> EN 10219-1, EN 10219-2</span>

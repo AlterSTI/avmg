@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"WIR SIND HERSTELLER",
+		"#weUse", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"ERZEUGNISSE",
+		"#product", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"GALERIE",
+		"#gallery", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"WIE ARBEITEN WIR",
+		"#howWeWork", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"KONTAKTE",
+		"#contacts", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
