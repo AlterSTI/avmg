@@ -55,3 +55,4 @@ CJSCore::RegisterExt
 		"rel" => ["jquery"]
 		]
 	);
+CJSCore::RegisterExt("ajax_request_ms", ["js"  => "/bitrix/js/av/ajax_request_ms.js"]);

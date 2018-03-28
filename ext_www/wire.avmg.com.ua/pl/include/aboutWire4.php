@@ -1,0 +1,1 @@
+Przyjmujemy do produkcji wyroby o dowolnej złożoności oraz dowolnych wymogach pod względem składu chemicznego, właściwości mechanicznych, opakowania, geometrycznych wymiarów kręgu. Wykonujemy średnice drutu, które nie wchodzą w standardowy szereg nomenklatury.

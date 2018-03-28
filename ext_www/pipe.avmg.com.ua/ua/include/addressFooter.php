@@ -14,20 +14,27 @@
     <ul>
         <li><b>Загальна інформація</b></li>
         <li>
-            <address>УкраЇна, Дніпро,<br>
-                <span>вул. Шолом-Алейхема, 5</span>
+            <address>
+                <div class="footer-data-wrapper">
+                    <div>УкраЇна, Дніпро,</div>
+                    <div>вул. Шолом-Алейхема, 5</div>
+                </div>
             </address>
         </li>
         <li>
             <i>
-                <a href="tel:+38(056) 376-79-94">+38(056) 376-79-94</a><br>
-                <span><a href="tel:+38(067) 485-53-73">+38(067) 485-53-73</a></span>
+                <div class="footer-data-wrapper">
+                    <a href="tel:+38(056) 376-79-94">+38(056) 376-79-94</a><br>
+                    <div><a href="tel:+38(067) 485-53-73">+38(067) 485-53-73</a></div>
+                </div>
             </i>
         </li>
         <li>
             <u>
-                <a href="mailto: office@avmg.com.ua">office@avmg.com.ua</a><br>
-                <span><a href="mailto: s.kireev@avmg.com.ua">s.kireev@avmg.com.ua</a></span>
+                <div class="footer-data-wrapper">
+                    <a href="mailto: office@avmg.com.ua">office@avmg.com.ua</a>
+                    <div><a href="mailto: s.kireev@avmg.com.ua">s.kireev@avmg.com.ua</a></div>
+                </div>
             </u>
         </li>
     </ul>

@@ -1,0 +1,1 @@
+We consider applications of any complexity with any requirements for chemical composition, mechanical properties, packaging, geometric dimensions of the coil. We manufacture wire diameters that are not included in the standard range of assortment.

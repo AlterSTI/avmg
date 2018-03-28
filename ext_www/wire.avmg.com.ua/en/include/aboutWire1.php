@@ -1,0 +1,1 @@
+All wire is stored only in the covered warehouses. We also have rackes for storing the wire, which facilitates access to each coil, accelerates shipment, prevents damage to products.

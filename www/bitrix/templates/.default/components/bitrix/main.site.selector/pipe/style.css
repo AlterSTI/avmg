@@ -66,5 +66,6 @@
 .pipe-lang-drop .lang-drop-list i.fa {
 	position: absolute;
 	right: 8px;
+	top:10px;
 }
 

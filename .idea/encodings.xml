@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/components/bitrix/form.result.new/av-pipe-order-form/lang/de/template.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/components/bitrix/form.result.new/av-pipe-partners-form/lang/de/template.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/components/bitrix/form.result.new/av-pipe-quick-form/lang/de/template.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/components/bitrix/form.result.new/av-steel-form-order-now/lang/de/template.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/components/bitrix/form.result.new/av-steel-partners-form/lang/de/template.php" charset="ISO-8859-15" />
     <file url="file://$PROJECT_DIR$/ext_www/pipe.avmg.com.ua/local/templates/landing_av_steel/lang/de/header.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/ext_www/wire.avmg.com.ua/local/templates/landing_av_wire/lang/de/header.php" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/www/bitrix/templates/.default/components/bitrix/form.result.new/wire/lang/de/template.php" charset="ISO-8859-15" />
   </component>
 </project>

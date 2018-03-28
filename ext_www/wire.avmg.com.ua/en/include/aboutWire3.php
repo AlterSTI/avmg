@@ -1,0 +1,1 @@
+On request, we can send certificates for any products. We also guarantee the quality of our products.

@@ -99,6 +99,24 @@ z-index: 9;
     color: #888888;
 }
 
+.make-diler-form form[name="pipe_application_PL"] .av-form-wrap-2 .fom-row:nth-of-type(3)::after {
+    content: 'lub';
+}
+
+.make-diler-form form[name="pipe_application_DE"] .av-form-wrap-2 .fom-row:nth-of-type(3)::after {
+    content: 'oder';
+    right: -14px;
+}
+
+.make-diler-form form[name="pipe_application_EN"] .av-form-wrap-2 .fom-row:nth-of-type(3)::after {
+    content: 'or';
+    right: -6px;
+}
+
+.make-diler-form form[name="pipe_application_RU"] .av-form-wrap-2 .fom-row:nth-of-type(3)::after {
+    content: 'или';
+}
+
 /* CHECKBOX */
 .make-diler-form .av-form-wrap-2 .fom-row input[type="checkbox"] + label {
     cursor: pointer;

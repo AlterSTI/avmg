@@ -1,0 +1,1 @@
+Der ganze Draht wird nur in den gedeckten Lagerstellen erhalten. Einschließlich haben wir in unserer Verfügung Gestelle für die Lagerung des Drahtes, war jedes Bund zugänglich macht, die Verladung fördert, die Störung der Erzeugnisse verhindert.

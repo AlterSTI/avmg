@@ -1,0 +1,1 @@
+Cały standardowy szereg spełnia normę GOST. Elastyczność produkcji. Zebraliśmy dla Państwa optymalny asortyment - jest on na tyle szeroki, że możliwe wybrać dokładnie to, czego Państwo potrzebują.

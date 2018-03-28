@@ -15,7 +15,6 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 //$APPLICATION->SetAdditionalCSS("/bitrix/css/main/system.auth/flat/style.css");
 $APPLICATION->SetAdditionalCSS("/style.css");
 ?><div class="bx-authform text-center">
-
 	<form name="form_auth" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
 
 		<input type="hidden" name="AUTH_FORM" value="Y" />

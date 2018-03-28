@@ -1,13 +1,11 @@
 function animScroll() {
     var e = $(window).height() / 1.2, o = $(this).scrollTop() + e,
-        t = $("[data-circle-first] [data-circle-1-img-1]").offset().top,
+        //t = $("[data-circle-first] [data-circle-1-img-1]").offset().top,
         r = $("[data-circle-2] [data-circle-up]").offset().top,
         m = $("[data-circle-map] [data-circle-m]").offset().top,
         a = $("[data-circle-3] [data-circle-1-img-1]").offset().top,
         n = ($("#map_canvas").offset().top, $(".main-wrap #pay-method-section .pull-left").offset().top, 0);
-    e = $(window).height(), o >= t && $("[data-circle-first] .col-sm-6 ").each(function () {
-        $(this).addClass("anim-show").css("transition-delay", n + "s"), n += .3
-    }), n = 0,
+
         o >= r && $("[data-circle-2] > .border-before").each(function () {
         $(this).addClass("anim-show-top").css("transition-delay", n + "s"), n += .3
     }), n = 0,
@@ -130,7 +128,7 @@ $(function () {
     }), $(window).on("scroll", function () {
         var o = $("#map-wrap").offset().top;
         $(this).scrollTop() > o / 2 && e(), $(this).scrollTop() > 700 ? $(".main-wrap .main-menu-fixed").addClass("fixed") : $(".main-wrap .main-menu-fixed").removeClass("fixed"), $(this).scrollTop() >= $("#order-now-wrap").offset().top / 2 && $("#order-now-wrap").css("background", "url(/upload/pipe/partners-bg.jpg) center 20% no-repeat"), animScroll()
-    }), $(window).height() >= $("[data-circle-first] [data-circle-1-img-1]").offset().top && animScroll(), $(window).scrollTop() >= $("#order-now-wrap").offset().top / 2 && $("#order-now-wrap").css("background", "url(/upload/pipe/partners-bg.jpg) center center no-repeat"), $(".emailLowerCase").keyup(function () {
+    }), $(window).height(), $(window).scrollTop() >= $("#order-now-wrap").offset().top / 2 && $("#order-now-wrap").css("background", "url(/upload/pipe/partners-bg.jpg) center center no-repeat"), $(".emailLowerCase").keyup(function () {
         this.value = this.value.toLowerCase()
     }), $('a[href^="#"]').click(function () {
         var e = $(this).attr("href");
@@ -156,7 +154,40 @@ $(function () {
 
 
 $(document).ready(function () {
+    // MsRequest = new MsRequest(AvRequest);
 
+
+function closeForm () {
+    $('.diler-form-submit input').on('click', function(e) {
+        var a = e.target.parentNode.parentNode.parentNode;
+        console.log(a);
+        var b = a.getElementsByTagName('input');
+        var c = 0;
+        for (var i=0; i<b.length; i++){
+            if (b[i].classList.contains('inputtext') && b[i].parentNode.classList.contains('required') && b[i].value == ''){
+                c++;
+            }
+        }
+        if (c == 0){
+            $('.popUp').hide();
+        }
+    });
+}
+
+function loadFormProfnastil(idPopup) {
+    if (idPopup === false) return false;
+
+    var formActive = document.getElementById(idPopup);
+    var header = document.getElementById('av-pipe-tube-popup-header');
+    var table = document.getElementById('av-pipe-tube-popup-table');
+
+    header.innerHTML = '';
+    table.innerHTML = '';
+    header.innerHTML = formActive.firstElementChild.innerHTML;
+    table.innerHTML = formActive.lastElementChild.innerHTML;
+}
+    closeForm ();
+    /**/
     /* ------------------------------------------- */
     /* --------- object position center ---------- */
     /* ------------------------------------------- */
@@ -197,70 +228,76 @@ $(document).ready(function () {
             AvBlurScreen("off")
         });
     });
+    // Плавные якорные ссылки
+    $(".av-pipe-horizontal-main-menu, .av-pipe-horizontal-main-menu-fixed, .av-pipe-horizontal-main-menu-footer, #mobile-menu").on("click","a", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
 
-    $('a[href^="#"]').click(function () {
-        var el = $(this).attr('href');
-        if (el == "#how_we_work") {
-            $('body').animate({
-                scrollTop: $(el).offset().top - 60
-            }, 1000);
-        } else if (el == "#profnastil") {
-            $('body').animate({
-                scrollTop: $(el).offset().top + 330
-            }, 1000);
-        } else {
-            $('body').animate({
-                scrollTop: $(el).offset().top
-            }, 1000);
-        }
+        //забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+
+            //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top - 67;
+
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 1500);
     });
 
-
+    // Появление формы, и исчезновение при положительном результате
     $('#partners-form-btn').on("click", function () {
-        AvBlurScreen("on", "9999");
+        closeForm();
+       AvBlurScreen("on", "9999");
         $('[data-partners-form]').positionCenter(99999).fadeIn().on("remove", function () {
-            AvBlurScreen("off")
+            AvBlurScreen("off");
         });
     });
 
+    // Popup - "Наша продукция"
+    $('#more-btn1').on('click', function () {
+        closeForm();
+        CreateAvAlertPopup2();
+        AvBlurScreen("on", "9999");
+        $('.make-done-form').positionCenter(99999).fadeIn().on("remove", function () {
+            AvBlurScreen("off")
+        });
+        loadFormProfnastil('tube-squere');
+    });
 
+
+    $('#more-btn2').on('click', function () {
+        closeForm();
+        CreateAvAlertPopup2();
+        AvBlurScreen("on", "9999");
+        $('.make-done-form').positionCenter(99999).fadeIn().on("remove", function () {
+            AvBlurScreen("off")
+        });
+        loadFormProfnastil('tube-rectangular');
+    });
+
+    $('#more-btn3').on('click', function () {
+        closeForm();
+        CreateAvAlertPopup2();
+        AvBlurScreen("on", "9999");
+        $('.make-done-form').positionCenter(99999).fadeIn().on("remove", function () {
+            AvBlurScreen("off")
+        });
+        loadFormProfnastil('tube-circle');
+    });
+
+    //Закрываем форму при клике на крестик
     $('[data-close-form2]').on('click', function () {
         AvBlurScreen("off");
         $('.popUp').fadeOut();
     });
 
-    $('.more-btn').on('click', function () {
-        AvBlurScreen("on", "9999");
-        $('.make-done-form').positionCenter(99999).fadeIn().on("remove", function () {
-            AvBlurScreen("off")
-        });
-    });
-
-    $('.more-btn1').on('click', function () {
-        AvBlurScreen("on", "9999");
-        $('.make-done-form').positionCenter(99999).fadeIn().on("remove", function () {
-            AvBlurScreen("off")
-        });
-    });
-
-
-    $('.more-btn2').on('click', function () {
-        AvBlurScreen("on", "9999");
-        $('.make-done-form-sq').positionCenter(99999).fadeIn().on("remove", function () {
-            AvBlurScreen("off")
-        });
-    });
-
-    $('.more-btn3').on('click', function () {
-        AvBlurScreen("on", "9999");
-        $('.make-done-form-circle').positionCenter(99999).fadeIn().on("remove", function () {
-            AvBlurScreen("off")
-        });
-    });
 
     $('.av-ctatalog-item-tablet').on('click', function (e) {
-        e.preventDefault;
+        console.log(e.preventDefault);
     });
 
+    document.body.addEventListener('pipeFormSendOk', function () {
+        $('.popUp').fadeOut();
+        //formActive.innerHTML='';
+    });
 });
 

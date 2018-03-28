@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="barabash_test_asintez">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="prod">
         <serverdata>
           <mappings>

@@ -19,6 +19,7 @@ $(function()
 					data    : $form.serialize(),
 					success : function(result)
 						{
+							console.log(result);
 						$formBlock.html("<div class=\"result-ok\">"+BX.message("AV_FORM_AJAX_RESULT_OK_MESSAGE")+"</div>");
 						},
 					complete: function()

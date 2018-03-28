@@ -1,0 +1,1 @@
+Drut jest przechowywany tylko w krytych pomieszczeniach magazynowych. W tym posiadamy regały do przechowywania drutu, co ułatwia dostęp do każdego kręgu, przyspiesza wysyłkę, zapobiega uszkodzeniu produktów.

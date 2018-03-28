@@ -1,0 +1,105 @@
+/*.av-lang-switcher                      {display: flex}
+.av-lang-switcher a,
+.av-lang-switcher a:visited            {color: inherit}
+.av-lang-switcher > span               {color: #CC0000}
+.av-lang-switcher > *:not(:last-child) {margin-right: 5px}
+
+@media (max-width: 991px)
+	{
+	.av-lang-switcher {font-weight: bold}
+	}
+*/
+.wire-fixed-lang-drop {
+	padding: 0;
+	opacity: 1;
+	left: 10px;
+	transition: all 0.5s ease;
+	width: 100%;
+	height: 100%;
+}
+
+.wire-fixed-lang-drop .lang-drop-list-hide-part{
+	position: absolute;
+	top:66px;
+	width: 100%;
+}
+
+.wire-fixed-lang-drop .lang-drop-list-hide-part{
+	background-color: rgba(237, 243, 245, 0.95);
+	border-radius: 0 0 10px 10px;
+}
+
+.wire-fixed-lang-drop:hover {
+	cursor: pointer;
+}
+.wire-fixed-lang-drop .empty {
+	display: none;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list-hide-part{
+	display: none;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list-hide-part ul{
+	padding: 0;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list-hide-part.select{
+	display: block;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list-hide-part.select a{
+	display: inline-block;
+	padding: 3px 16px;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list {
+	padding: 6px 18px 6px 12px;
+	display: none;
+	border: none;
+	text-align: left;
+	transition: all 0.5s ease;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list.active{
+	display: inline-block;
+	padding-bottom: 12px;
+}
+
+.wire-fixed-lang-drop li.lang-drop-list:hover,  .wire-fixed-lang-drop li.lang-drop-list-hide-part li:hover{
+	color: #cc0000;
+}
+
+.wire-fixed-lang-drop .lang-drop-list i.fa {
+	position: absolute;
+	top:22px;
+	right: 10px;
+	font-size: 17px;
+}
+
+#wire-fixed-lang-drop ul li {
+	padding: 5px;
+}
+
+#wire-fixed-lang-drop ul li:first-child {
+	padding: 0 5px 5px 5px;
+}
+
+#wire-fixed-lang-drop ul li:last-child {
+	padding-bottom: 15px;
+}
+
+#wire-fixed-lang-drop li ul li .not-active-langs{
+	color: #cc0000;
+}
+#wire-fixed-lang-drop li.lang-drop-list-hide-part{
+	padding: 0;
+}
+#wire-fixed-lang-drop li.lang-drop-list-hide-part li:hover{
+	background-color: #5a6c77;
+}
+#wire-fixed-lang-drop li.lang-drop-list-hide-part li:last-child:hover{
+	border-radius: 0 0 10px 10px;
+	transition: background-color 1s linear;
+}
+

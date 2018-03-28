@@ -1,0 +1,1 @@
+© 2009-2017 AV Metal Group.All rights reserved.

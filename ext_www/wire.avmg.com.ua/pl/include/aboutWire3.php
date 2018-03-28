@@ -1,0 +1,1 @@
+Na życzenie możemy wysłać certyfikaty na wszelkie produkty. Także gwarantujemy jakość naszych produktów.

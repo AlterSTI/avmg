@@ -1,0 +1,1 @@
+Availability of certificates and guarantees

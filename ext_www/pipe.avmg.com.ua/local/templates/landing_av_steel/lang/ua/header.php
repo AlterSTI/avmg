@@ -26,7 +26,23 @@ $MESS['PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TITLE_TABLE'] = 'заголово�
 $MESS['PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_VALUE_TABLE'] = 'значення таблиці';
 $MESS['PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_BOTTOM_TABLE'] = 'нижню частину таблиці';
 $MESS['PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON'] = 'Детальніше';
-
 /*END AV GOODS*/
+/*POPUP*/
+$MESS['PIPE_INCLUDE_AREA_TUBE_SQUERE'] = 'заголовок';
+$MESS['PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'] = 'значення таблиці';
+$MESS['PIPE_INCLUDE_AREA_TUBE_SQUERE_FORM_TITLE'] = 'ЗАЛИШТЕ СВОЇ КОНТАКТНІ ДАНІ І МЕНЕДЖЕР УТОЧНИТЬ ЦІНУ ТОВАРУ';
+
+/*END POPUP*/
+
+$MESS['PIPE_INCLUDE_AREA_FORM_PARTNER'] = 'форму для партнерів';
+$MESS['PIPE_INCLUDE_AREA_FORM_PROFNASTIL'] = intval(61);//id form profnastil tube squere
+$MESS['PIPE_INCLUDE_AREA_FORM_QUICK'] = 'форму для швидкого замовлення';
+
+$MESS['PIPE_INCLUDE_AREA_FORM_PARTNER_HEADER'] = 'форму для партнерів';
+$MESS['PIPE_INCLUDE_AREA_FORM_QUICK_HEADER'] = 'форму для швидкого замовлення';
+
+$MESS['AV_PIPE_PAGE_NOT_FOUND_1']='Сторінка не знайдена';
+$MESS['AV_PIPE_PAGE_NOT_FOUND_2']='Ми не можемо знайти сторінку, яку ви шукали.';
+$MESS['AV_PIPE_PAGE_NOT_FOUND_TO_GENERAL']='На головну';
 
 

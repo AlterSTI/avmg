@@ -4,11 +4,15 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 Loc::loadMessages(__FILE__);
 Asset::getInstance()->addJs('/bitrix/js/main/jquery/jquery-2.1.3.js');
 
-
 CJSCore::RegisterExt("bootstrap", ["css" => "/bitrix/css/av/bootstrap.supermin.css"]);
 CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/style.css"]);
 
+$templateFolder     = getFolder(__DIR__);
+$templateFolderHttp = CURRENT_PROTOCOL."://".SITE_NAME.str_replace(DIRECTORY_SEPARATOR, "/", $templateFolder);
+Asset::getInstance()->addString("<script>AvRequest = \"".$templateFolderHttp."ajax/loadForma.php\";</script>");
+
 ?>
+<?if (!defined('ERROR_404') || ERROR_404 != 'Y'): ?>
 <!DOCTYPE html>
 <html xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
 <?
@@ -21,11 +25,11 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
     <title>
         <? $APPLICATION->ShowTitle() ?>
     </title>
-    <link rel="icon" type="image/x-icon" href="/bitrix/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <? $APPLICATION->ShowHead() ?>
-    <? CJSCore::Init(["av", "bootstrap", "fontawesome", "js_main"]) ?>
+    <? CJSCore::Init(["av", "bootstrap", "fontawesome", "js_main", "ajax_request_ms"]) ?>
     <? CJSCore::Init(array("jquery")) ?>
 
     <?
@@ -49,39 +53,36 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         ga('create', 'UA-88853738-1', 'auto');
         ga('send', 'pageview');
     </script>
-
-    <script type="text/javascript">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
         (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
+            (w[c] = w[c] || []).push(function() {
                 try {
-                    w.yaCounter41532584 = new Ya.Metrika({
-                        id: 41532584,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
+                    w.yaCounter17188231 = new Ya.Metrika({
+                        id:17188231,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        trackHash:true
                     });
-                } catch (e) {
-                }
+                } catch(e) { }
             });
 
             var n = d.getElementsByTagName("script")[0],
                 s = d.createElement("script"),
-                f = function () {
-                    n.parentNode.insertBefore(s, n);
-                };
+                f = function () { n.parentNode.insertBefore(s, n); };
             s.type = "text/javascript";
             s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
 
             if (w.opera == "[object Opera]") {
                 d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })
-        (document, window, "yandex_metrika_callbacks");
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
     </script>
+    <!-- /Yandex.Metrika counter -->
+
 
     <script>
         var _gaq = _gaq || [];
@@ -114,40 +115,6 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         ga('create', 'UA-88853738-1', 'auto');
         ga('send', 'pageview');
     </script>
-
-    <script type="text/javascript">
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter41532584 = new Ya.Metrika({
-                        id: 41532584,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
-                    });
-                } catch (e) {
-                }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () {
-                    n.parentNode.insertBefore(s, n);
-                };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })
-        (document, window, "yandex_metrika_callbacks");
-    </script>
-
     <script>
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-88853738-1']);
@@ -189,7 +156,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
 
         <div class="bg-mobile-menu hidden ">
             <div class="flex-menu text-center text-uppercase">
-                <?/*$APPLICATION->IncludeComponent(
+                <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "av-pipe-horizontal-mobile",
                     array(
@@ -206,303 +173,254 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         "ALLOW_MULTI_SELECT" => "N"
                     ),
                     false
-                );*/?>
-                <ul id="mobile-menu">
-                    <li><a href="#weUse">Ми виробники</a></li>
-                    <li><a href="#product">Продукція</a></li>
-                    <li><a href="#gallery">Галерея</a></li>
-                    <li><a href="#howWeWork">Як ми працюємо</a></li>
-                    <li><a href="#contacts">Контакти</a></li>
-                </ul>
+                );?>
             </div>
         </div>
     </div>
 
     <div class="main-wrap">
 
-        <div class="popUp" data-call-back-form="" hidden>
-            <? $APPLICATION->IncludeComponent(
-                "bitrix:form",
-                "av-steel-call-back",
-                Array(
-                    "AJAX_MODE" => "Y",
-                    "AJAX_OPTION_ADDITIONAL" => "",
-                    "AJAX_OPTION_HISTORY" => "N",
-                    "AJAX_OPTION_JUMP" => "N",
-                    "AJAX_OPTION_SHADOW" => "N",
-                    "AJAX_OPTION_STYLE" => "N",
-                    "CACHE_TIME" => "3600",
-                    "CACHE_TYPE" => "N",
-                    "CHAIN_ITEM_LINK" => "",
-                    "CHAIN_ITEM_TEXT" => "",
-                    "COMPONENT_TEMPLATE" => "av-steel",
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    "EDIT_ADDITIONAL" => "N",
-                    "EDIT_STATUS" => "Y",
-                    "IGNORE_CUSTOM_TEMPLATE" => "N",
-                    "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
-                    "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
-                    "RESULT_ID" => $_REQUEST[RESULT_ID],
-                    "SEF_MODE" => "N",
-                    "SHOW_ADDITIONAL" => "N",
-                    "SHOW_ANSWER_VALUE" => "N",
-                    "SHOW_EDIT_PAGE" => "N",
-                    "SHOW_LIST_PAGE" => "N",
-                    "SHOW_STATUS" => "N",
-                    "SHOW_VIEW_PAGE" => "N",
-                    "START_PAGE" => "new",
-                    "SUCCESS_URL" => "index.php",
-                    "USE_EXTENDED_ERRORS" => "N",
-                    "VARIABLE_ALIASES" => array("action" => "action",),
-                    "WEB_FORM_ID" => "15"
-                )
-            ); ?>
-            <div data-close-form2=""></div>
-        </div>
+<!--        <div class="popUp" data-call-back-form="" hidden>-->
+<!--            --><?// /*$APPLICATION->IncludeComponent(
+//                "bitrix:form",
+//                "av-steel-call-back",
+//                Array(
+//                    "AJAX_MODE" => "Y",
+//                    "AJAX_OPTION_ADDITIONAL" => "",
+//                    "AJAX_OPTION_HISTORY" => "N",
+//                    "AJAX_OPTION_JUMP" => "N",
+//                    "AJAX_OPTION_SHADOW" => "N",
+//                    "AJAX_OPTION_STYLE" => "N",
+//                    "CACHE_TIME" => "3600",
+//                    "CACHE_TYPE" => "N",
+//                    "CHAIN_ITEM_LINK" => "",
+//                    "CHAIN_ITEM_TEXT" => "",
+//                    "COMPONENT_TEMPLATE" => "av-steel",
+//                    "COMPOSITE_FRAME_MODE" => "A",
+//                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+//                    "EDIT_ADDITIONAL" => "N",
+//                    "EDIT_STATUS" => "Y",
+//                    "IGNORE_CUSTOM_TEMPLATE" => "N",
+//                    "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
+//                    "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
+//                    "RESULT_ID" => $_REQUEST[RESULT_ID],
+//                    "SEF_MODE" => "N",
+//                    "SHOW_ADDITIONAL" => "N",
+//                    "SHOW_ANSWER_VALUE" => "N",
+//                    "SHOW_EDIT_PAGE" => "N",
+//                    "SHOW_LIST_PAGE" => "N",
+//                    "SHOW_STATUS" => "N",
+//                    "SHOW_VIEW_PAGE" => "N",
+//                    "START_PAGE" => "new",
+//                    "SUCCESS_URL" => "index.php",
+//                    "USE_EXTENDED_ERRORS" => "N",
+//                    "VARIABLE_ALIASES" => array("action" => "action",),
+//                    "WEB_FORM_ID" => "15"
+//                )
+//            ); */?>
+<!--            <div data-close-form2=""></div>-->
+<!--        </div>-->
 
         <div class="popUp make-diler-form" data-partners-form="">
-            <? $APPLICATION->IncludeComponent(
-                "bitrix:form",
-                "av-steel-partners-form",
-                Array(
-                    "AJAX_MODE" => "Y",
-                    "AJAX_OPTION_ADDITIONAL" => "",
-                    "AJAX_OPTION_HISTORY" => "N",
-                    "AJAX_OPTION_JUMP" => "N",
-                    "AJAX_OPTION_SHADOW" => "N",
-                    "AJAX_OPTION_STYLE" => "N",
-                    "CACHE_TIME" => "3600",
-                    "CACHE_TYPE" => "N",
-                    "CHAIN_ITEM_LINK" => "",
-                    "CHAIN_ITEM_TEXT" => "",
-                    "COMPONENT_TEMPLATE" => "av-steel",
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    "EDIT_ADDITIONAL" => "N",
-                    "EDIT_STATUS" => "Y",
-                    "IGNORE_CUSTOM_TEMPLATE" => "N",
-                    "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
-                    "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
-                    "RESULT_ID" => $_REQUEST[RESULT_ID],
-                    "SEF_MODE" => "N",
-                    "SHOW_ADDITIONAL" => "N",
-                    "SHOW_ANSWER_VALUE" => "N",
-                    "SHOW_EDIT_PAGE" => "N",
-                    "SHOW_LIST_PAGE" => "N",
-                    "SHOW_STATUS" => "N",
-                    "SHOW_VIEW_PAGE" => "N",
-                    "START_PAGE" => "new",
-                    "SUCCESS_URL" => "index.php",
-                    "USE_EXTENDED_ERRORS" => "N",
-                    "VARIABLE_ALIASES" => array("action" => "action",),
-                    "WEB_FORM_ID" => "60"
-                )
-            ); ?>
+            <div class="formsInclude clearfix">
+                <div class="text-uppercase text-center title-form-1">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/formPartnerHeader.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PARTNER_HEADER'),
+                            "MODE"  => "text"
+                        )
+                    );?>
+                </div>
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/formPartner.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PARTNER'),
+                        "MODE"  => "php"
+                    )
+                );?>
             <div data-close-form2=""></div>
+            </div>
         </div>
+    <!------------------------------->
+    <div id="make-done-form" class = "hide-content">
+        <!--ТРУБЫ КВАДРАТНЫЕ -->
+        <div id = "tube-squere">
+            <div class="make-done-top tube-popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/tubeSquere.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+            <div class="product-table-data popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/ourProductPopup.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+        </div>
+        <!-- ТРУБЫ ПРЯМОУГЛЬНЫЕ -->
+        <div id = "tube-rectangular">
+            <div class="make-done-top tube-popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/tubePr.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+            <div class="product-table-data popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/ourProdPopupPr.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+        </div>
+        <!-- ТРУБЫ КРУГЛЫЕ -->
+        <div id = "tube-circle">
+            <div class="make-done-top tube-popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/tubeCircle.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+            <div class="product-table-data popup-squere">
+                <?$APPLICATION->IncludeFile(
+                    "/".LANGUAGE_ID."/include/ourProdPopupCircle.php",
+                    Array(),
+                    Array(
+                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'),
+                        "MODE"  => "text"
+                    )
+                );?>
+            </div>
+        </div>
+    </div>
+    <!------------------------------->
         <!-- ТРУБЫ КВАДРАТНЫЕ -->
-        <div class="popUp make-done-form av-alert-popup" data-catalog-order="">
-            <div class="make-done-top">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/tubeSquere.php"
-                    )
-                ); ?>
-            </div>
+
+        <div class="popUp make-done-form" data-catalog-order="">
+            <div class="make-done-top tube-popup-squere" id="av-pipe-tube-popup-header"></div>
             <div class="make-done-md">
                 <div class="col-md-7">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/ourProductPopup.php"
-                        )
-                    ); ?>
+                    <div class="our-product">
+                        <div class="">
+                            <div class="product-table-data popup-squere" id="av-pipe-tube-popup-table"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-5 right-form-to">
-                    <h3 class="right-form-title">ЗАЛИШТЕ СВОЇ КОНТАКТНІ ДАНІ І МЕНЕДЖЕР УТОЧНИТЬ ЦІНУ ТОВАРУ</h3>
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:form",
-                        "av-steel-partners-form",
-                        Array(
-                            "AJAX_MODE" => "Y",
-                            "AJAX_OPTION_ADDITIONAL" => "",
-                            "AJAX_OPTION_HISTORY" => "N",
-                            "AJAX_OPTION_JUMP" => "N",
-                            "AJAX_OPTION_SHADOW" => "N",
-                            "AJAX_OPTION_STYLE" => "N",
-                            "CACHE_TIME" => "3600",
-                            "CACHE_TYPE" => "N",
-                            "CHAIN_ITEM_LINK" => "",
-                            "CHAIN_ITEM_TEXT" => "",
-                            "COMPONENT_TEMPLATE" => "av-steel",
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            "EDIT_ADDITIONAL" => "N",
-                            "EDIT_STATUS" => "Y",
-                            "IGNORE_CUSTOM_TEMPLATE" => "N",
-                            "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
-                            "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
-                            "RESULT_ID" => $_REQUEST[RESULT_ID],
-                            "SEF_MODE" => "N",
-                            "SHOW_ADDITIONAL" => "N",
-                            "SHOW_ANSWER_VALUE" => "N",
-                            "SHOW_EDIT_PAGE" => "N",
-                            "SHOW_LIST_PAGE" => "N",
-                            "SHOW_STATUS" => "N",
-                            "SHOW_VIEW_PAGE" => "N",
-                            "START_PAGE" => "new",
-                            "SUCCESS_URL" => "index.php",
-                            "USE_EXTENDED_ERRORS" => "N",
-                            "VARIABLE_ALIASES" => array("action" => "action",),
-                            "WEB_FORM_ID" => "61"
-                        )
-                    ); ?>
+                    <h3 class="right-form-title"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_FORM_TITLE')?></h3>
+                    <div class="formsInclude" id = "av-pipe-tube-popup-formsInclude">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/formProfnastil.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PROFNASTIL'),
+                                "MODE"  => "php"
+                            )
+                        );?>
+                    </div>
                 </div>
             </div>
 
             <div data-close-form2=""></div>
         </div>
-        <!--  ТРУБЫ ПРЯМОУГЛЬНЫЕ  -->
-        <div class="popUp make-done-form-sq av-alert-popup" data-catalog-order="">
-            <div class="make-done-top">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/tubePr.php"
-                    )
-                ); ?>
-            </div>
-            <div class="make-done-md">
-                <div class="col-md-7">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/ourProdPopupPr.php"
-                        )
-                    ); ?>
-                </div>
-                <div class="col-md-5 right-form-to">
-                    <h3 class="right-form-title">ЗАЛИШТЕ СВОЇ КОНТАКТНІ ДАНІ І МЕНЕДЖЕР УТОЧНИТЬ ЦІНУ ТОВАРУ</h3>
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:form",
-                        "av-steel-partners-form",
-                        Array(
-                            "AJAX_MODE" => "Y",
-                            "AJAX_OPTION_ADDITIONAL" => "",
-                            "AJAX_OPTION_HISTORY" => "N",
-                            "AJAX_OPTION_JUMP" => "N",
-                            "AJAX_OPTION_SHADOW" => "N",
-                            "AJAX_OPTION_STYLE" => "N",
-                            "CACHE_TIME" => "3600",
-                            "CACHE_TYPE" => "N",
-                            "CHAIN_ITEM_LINK" => "",
-                            "CHAIN_ITEM_TEXT" => "",
-                            "COMPONENT_TEMPLATE" => "av-steel",
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            "EDIT_ADDITIONAL" => "N",
-                            "EDIT_STATUS" => "Y",
-                            "IGNORE_CUSTOM_TEMPLATE" => "N",
-                            "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
-                            "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
-                            "RESULT_ID" => $_REQUEST[RESULT_ID],
-                            "SEF_MODE" => "N",
-                            "SHOW_ADDITIONAL" => "N",
-                            "SHOW_ANSWER_VALUE" => "N",
-                            "SHOW_EDIT_PAGE" => "N",
-                            "SHOW_LIST_PAGE" => "N",
-                            "SHOW_STATUS" => "N",
-                            "SHOW_VIEW_PAGE" => "N",
-                            "START_PAGE" => "new",
-                            "SUCCESS_URL" => "index.php",
-                            "USE_EXTENDED_ERRORS" => "N",
-                            "VARIABLE_ALIASES" => array("action" => "action",),
-                            "WEB_FORM_ID" => "61"
-                        )
-                    ); ?>
-                </div>
-            </div>
-
-            <div data-close-form2=""></div>
-        </div>
-
-        <!--  ТРУБЫ КРУГЛЫЕ  -->
-        <div class="popUp make-done-form-circle av-alert-popup" data-catalog-order="">
-            <div class="make-done-top">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/tubeCircle.php"
-                    )
-                ); ?>
-            </div>
-            <div class="make-done-md">
-                <div class="col-md-7">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/ourProdPopupCircle.php"
-                        )
-                    ); ?>
-                </div>
-                <div class="col-md-5 right-form-to">
-                    <h3 class="right-form-title">ЗАЛИШТЕ СВОЇ КОНТАКТНІ ДАНІ І МЕНЕДЖЕР УТОЧНИТЬ ЦІНУ ТОВАРУ</h3>
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:form",
-                        "av-steel-partners-form",
-                        Array(
-                            "AJAX_MODE" => "Y",
-                            "AJAX_OPTION_ADDITIONAL" => "",
-                            "AJAX_OPTION_HISTORY" => "N",
-                            "AJAX_OPTION_JUMP" => "N",
-                            "AJAX_OPTION_SHADOW" => "N",
-                            "AJAX_OPTION_STYLE" => "N",
-                            "CACHE_TIME" => "3600",
-                            "CACHE_TYPE" => "N",
-                            "CHAIN_ITEM_LINK" => "",
-                            "CHAIN_ITEM_TEXT" => "",
-                            "COMPONENT_TEMPLATE" => "av-steel",
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            "EDIT_ADDITIONAL" => "N",
-                            "EDIT_STATUS" => "Y",
-                            "IGNORE_CUSTOM_TEMPLATE" => "N",
-                            "NOT_SHOW_FILTER" => array(0 => "", 1 => "",),
-                            "NOT_SHOW_TABLE" => array(0 => "", 1 => "",),
-                            "RESULT_ID" => $_REQUEST[RESULT_ID],
-                            "SEF_MODE" => "N",
-                            "SHOW_ADDITIONAL" => "N",
-                            "SHOW_ANSWER_VALUE" => "N",
-                            "SHOW_EDIT_PAGE" => "N",
-                            "SHOW_LIST_PAGE" => "N",
-                            "SHOW_STATUS" => "N",
-                            "SHOW_VIEW_PAGE" => "N",
-                            "START_PAGE" => "new",
-                            "SUCCESS_URL" => "index.php",
-                            "USE_EXTENDED_ERRORS" => "N",
-                            "VARIABLE_ALIASES" => array("action" => "action",),
-                            "WEB_FORM_ID" => "61"
-                        )
-                    ); ?>
-                </div>
-            </div>
-
-            <div data-close-form2=""></div>
-        </div>
+<!--        <!--  ТРУБЫ ПРЯМОУГЛЬНЫЕ  -->
+<!--        <div class="popUp make-done-form-sq" data-catalog-order="">-->
+<!--            <div class="make-done-top tube-popup-squere"></div>-->
+<!--            <div class="make-done-md">-->
+<!--                <div class="col-md-7">-->
+<!--                    <div class="our-product">-->
+<!--                        <div class="">-->
+<!--                            <div class="product-table-data popup-squere">-->
+<!--                                --><?//$APPLICATION->IncludeFile(
+//                                    "/".LANGUAGE_ID."/include/ourProdPopupPr.php",
+//                                    Array(),
+//                                    Array(
+//                                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'),
+//                                        "MODE"  => "text"
+//                                    )
+//                                );?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-5 right-form-to">-->
+<!--                    <h3 class="right-form-title">--><?//=Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_FORM_TITLE')?><!--</h3>-->
+<!--                    <div class="formsInclude" id="formProfnastilTube2" data-form-id="--><?//=Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PROFNASTIL')?><!--">-->
+<!--                        --><?///*$APPLICATION->IncludeFile(
+//                            "/".LANGUAGE_ID."/include/formProfnastil.php",
+//                            Array(),
+//                            Array(
+//                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PROFNASTIL'),
+//                                "MODE"  => "php"
+//                            )
+//                        );*/?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--            <div data-close-form2=""></div>-->
+<!--        </div>-->
+<!---->
+<!--        <!--  ТРУБЫ КРУГЛЫЕ  -->
+<!--        <div class="popUp make-done-form-circle" data-catalog-order="">-->
+<!--            <div class="make-done-top tube-popup-squere"></div>-->
+<!--            <div class="make-done-md">-->
+<!--                <div class="col-md-7">-->
+<!--                    <div class="our-product">-->
+<!--                        <div class="">-->
+<!--                            <div class="product-table-data popup-squere">-->
+<!--                                --><?//$APPLICATION->IncludeFile(
+//                                    "/".LANGUAGE_ID."/include/ourProdPopupCircle.php",
+//                                    Array(),
+//                                    Array(
+//                                        "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_TABLE'),
+//                                        "MODE"  => "text"
+//                                    )
+//                                );?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-5 right-form-to">-->
+<!--                    <h3 class="right-form-title">--><?//=Loc::getMessage('PIPE_INCLUDE_AREA_TUBE_SQUERE_FORM_TITLE')?><!--</h3>-->
+<!--                    <div class="formsInclude" id="formProfnastilTube3" data-form-id="--><?//=Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PROFNASTIL')?><!--">-->
+<!--                        --><?///*$APPLICATION->IncludeFile(
+//                            "/".LANGUAGE_ID."/include/formProfnastil.php",
+//                            Array(),
+//                            Array(
+//                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_PROFNASTIL'),
+//                                "MODE"  => "php"
+//                            )
+//                        );*/?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--            <div data-close-form2=""></div>-->
+<!--        </div>-->
 
         <div id="bg-img-1">
             <div class="main-menu-fixed">
@@ -561,80 +479,27 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                                     false
                             );?>
                         </div>
-                        <div class="av-pipe-navigation-menu-lang">
-                            <?$APPLICATION->IncludeComponent(
-                                    "bitrix:main.site.selector",
-                                    "pipe",
-                                    array(
-                                        "SITE_LIST" => array(
-                                            0 => "*all*",
-                                        ),
-                                        "PIPE_SYTE_SELECTOR_DOMAIN" => "pipe.avmg.com.ua",
-                                        "COMPONENT_TEMPLATE" => "pipe",
-                                        "CACHE_TYPE" => "A",
-                                        "CACHE_TIME" => "3600"
-                                    ),
-                                    false
-                                );?>
-                        </div>
+                    </div>
+                </div>
+                <div class="av-pipe-navigation-menu-lang-inner">
+                    <div class="av-pipe-navigation-menu-lang">
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.site.selector",
+                            "pipe",
+                            array(
+                                "SITE_LIST" => array(
+                                    0 => "*all*",
+                                ),
+                                "PIPE_SYTE_SELECTOR_DOMAIN" => "pipe.avmg.com.ua",
+                                "COMPONENT_TEMPLATE" => "pipe",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600"
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
             </div>
-            <!--Нужно-->
-            <div class="container" style="display: none">
-                <div class="col-md-12 text-center" data-circle-1="" data-circle-first>
-                    <br>
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        Array(
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => "/include/weAreBest.php"
-                        )
-                    ); ?>
-
-                    <br>
-                    <div class="col-md-6">
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-uppercase make-to">
-                            <div class="hidden-xs " data-circle-1-img-1="">
-                            </div>
-                            <p>
-                                <span data-red-text="">3</span> года
-                                <br> успешной работы
-                            </p>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-uppercase make-to">
-                            <div class="hidden-xs" data-circle-1-img-2="">
-                            </div>
-                            <p>
-                                <span data-red-text="">40 000</span>
-                                <br> заказов
-                            </p>
-                        </div>
-                    </div>
-                    <br class="hidden-lg hidden-md">
-                    <div class="col-md-6">
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-uppercase make-to">
-                            <div class="hidden-xs" data-circle-1-img-3="">
-                            </div>
-                            <p>
-                                <span data-red-text="">12 000 000</span> м<sup>2</sup>
-                                <br> кровли
-                            </p>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-uppercase make-to">
-                            <div class="hidden-xs" data-circle-1-img-4="">
-                            </div>
-                            <p>
-                                До <span data-red-text="">35</span> лет
-                                <br> срок службы
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/Нужно-->
 
             <div class="container top-main-logo">
                 <div class="col-md-12" data-main-logo="">
@@ -812,7 +677,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                             );?>
                                         </div>
                                     </div>
-                                    <button class="more-btn1"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                                    <button id="more-btn1" class="more-btn1"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
                             </div>
                             <div class="col-sm-12 col-md-4">
                                 <div class="pipe-goods-img">
@@ -867,7 +732,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                             );?>
                                         </div>
                                     </div>
-                                    <button class="more-btn2"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                                    <button id="more-btn2" class="more-btn2"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
                             </div>
                             <div class="col-sm-12 col-md-4">
                                 <div class="pipe-goods-img">
@@ -922,7 +787,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                                 );?>
                                             </div>
                                         </div>
-                                        <button class="more-btn3"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
+                                        <button id="more-btn3" class="more-btn3"><?=Loc::getMessage('PIPE_INCLUDE_AREA_TOOLTIP_OUR_PRODUCTS_TABLE_BUTTON')?></button>
                                     </div>
                                 </div>
                             </div>
@@ -989,12 +854,12 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                     5 => "",
                 ),
                 "IMAGE_URL" => array(
-                    0 => "/upload/pipe_image_carousel/baner_1.jpg",
-                    1 => "/upload/pipe_image_carousel/baner_2.jpg",
-                    2 => "/upload/pipe_image_carousel/baner_3.jpg",
-                    3 => "/upload/pipe_image_carousel/baner_4.jpg",
-                    4 => "/upload/pipe_image_carousel/baner_5.jpg",
-                    5 => "/upload/pipe_image_carousel/baner_6.jpg",
+                    0 => "/upload/pipe_image_carousel/1.jpg",
+                    1 => "/upload/pipe_image_carousel/2.jpg",
+                    2 => "/upload/pipe_image_carousel/3.jpg",
+                    3 => "/upload/pipe_image_carousel/4.jpg",
+                    4 => "/upload/pipe_image_carousel/5.jpg",
+                    5 => "/upload/pipe_image_carousel/6.jpg",
                 )
             ),
             false
@@ -1072,55 +937,30 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                 </div>
             </div>
         </div>
-        <div class="col-lg-12 col-md-12" id="order-now-wrap">
+        <div class="col-lg-12 col-md-12 partners-wrap" id="order-now-wrap">
             <div class="container">
+                <div class="title-form-1 text-uppercase text-center">
+                    <?$APPLICATION->IncludeFile(
+                        "/".LANGUAGE_ID."/include/formQuickHeader.php",
+                        Array(),
+                        Array(
+                            "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_QUICK_HEADER'),
+                            "MODE"  => "text"
+                        )
+                    );?>
+                </div>
                 <div class="col-md-12 col-sm-12 ">
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:form",
-                        "av-steel-form-order-now",
-                        array(
-                            "AJAX_MODE" => "Y",
-                            "AJAX_OPTION_ADDITIONAL" => "",
-                            "AJAX_OPTION_HISTORY" => "N",
-                            "AJAX_OPTION_JUMP" => "N",
-                            "AJAX_OPTION_SHADOW" => "N",
-                            "AJAX_OPTION_STYLE" => "Y",
-                            "CACHE_TIME" => "3600",
-                            "CACHE_TYPE" => "N",
-                            "CHAIN_ITEM_LINK" => "",
-                            "CHAIN_ITEM_TEXT" => "",
-                            "COMPONENT_TEMPLATE" => "av-steel-form-order-now",
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            "EDIT_ADDITIONAL" => "N",
-                            "EDIT_STATUS" => "N",
-                            "IGNORE_CUSTOM_TEMPLATE" => "N",
-                            "NOT_SHOW_FILTER" => array(
-                                0 => "",
-                                1 => "",
-                            ),
-                            "NOT_SHOW_TABLE" => array(
-                                0 => "",
-                                1 => "",
-                            ),
-                            "RESULT_ID" => $_REQUEST[RESULT_ID],
-                            "SEF_MODE" => "N",
-                            "SHOW_ADDITIONAL" => "N",
-                            "SHOW_ANSWER_VALUE" => "N",
-                            "SHOW_EDIT_PAGE" => "N",
-                            "SHOW_LIST_PAGE" => "N",
-                            "SHOW_STATUS" => "N",
-                            "SHOW_VIEW_PAGE" => "N",
-                            "START_PAGE" => "new",
-                            "SUCCESS_URL" => "index.php",
-                            "USE_EXTENDED_ERRORS" => "N",
-                            "WEB_FORM_ID" => "62",
-                            "VARIABLE_ALIASES" => array(
-                                "action" => "action",
+                    <div class="formsInclude">
+                        <?$APPLICATION->IncludeFile(
+                            "/".LANGUAGE_ID."/include/formQuick.php",
+                            Array(),
+                            Array(
+                                "NAME" => Loc::getMessage('PIPE_INCLUDE_AREA_FORM_QUICK'),
+                                "MODE"  => "php"
                             )
-                        ),
-                        false
-                    ); ?>
+                        );?>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1302,8 +1142,8 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         </div>
         <div class="container">
             <div id="map-wrap" class="map-wrap clearfix">
-                <a id="contacts"></a>
                 <div class="col-md-12 made-prof-tube main-title-other indent-left main-txt tube-made-bot-txt">
+                    <a id="contacts"></a>
                     <br>
                     <?$APPLICATION->IncludeFile(
                         "/".LANGUAGE_ID."/include/mapText.php",
@@ -1477,3 +1317,4 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
 //                    h.parentNode.insertBefore(s, h);
 //                 })(window, document, 'https://corp.avmg.com.ua/upload/crm/site_button/loader_3_hi9pyn.js');
              </script>
+        <?endif;?>

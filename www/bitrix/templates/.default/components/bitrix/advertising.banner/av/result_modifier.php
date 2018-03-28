@@ -3,9 +3,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 $arResult["BANNERS_INFO"] = [];
 $bannersHtml              = mb_convert_encoding($arResult["BANNER"], "HTML-ENTITIES", "UTF-8");
-$bannersDomObject         = $bannersHtml           ? DOMDocument::loadHTML($bannersHtml)                                           : false;
-$bannersDomXPathObject    = $bannersDomObject      ? new DOMXPath($bannersDomObject)                                               : false;
-$bannersQuery             = $bannersDomXPathObject ? $bannersDomXPathObject->query("//*[contains(@class,\"bx-slider-preset-1\")]") : false;
+$bannersDomObject         = $bannersHtml           ? DOMDocument::loadHTML($bannersHtml)                                         : false;
+$bannersDomXPathObject    = $bannersDomObject      ? new DOMXPath($bannersDomObject)                                             : false;
+$bannersQuery             = $bannersDomXPathObject ? $bannersDomXPathObject->query("//*[contains(@class,\"bx-slider-preset\")]") : false;
 
 if($bannersQuery)
 	foreach($bannersQuery as $domElementObject)

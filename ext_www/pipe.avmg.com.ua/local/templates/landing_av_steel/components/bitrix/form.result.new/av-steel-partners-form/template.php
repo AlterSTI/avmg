@@ -5,7 +5,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 
 <?if($arResult["isFormNote"] == "Y"):?>
 	<div id="form-anwer123" hidden>
-		<span id="popUp-text-fromForm" back-url >
+		<span id="popUp-text-fromForm" back-url= >
 			<br><span><?=Loc::getMessage('AV_FORM_THANKS')?></span><br>
 		</span>
 	</div>

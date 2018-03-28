@@ -2,7 +2,7 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 if (empty($arResult)) return;
 ?>
-<ul id="mobile-menu" class="av-pipe-horizontal-main-menu-footer">
+<ul id="mobile-menu">
     <?
         if(!isset($arParams['MAX_LEVEL']) || empty($arParams['MAX_LEVEL']) || $arParams['MAX_LEVEL'] == 1) {
             require_once('levels/level1.php');

@@ -1,0 +1,99 @@
+.av-form-result-ok     {color: #B6C0C6;margin-top: 10px;text-align: center}
+.av-form .errors-block {color: #CC0000;margin-bottom: 10px}
+.av-form .buttons-row  {margin-top: 26px}
+
+.av-pipe-quick-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.av-pipe-quick-form .quick-inner {
+    background-color: #fff;
+    box-shadow: 5px 9px 10px 0px rgba(0, 0, 0, 0.5);
+    width: calc(100% / 3);
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 290px;
+    text-align: left;
+    border-radius: 4px;
+    padding: 7px 5px;
+}
+
+.av-pipe-quick-form .quick-inner .av-form-styled-input,
+.av-pipe-quick-form .quick-inner .av-form-styled-phone {
+    border-bottom: none;
+}
+
+.av-pipe-quick-form .av-form-styled-input.placeholder-on,
+.av-pipe-quick-form .av-form-styled-input.placeholder-off,
+.av-pipe-quick-form .av-form-styled-phone.placeholder-on,
+.av-pipe-quick-form .av-form-styled-phone.placeholder-off {
+    margin-top: 0;
+}
+
+.av-pipe-quick-form .av-form-styled-input.placeholder-on label,
+.av-pipe-quick-form .av-form-styled-phone.placeholder-on label {
+    color: #8e8e8e;
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+
+.av-pipe-quick-form .av-form-styled-input.placeholder-off label,
+.av-pipe-quick-form .av-form-styled-phone.placeholder-off label {
+    color: #fff;
+    font-size: 15px;
+}
+
+.av-pipe-quick-form .quick-inner .av-form-styled-input input:focus,
+.av-pipe-quick-form .quick-inner .av-form-styled-phone input:focus,
+.quick-btn .av-form-button:focus {
+    outline: none;
+}
+
+.av-pipe-quick-form .quick-inner .av-form-styled-input input,
+.av-pipe-quick-form .quick-inner .av-form-styled-phone input {
+    font-size: 16px;
+}
+
+.quick-btn {
+    display: inline-block;
+    border: 2px solid #fff;
+    background-color:  rgba(255, 255, 255, 0);
+    box-shadow: 5px 9px 10px 0px rgba(0, 0, 0, 0.5);
+    max-width: 200px;
+    width: 100%;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.quick-btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.quick-btn .av-form-button {
+    background-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    font-size: 18px;
+    padding: 6px;
+    width: 100%;
+}
+
+.quick-btn .av-form-button:hover {
+    box-shadow: none;
+}
+
+.av-pipe-quick-form-ok {
+    text-align: center;
+    color: #56a919;
+    font-size: 18px;
+}
+
+.av-pipe-quick-form .errors-block {
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: red;
+}

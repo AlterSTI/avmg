@@ -1,0 +1,1 @@
+The whole standard range is included in the GOST. Flexibility of production. We have collected for you the optimal assortment - big enough to choose exactly what you need.

@@ -2,7 +2,7 @@
 use
 	\Bitrix\Main\Page\Asset,
 	\Bitrix\Main\Localization\Loc;
-
+//pre($arResult);
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /* -------------------------------------------------------------------- */
 /* -------------------------- naked markup ---------------------------- */
@@ -28,7 +28,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		<div class="left-col">
 			<?=$arResult["FILTER_HTML"]?>
 
-			<?=$arResult["MENU_HTML"]?>
+			<?/*=$arResult["MENU_HTML"]*/?>
 
 			<?if($arParams["SHOW_INCLUDE_AREA_SECTION"] == "Y"):?>
 			<?$APPLICATION->IncludeComponent("bitrix:main.include", "", ["AREA_FILE_SHOW" => "sect"])?>
