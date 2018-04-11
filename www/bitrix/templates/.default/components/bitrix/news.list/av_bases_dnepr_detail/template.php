@@ -6,17 +6,17 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /* ------------------------------ pager ------------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
-<?if($arParams["DISPLAY_TOP_PAGER"] && $arResult["NAV_STRING"]):?>
+<?if($arParams["DISPLAY_TOP_PAGER"] && $arResult["NAV_STRING"]){?>
 <div class="av-bases-list-pager top"><?=$arResult["NAV_STRING"]?></div>
-<?endif?>
+<?}?>
 <?
 /* -------------------------------------------------------------------- */
 /* ---------------------------- empty list ---------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
-<?if(!count($arResult["ITEMS"])):?>
+<?if(!count($arResult["ITEMS"])){?>
 <?=Loc::getMessage("AV_BASES_LIST_NO_ITEMS")?>
-<?endif?>
+<?}?>
 
 
 <?
@@ -24,7 +24,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /* ------------------------------ list ------------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
-<?foreach ($arResult["ITEMS"] as $index => $coast):?>
+<?foreach ($arResult["ITEMS"] as $index => $coast){?>
     <div class="title-top mobile-title-side-dash">
         <?if ($index === 'RIGHT_COAST'):?>
             <h2>Правый берег</h2>
@@ -34,12 +34,12 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     </div>
     <div class="container">
         <div class="row">
-            <?foreach($coast as $arItem):?>
+            <?foreach($coast as $arItem){?>
                 <div class="banks-main-wrapper-box">
                     <div class="banks-main-inner">
                         <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 banks-first-contacts">
                             <h2><?=$arItem['NAME']?></h2>
-                            <address class="address-box">
+                            <address class="address-box address-banks-side">
                                 <div class="banks-main-contact-title">
                                     <h2>Контакты</h2>
                                 </div>
@@ -49,9 +49,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                                 </div>
                                 <div class="banks-main-address-box">
                                     <span>График работы</span>
-                                    <?foreach ($arItem['OPEN_HOURSES'] as $open_hours):?>
+                                    <?foreach ($arItem['OPEN_HOURSES'] as $open_hours){?>
                                         <span><?=$open_hours?></span>
-                                    <?endforeach;?>
+                                    <?}?>
                                 </div>
                                 <span class="banks-cord" data-cordinate-x = "<?=$arItem['cordinateX']?>"
                                                          data-cordinate-y = "<?=$arItem['cordinateY']?>"
@@ -76,31 +76,31 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     <div class="type-metall-block col-md-12">
                         <h2>Типы продукции металлобазы</h2>
                         <div class="type-metall-wrap">
-                        <?foreach ($arItem['STREAMS'] as $baseStream):?>
+                        <?foreach ($arItem['STREAMS'] as $baseStream){?>
                             <div class="type-metall-inner col-md-6 col-lg-3">
                                 <div class="type-metall-info">
                                     <img src="<?=$baseStream['ICON']?>" width="51" height="53" alt="<?=$baseStream['NAME']?>">
                                     <div class="type-metall-data">
                                         <span><?=$baseStream['NAME']?></span>
-                                        <?foreach ($baseStream['PHONES'] as $key => $phoneNumber):?>
+                                        <?foreach ($baseStream['PHONES'] as $key => $phoneNumber){?>
                                             <a href="tel:<?=$baseStream['PHONES_NUMBER'][$key]?>"><?=$phoneNumber?></a>
-                                        <?endforeach;?>
+                                        <?}?>
                                     </div>
                                 </div>
                                 <div class="btn-save-price">
-                                    <?if($baseStream['PRICE'] != ''):?>
+                                    <?if($baseStream['PRICE'] != ''){?>
                                         <button data-price-stream="<?=$baseStream['PRICE']?>">Скачать прайс</button>
-                                    <?endif;?>
+                                    <?}?>
                                 </div>
                             </div>
-                        <?endforeach;?>
+                        <?}?>
                         </div>
                     </div>
                 </div>
-            <?endforeach?>
+            <?}?>
         </div>
     </div>
-<?endforeach?>
+<?}?>
 
 
 

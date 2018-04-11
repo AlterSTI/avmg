@@ -440,6 +440,7 @@ p {
 
 .banks-main-inner .bank-map-data:last-child img {
     min-height: 200px;
+    max-height: 200px;
 }
 
 .banks-cord {
@@ -624,7 +625,7 @@ p {
         display: none;
     }
 
-    .address-box.lololo .banks-main-address-box:nth-child(3) {
+    .address-box.banks-side-variant .banks-main-address-box:nth-child(3) {
         display: block;
     }
 

@@ -8,21 +8,19 @@ $(function() {
 	});
 
 	//Вторая выпадайка
-	$(".address-box").click(function(event) {
+	$(".address-banks-side").click(function(event) {
 		var e = event.target;
-        var rezult = $(e).parent().parent().toggleClass("lololo");
+        var rezult = $(e).parent().parent().toggleClass("banks-side-variant");
 
         $(this).each(function(){
-			if ($(this).hasClass("lololo") && $(this).parent().parent().children().hasClass("bank-map-data") && $(this).parent().parent().parent().children().hasClass("type-metall-block")) {
-				$(".lololo .banks-main-address-box:nth-child(3), .lololo .bank-map-data").fadeIn(500);
+			if ($(this).hasClass("banks-side-variant") && $(this).parent().parent().children().hasClass("bank-map-data") && $(this).parent().parent().parent().children().hasClass("type-metall-block")) {
+				$(".banks-side-variant .banks-main-address-box:nth-child(3), .banks-side-variant .bank-map-data").fadeIn(500);
                 $(this).parent().parent().parent().children().fadeIn(500);
 				$(this).parent().parent().children().fadeIn(500);
-                $(".lololo .address-more").addClass("rotate");
+                $(".banks-side-variant .address-more").addClass("rotate");
 			} else {
-                $(".lololo .banks-main-address-box:nth-child(3), .bank-map-data, .type-metall-block ").fadeOut(500);
+                $(".banks-side-variant .banks-main-address-box:nth-child(3), .bank-map-data, .type-metall-block ").fadeOut(500);
                 $(".address-more").removeClass("rotate");
-                // $(this).parent().parent().parent().children().fadeOut(500);
-                //$(this).parent().parent().children().fadeOut(500);
 			}
         });
 	});
