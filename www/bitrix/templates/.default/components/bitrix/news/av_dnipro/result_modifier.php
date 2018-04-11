@@ -4,7 +4,6 @@ use
 	\Bitrix\Iblock\InheritedProperty\SectionValues;
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
 $arParams["MARKUP_TYPE"] = in_array($arParams["MARKUP_TYPE"], ["STANDART", "TWO_COLUMNS"]) ? $arParams["MARKUP_TYPE"] : 'STANDART';
 
 $arResult["FILTER_HTML"]             = "";
@@ -94,6 +93,7 @@ if
 /* -------------------------------------------------------------------- */
 /* --------------------------- filter html ---------------------------- */
 /* -------------------------------------------------------------------- */
+/*
 if($pageType != "detail" && $arParams["USE_FILTER"] == "Y")
 	{
 	$emptyFilterUrl   = $urlTemplates["news"];
@@ -153,7 +153,7 @@ if($pageType != "detail" && $arParams["USE_FILTER"] == "Y")
 /* -------------------------------------------------------------------- */
 /* ---------------------------- menu html ----------------------------- */
 /* -------------------------------------------------------------------- */
-if($pageType != "detail" && $arParams["SHOW_LEFT_MENU"] == "Y")
+/*if($pageType != "detail" && $arParams["SHOW_LEFT_MENU"] == "Y")
 	{
 	ob_start();
 		$APPLICATION->IncludeComponent
@@ -178,12 +178,13 @@ if($pageType != "detail" && $arParams["SHOW_LEFT_MENU"] == "Y")
 /* -------------------------------------------------------------------- */
 /* ---------------------------- list html ----------------------------- */
 /* -------------------------------------------------------------------- */
+
 if($pageType != 'detail')
 	{
 	ob_start();
 	$APPLICATION->IncludeComponent
 		(
-		"bitrix:news.list", $arParams["LIST_TEMPLATE"],
+		"bitrix:news.list", /*$arParams["LIST_TEMPLATE"]*/'av_bases_dnepr',
 			[
 			"AJAX_MODE"           => $arParams["AJAX_MODE"],
 			"AJAX_OPTION_JUMP"    => $arParams["AJAX_OPTION_JUMP"],
@@ -347,3 +348,5 @@ if($arParams["ADD_SUBSECTIONS_CHAIN"] == "Y" && $arParams["ADD_SECTIONS_CHAIN"] 
 				)
 			);
 	}
+
+	//pre($arResult);

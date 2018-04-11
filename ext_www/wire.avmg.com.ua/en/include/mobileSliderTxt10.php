@@ -1,0 +1,1 @@
+Delivery is carried out:

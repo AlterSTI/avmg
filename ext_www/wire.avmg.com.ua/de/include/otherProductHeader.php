@@ -1,1 +1,1 @@
-gmbh „ab metal group“ bietet den konsumenten auch die breite auswahl anderer erzeugnisse des Metall-Halbzeugs an
+gmbh „av metal group“ bietet den konsumenten auch die breite auswahl anderer erzeugnisse des Metall-Halbzeugs an

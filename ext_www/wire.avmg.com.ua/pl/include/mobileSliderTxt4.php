@@ -1,0 +1,1 @@
+Działka termiczna pozwala produkować 1000 ton produktów miesięcznie.

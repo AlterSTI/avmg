@@ -34,6 +34,10 @@
 .av-bases-list-pager.top    					 {margin-bottom: 52px}
 .av-bases-list-pager.bottom 					 {margin-top:    52px}
 .av-bases-list-element .google-map .gm-style-pbt {padding: 0 5px;text-align: center;font-size: 18px}
+#dnepr_bases_map{
+	min-height: 543px;
+	width: 100%;
+}
 /* -------------------------------------------------------------------- */
 /* ------------------------------ media ------------------------------- */
 /* -------------------------------------------------------------------- */

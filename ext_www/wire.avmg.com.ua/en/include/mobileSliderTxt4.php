@@ -1,0 +1,1 @@
+The thermal area allows to produce 1000 tons of products per month.

@@ -36,9 +36,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 <!--		</div>-->
 
 		<div class="right-col">
-            <?pre($arResult);?>
+            <?/*pre($arResult);*/?>
 			<?if($arResult["LIST_DESCRIPTION"]):?>
-				<?=$arResult["LIST_DESCRIPTION"]?>
+				<?/*=$arResult["LIST_DESCRIPTION"]*/?>
 
 				<?if($arResult["SHARING_HTML"]):?>
 				<div class="share-block">

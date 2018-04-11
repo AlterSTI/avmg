@@ -1,0 +1,1 @@
+Die Wärmezone lässt 1000 t der Erzeugnisse per Monat produzieren.

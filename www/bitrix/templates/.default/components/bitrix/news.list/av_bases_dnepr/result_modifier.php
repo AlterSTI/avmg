@@ -1,70 +1,165 @@
 <?
-use \Bitrix\Main\Application;
-
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-/* -------------------------------------------------------------------- */
-/* ------------------------- using subcatagory ------------------------ */
-/* -------------------------------------------------------------------- */
-if(substr_count($arParams["DETAIL_URL"], '#PARENT_SECTION_ID#') || substr_count($arParams["DETAIL_URL"], '#PARENT_SECTION_CODE#'))
-	foreach($arResult["ITEMS"] as $index => $elementInfo){
-		$queryList = CIBlockSection::GetList
-			(
-			    [],
-				[
-                    "IBLOCK_ID"   => $arParams["IBLOCK_ID"],
-                    "ACTIVE"      => 'Y',
-                    "DEPTH_LEVEL" => 1,
-                    "HAS_ELEMENT" => $elementInfo["ID"]
-				],
-			    false,
-                ["ID", "CODE"]
-			);
-		while($queryElement = $queryList->GetNext())
-			$arResult["ITEMS"][$index]["DETAIL_PAGE_URL"] =
-				str_replace
-					(
-					["#PARENT_SECTION_ID#", "#PARENT_SECTION_CODE#"],
-					[$queryElement["ID"], $queryElement["CODE"]],
-					$elementInfo["DETAIL_PAGE_URL"]
-					);
-		}
 
-/* -------------------------------------------------------------------- */
-/* ------------------------------ streams ----------------------------- */
-/* -------------------------------------------------------------------- */
-$arResult["STREAMS_INFO"] = [];
-if(in_array('streams', $arParams["PROPERTY_CODE"]))
-	{
-	$streamsIblockId = CIBlockProperty::GetList([], ["IBLOCK_ID" => $arParams["IBLOCK_ID"], "ACTIVE" => 'Y', "CODE" => 'streams'])->GetNext()["LINK_IBLOCK_ID"];
-	if($streamsIblockId)
-		{
-		$queryList = CIBlockElement::GetList(["SORT" => 'ASC'], ["IBLOCK_ID" => $streamsIblockId, "ACTIVE" => 'Y'], false, false, ["ID", "NAME", "PROPERTY_icon"]);
-		while($queryElement = $queryList->GetNext())
-			{
-			$iconInfo = CFile::GetByID($queryElement["PROPERTY_ICON_VALUE"])->Fetch();
-			$iconPath = explode('.', $iconInfo["ORIGINAL_NAME"])[1] == 'svg'
-				? '/upload/'.$iconInfo["SUBDIR"].'/'.$iconInfo["ORIGINAL_NAME"]
-				: $this->GetFolder().'/images/stream_default_icon.svg';
 
-			$svgContent    = file_get_contents(Application::getDocumentRoot().$iconPath);
-			$svgContentObj = simplexml_load_string($svgContent);
-			$svgWidth      = 0;
-			$svgHeight     = 35;
+/** ********************************************************************************************************************
+******************************************************variables*********************************************************
+***********************************************************************************************************************/
 
-			if($svgContentObj)
-				{
-				$svgViewboxParams = explode(' ', $svgContentObj->attributes()["viewBox"]);
-				$svgWidth         = $svgHeight*$svgViewboxParams[2]/$svgViewboxParams[3];
-				}
+$bases                      = 0;
+$resultUserIDs              = [];
+$basesIDs                   = [];
+$leftCoastIDs               = [];
+$rightCoastIDs              = [];
+$leftCoast                  = [];
+$rightCoast                 = [];
+$resultBasesOptions         = [];
+$resultUserFields           = [];
 
-			if($svgContent && $svgWidth && $svgHeight)
-				$arResult["STREAMS_INFO"][$queryElement["ID"]] =
-					[
-					"NAME"        => $queryElement["NAME"],
-					"SVG_CONTENT" => $svgContent,
-					"SVG_WIDTH"   => $svgWidth,
-					"SVG_HEIGHT"  => $svgHeight
-					];
-			}
-		}
-	}
+$iblockId                   = (int) $arParams['IBLOCK_ID'];
+$streamsInfoIblockId        = (int) $arParams['AV_BASES_STREAMS_INFO_IBLOCK'];
+$managerStreamsId           = (int) $arParams['AV_BASES_STREAMS_MANAGER_STREAM'];
+
+$alias                      = array_map(function ($val){return (string)$val;}, $arParams['AV_BASES_STREAMS_NAME_ALIAS']);
+$alias                      = array_diff($alias, ['']);
+
+$noDisplayItems             = array_map(function ($val){return (int)$val;}, $arParams['AV_BASES_STREAMS_NO_DISPLAY']);
+$noDisplayItems             = array_diff($noDisplayItems, [0]);
+
+
+$leftCoustItems             = array_map(function ($val){return (int)$val;}, $arParams['AV_BASES_STREAMS_LEFT_COAST']);
+$leftCoustItems             = array_diff($leftCoustItems, [0]);
+
+$rightCoustItems            = array_map(function ($val){return (int)$val;}, $arParams['AV_BASES_STREAMS_RIGHT_COAST']);
+$rightCoustItems            = array_diff($rightCoustItems, [0]);
+
+if( $iblockId                   <= 0 ||
+    $streamsInfoIblockId        <= 0 ||
+    $managerStreamsId           <= 0 ||
+    count($noDisplayItems)      <= 0 ||
+    count($leftCoustItems)      <= 0 ||
+    count($rightCoustItems)     <= 0 ||
+    count($alias)               <= 0
+) return;
+
+
+/** ********************************************************************************************************************
+ ******************************************************getBasesIDs******************************************************
+ ***********************************************************************************************************************/
+foreach ($arResult["ITEMS"] as $bases) {
+    if (array_search($bases['ID'],$noDisplayItems) !== false) continue;
+
+    if (array_search($bases['ID'], $leftCoustItems) !== false) {
+        $i = array_search($bases['ID'], $leftCoustItems);
+        $leftCoastIDs[$i] = $bases['ID'];
+
+        $leftCoast[$i]['BASE_ID'] = $bases['ID'];
+        $leftCoast[$i]['IBLOCK_ID']     = $bases['IBLOCK_ID'];
+        $leftCoast[$i]['cordinateX']    = $bases["PROPERTIES"]["cordinate_x"]["VALUE"];
+        $leftCoast[$i]['cordinateY']    = $bases["PROPERTIES"]["cordinate_y"]["VALUE"];
+        $leftCoast[$i]['OPEN_HOURSES']  = $bases["PROPERTIES"]['open_houres']['VALUE'];
+        $leftCoast[$i]['ADDRESS']       = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
+        if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
+            $leftCoast[$i]['NAME'] = $alias[$bases['ID']];
+        } else {
+            $leftCoast[$i]['NAME'] = $bases['NAME'];
+        }
+
+    } elseif (array_search($bases['ID'], $rightCoustItems) !== false) {
+        $i = array_search($bases['ID'], $rightCoustItems);
+        $rightCoastIDs[array_search($bases['ID'], $rightCoustItems)] = $bases['ID'];
+
+        $rightCoast[$i]['BASE_ID'] = $bases['ID'];
+        $rightCoast[$i]['IBLOCK_ID']    = $bases['IBLOCK_ID'];
+        $rightCoast[$i]['cordinateX']   = $bases["PROPERTIES"]["cordinate_x"]["VALUE"];
+        $rightCoast[$i]['cordinateY']   = $bases["PROPERTIES"]["cordinate_y"]["VALUE"];
+        $rightCoast[$i]['OPEN_HOURSES'] = $bases["PROPERTIES"]['open_houres']['VALUE'];
+        $rightCoast[$i]['ADDRESS']      = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
+        if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
+            $rightCoast[$i]['NAME'] = $alias[$bases['ID']];
+        } else {
+            $rightCoast[$i]['NAME'] = $bases['NAME'];
+        }
+    }
+}
+ksort($rightCoastIDs);
+ksort($leftCoastIDs);
+$basesIDs = array_merge($rightCoastIDs, $leftCoastIDs);
+
+//pre($basesIDs);
+
+/** ********************************************************************************************************************
+ ******************************************************getBasesInfo*****************************************************
+ ***********************************************************************************************************************/
+if (count($basesIDs) > 0) {
+    $res = CIBlockElement::GetList
+    (
+        ['SORT' => 'ASC'],
+        [
+            "IBLOCK_ID" => $streamsInfoIblockId,
+            "PROPERTY_BASE" => $basesIDs,
+            "PROPERTY_STREAM" => $managerStreamsId
+        ],
+        false,
+        false,
+        ["ID", "IBLOCK_ID", "NAME", "IBLOCK_SECTION_ID", "PROPERTY_MANAGER", "PROPERTY_PRICE", "PROPERTY_BASE"]
+    );
+
+    while ($ob = $res->Fetch()) {
+        $resultBasesOptions[$ob['PROPERTY_BASE_VALUE']] = $ob;
+        $resultUserIDs[$ob['PROPERTY_BASE_VALUE']] = $ob['PROPERTY_MANAGER_VALUE'][0];
+    }
+    //pre($resultBasesOptions);
+    //pre($resultUserIDs);
+}
+/** ********************************************************************************************************************
+ ******************************************************getUsersInfo*****************************************************
+ ***********************************************************************************************************************/
+if (count($resultUserIDs) > 0) {
+    $rsUsers = CUser::GetList(
+        $by = 'id',
+        $order = 'asc',
+        ['ID' => implode('|', $resultUserIDs)],
+        [
+            'FIELDS' => ['ID','NAME', 'LAST_NAME', 'WORK_PHONE']
+        ]
+    );
+    while ($obUsers = $rsUsers->Fetch()) {
+
+        $resultUserFields[$obUsers['ID']]['MANAGER_FIO']  = $obUsers['LAST_NAME'].' '.$obUsers['NAME'];
+        $resultUserFields[$obUsers['ID']]['WORK_PHONE'] = $obUsers['WORK_PHONE'];
+
+    }
+    //pre($resultUserFields);
+}
+/** ********************************************************************************************************************
+ ******************************************************collectResult*****************************************************
+ ***********************************************************************************************************************/
+if (count($resultUserFields) > 0){
+
+    foreach ($leftCoastIDs as $number => $id){
+        $leftCoast[$number] = array_merge($leftCoast[$number], $resultUserFields[$resultUserIDs[$id]]);
+        $leftCoast[$number]['PRICE'] = $resultBasesOptions[$id]['PROPERTY_PRICE_VALUE'];
+    }
+    foreach ($rightCoastIDs as $number => $id){
+        $rightCoast[$number] = array_merge($rightCoast[$number], $resultUserFields[$resultUserIDs[$id]]);
+        $rightCoast[$number]['PRICE'] = $resultBasesOptions[$id]['PROPERTY_PRICE_VALUE'];
+    }
+
+ksort($leftCoast);
+ksort($rightCoast);
+/*pre($leftCoast);
+pre($rightCoast);*/
+}
+
+
+/** ********************************************************************************************************************
+ ******************************************************form_$arResult['ITEMS']******************************************
+ ***********************************************************************************************************************/
+
+$arResult['ITEMS']                   = [];
+$arResult['ITEMS']['LEFT_COAST']     = $leftCoast;
+$arResult['ITEMS']['RIGHT_COAST']    = $rightCoast;
+$GLOBALS['AV_BASES_FILTER_DNEPR_IDS'] = $arResult['ITEMS'];
+
+//pre($arResult['ITEMS']);

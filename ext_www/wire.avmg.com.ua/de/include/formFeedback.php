@@ -8,7 +8,7 @@
         "AJAX_OPTION_HISTORY" => "N",
 
         "SEF_MODE"    => "N",
-        "WEB_FORM_ID" => 65,
+        "WEB_FORM_ID" => 82,
 
         "START_PAGE"     => "new",
         "SHOW_LIST_PAGE" => "N",

@@ -1,6 +1,6 @@
 <h2>KONTAKTE</h2>
 <ul>
-    <li><span><i>Dnipro, Scholom-Alejchem-Strasse, 5</i></span></li>
+    <li><span><i>Dnipro, 49000, Scholom-Alejchem-Strasse, 5</i></span></li>
     <li>
         <span>
             <div>
@@ -14,14 +14,14 @@
     <li>
         <span>
             <i>
-              <a href="mailto:provoloka@avmg.com.ua">provoloka@avmg.com.ua</a>
+              <a href="mailto:wire@avmg.com.ua">wire@avmg.com.ua</a>
             </i>
         </span>
     </li>
     <li>
         <span>
             <i>
-                <a href="https://shop.avmg.com.ua/" target="_blank">shop.avmg.com.ua</a>
+                <a href="https://avmg.com.ua/" target="_blank">avmg.com.ua</a>
             </i>
         </span>
     </li>

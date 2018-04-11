@@ -1,0 +1,1 @@
+<img src="/local/templates/landing_av_wire/images-wire-steel/tube-second-slider1.jpg" alt="">

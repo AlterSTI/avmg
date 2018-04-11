@@ -1,6 +1,6 @@
 <h2>NASZE KONTAKTY</h2>
 <ul>
-    <li><span><i>Dniepr, ul. Shalom Alejchema, 5</i></span></li>
+    <li><span><i>Dniepr, 49000, ul. Shalom Alejchema, 5</i></span></li>
     <li>
         <span>
             <div>
@@ -14,14 +14,14 @@
     <li>
         <span>
             <i>
-              <a href="mailto:provoloka@avmg.com.ua">provoloka@avmg.com.ua</a>
+              <a href="mailto:wire@avmg.com.ua">wire@avmg.com.ua</a>
             </i>
         </span>
     </li>
     <li>
         <span>
             <i>
-                <a href="https://shop.avmg.com.ua/" target="_blank">shop.avmg.com.ua</a>
+                <a href="https://avmg.com.ua/" target="_blank">avmg.com.ua</a>
             </i>
         </span>
     </li>
