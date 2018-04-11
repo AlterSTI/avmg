@@ -1,0 +1,2 @@
+<h3>rectangular PIPES</h3>
+<span>The profile rectangular pipe is made of high-quality carbon steel, grade S235JRH. Steel blank is subjected to additional processing by the method of cold deformation.</span>

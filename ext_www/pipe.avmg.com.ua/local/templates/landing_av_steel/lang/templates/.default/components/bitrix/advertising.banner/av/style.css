@@ -1,0 +1,164 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-banner h2
+	{
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin:  0;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ banner ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-banner
+	{
+	height: inherit;
+	min-height: 150px;
+	position: relative;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ slides ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-banner .item
+	{
+	overflow: hidden;
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	}
+.av-banner .item:not(.first) {display: none}
+
+.av-banner .item .link
+	{
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	z-index: 10;
+	}
+.av-banner .item .image
+	{
+	overflow: hidden;
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	}
+.av-banner .item .image img {width: 100%}
+
+.av-banner .item .video
+	{
+	position: relative;
+	padding-bottom: 56.25%;
+	}
+.av-banner .item .video iframe
+	{
+	position: absolute;
+	width:  100%;
+	height: 100%;
+	}
+
+.av-banner .item.first .text-block
+	{
+	max-width: 850px;
+	width: 100%;
+	top: 65px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	}
+
+.av-banner .item .text-block
+	{
+	align-items: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 65px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width:  600px;
+	height: calc(100% - 25% - 30px - 20px - 30px);
+	z-index: 30;
+	}
+.av-banner .item .text-block h2,
+.av-banner .item .text-block .text
+	{
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	text-shadow: 1px 1px 2px black, 0 0 1em #181818;
+	width: 100%;
+	}
+.av-banner .item .text-block h2
+	{
+	height:      50px;
+	font-size:   45px;
+	line-height: 45px;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	}
+.av-banner .item .text-block .text
+	{
+	font-size:   25px;
+	line-height: 25px;
+	max-height: calc(100% - 50px - 10px - 45px - 15px);
+	margin-bottom: 15px;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ pager ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-banner .pager
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 5%;
+	position: absolute;
+	bottom: 30px;
+	width: 90%;
+	z-index: 20;
+	}
+.av-banner .pager > *
+	{
+	border: 1px solid #FFF;
+	border-radius: 14px;
+	cursor: pointer;
+	margin: 3px;
+	outline: none;
+	width:  14px;
+	height: 14px;
+	}
+.av-banner .pager > *:not(.selected):focus {border-color: #CC0000}
+.av-banner .pager > *.selected             {background: #FFF}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ media ------------------------------- */
+/* -------------------------------------------------------------------- */
+@media(max-width: 767px)
+	{
+	.av-banner .item .text-block,
+	.av-banner .item.first .text-block
+		{
+		top: 0;
+		left: 0;
+		width: 90%;
+		height: calc(30px + 10px + 45px);
+		}
+	.av-banner .item .text-block h2
+		{
+		height:      35px;
+		font-size:   30px;
+		line-height: 30px;
+		}
+	.av-banner .item .text-block .text {display: none}
+	.av-banner .pager                  {bottom: 10px}
+	}

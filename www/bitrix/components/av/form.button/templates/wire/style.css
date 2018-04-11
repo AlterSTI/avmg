@@ -1,0 +1,69 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-form-button
+	{
+	background: transparent;
+	border: none;
+	color: inherit;
+	font-weight: normal;
+	margin:  0;
+	padding: 0;
+	}
+.av-form-button,
+.av-form-button:hover,
+.av-form-button:focus,
+.av-form-button:active,
+.av-form-button:visited {text-decoration: none}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ button ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-form-button
+	{
+	background: #CC0000;
+	border: 1px solid #CC0000;
+	border-radius: 2px;
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	padding: 7px 10px;
+	transition: .3s;
+	text-align: center;
+	min-width: 100px;
+	}
+.av-form-button:visited {color: #FFF}
+.av-form-button:hover,
+.av-form-button:focus,
+.av-form-button:active
+	{
+	background: #FFF;
+	box-shadow: 0 2px 4px rgba(76,82,85,0.25);
+	color: #CC0000;
+	}
+
+.wire-btn .av-form-button {
+	background: #CC0000;
+	border: 1px solid #CC0000;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	transition: all 0.3s linear;
+	border-radius: 2px;
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	min-width: 100px;
+}
+
+.wire-btn .av-form-button:hover,
+.wire-btn .av-form-button:focus,
+.wire-btn .av-form-button:active {
+	background-color: #a00606;
+	border: 1px solid #a00606;
+	color: #fff;
+	outline: none;
+}

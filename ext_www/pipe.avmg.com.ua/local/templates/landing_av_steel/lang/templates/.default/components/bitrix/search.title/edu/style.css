@@ -1,0 +1,22 @@
+#title-search-input{
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 10px;
+	background-color: #F0F3F5;
+	border:1px solid #e2e2e4;
+}
+.search-icon{
+	background-image: url(/bitrix/templates/.default/components/bitrix/search.title/edu/images/search_icon.png);
+	cursor: pointer;
+	background-size: cover;
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	right: 37px;
+	top: 6px;
+}
+.desktop-search-cell{
+	white-space: nowrap;
+}

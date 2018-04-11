@@ -1,0 +1,2 @@
+<h3>Rury prostokątne</h3>
+<span>Prostokątna rura profilowana wykonana jest z wysokiej jakości stali węglowej, marki S235JRH. Stalowy element poddawany jest dodatkowej obróbce metodą deformacji na zimno.</span>

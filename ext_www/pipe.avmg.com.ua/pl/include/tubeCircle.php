@@ -1,0 +1,2 @@
+<h3>Rury okrągłe</h3>
+<span>Jakość rur okrągłych reguluje norma EN 10219-1. Nasze produkty są zgodne z wymaganą certyfikatem normą i wymiarami. Oferujemy rury okrągłe o średnicy 76,1 mm, grubość ścianki - od 2 do 3 mm.</span>

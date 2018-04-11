@@ -1,0 +1,103 @@
+.av-catalog-element
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+.av-catalog-element .images-block
+	{
+	width: 250px;
+	}
+.av-catalog-element .preview-text
+	{
+	text-align: justify;
+	width: calc(100% - 250px - 40px);
+	}
+.av-catalog-element .detail-text
+	{
+	margin-top: 25px;
+	text-align: justify;width: 100%;
+	}
+/* -------------------------------------------------------------------- */
+/* ----------------------------- sku table ---------------------------- */
+/* -------------------------------------------------------------------- */
+.av-catalog-element .info-table-wraper
+	{
+	margin-top: 25px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	}
+.av-catalog-element .info-table
+	{
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+	position: absolute;
+	width: 100%;
+	}
+.av-catalog-element .info-table th,
+.av-catalog-element .info-table td
+	{
+	border: 1px solid #D6DBDF;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: middle;
+	}
+.av-catalog-element .info-table th                   {background: #E2E2E2}
+.av-catalog-element .info-table .item-row:hover   td,
+.av-catalog-element .info-table .item-row.checked td {background: #FAFAFA}
+
+.av-catalog-element .info-table .item-row .counter
+	{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0 -9px;
+	}
+.av-catalog-element .info-table .item-row .counter                input {width: 35px;text-align: center}
+.av-catalog-element .info-table .item-row .counter:not(.disabled) input {border-bottom: 1px solid #000}
+
+.av-catalog-element .info-table .item-row .counter .checker
+	{
+	cursor: pointer;
+	line-height: 24px;
+	font-size: 18px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-catalog-element .info-table .item-row .counter.disabled .checker,
+.av-catalog-element .info-table .item-row .counter          .checker.disabled {visibility: hidden}
+.av-catalog-element .info-table .item-row .counter          .checker:hover,
+.av-catalog-element .info-table .item-row .counter          .checker:active,
+.av-catalog-element .info-table .item-row .counter          .checker:focus    {color: #CC0000}
+
+.av-catalog-element .info-table .item-row.checked       .buy-block .check,
+.av-catalog-element .info-table .item-row:not(.checked) .buy-block .checked,
+.av-catalog-element .info-table .item-row:not(.checked) .buy-block .change,
+.av-catalog-element .info-table .item-row               .buy-block .empty-alert {display: none}
+.av-catalog-element .info-table .item-row               .buy-block .check       {font-weight: bold}
+.av-catalog-element .info-table .item-row               .buy-block .checked     {color: #CC0000;font-weight: bold}
+.av-catalog-element .info-table .item-row               .buy-block .change      {color: #999}
+.av-catalog-element .info-table .item-row               .buy-block .check:hover,
+.av-catalog-element .info-table .item-row               .buy-block .change:hover,
+.av-catalog-element .info-table .item-row               .ask-price-call-form    {cursor: pointer;text-decoration: underline}
+/* -------------------------------------------------------------------- */
+/* ------------------------------- media ------------------------------ */
+/* -------------------------------------------------------------------- */
+@media(max-width: 1199px)
+	{
+	.av-catalog-element .info-table th,
+	.av-catalog-element .info-table td {padding: 3px 5px}
+	}
+@media(max-width: 991px)
+	{
+	.av-catalog-element .images-block {width: 100%}
+	.av-catalog-element .preview-text {margin-top: 25px;width: 100%}
+	}

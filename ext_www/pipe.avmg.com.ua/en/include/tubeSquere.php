@@ -1,0 +1,2 @@
+<h3>Square pipes</h3>
+<span>Square pipes are made in accordance with EN 10219-2 of high-quality carbon steel of grade S235JRH. The cold and hot strain method is used in the production, which greatly increases the quality of products.</span>

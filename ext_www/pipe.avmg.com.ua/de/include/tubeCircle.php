@@ -1,0 +1,2 @@
+<h3>KREISROHRE</h3>
+<span>Die Qualität von Rundrohren wird durch die Norm EN 10219-1 geregelt. Unsere Produkte entsprechen den im Zertifikat festgelegten Normen und Abmessungen. Wir bieten runde Rohre mit einem Durchmesser von bis zu 76,1 mm und einer Wandstärke von 2 bis 3 mm an.</span>

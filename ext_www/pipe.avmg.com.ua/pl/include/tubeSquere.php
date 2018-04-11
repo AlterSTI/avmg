@@ -1,0 +1,2 @@
+<h3>Rury kwadratowe</h3>
+<span>Rury kwadratowe produkowane są zgodnie z normą EN 10219-2 z wysokiej jakości stali wysokowęglowej marki S235JRH. W produkcji wykorzystywana jest technika deformacji zimnej i ciepłej, co znacznie podnosi jakość produktów.</span>

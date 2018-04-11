@@ -1,0 +1,2 @@
+<h3>Round pipes</h3>
+<span>The quality of round pipes is regulated by the standard EN 10219-1. Our products comply with the norms and dimensions established by the certificate. We offer round pipes with a diameter of up to 76.1 mm, with a wall thickness of 2 to 3 mm.</span>

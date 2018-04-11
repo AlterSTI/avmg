@@ -1,0 +1,2 @@
+<h3>RECHTECKROHRE</h3>
+<span>Das rechteckige Profilrohr besteht aus hochwertigem Kohlenstoffstahl der Güte S235JRH. Der Stahlrohling wird einer zusätzlichen Verarbeitung durch Kaltverformung unterzogen.</span>

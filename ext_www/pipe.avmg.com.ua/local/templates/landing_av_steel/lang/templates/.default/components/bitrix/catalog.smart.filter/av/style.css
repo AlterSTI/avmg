@@ -1,0 +1,207 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-smart-filter ul,
+.av-smart-filter li
+	{
+	margin:  0;
+	padding: 0;
+	}
+.av-smart-filter li::before {display: none}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ filter ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-smart-filter              {border: 1px solid #B6C0C6}
+.av-smart-filter .items-count {display: none;font-weight: bold}
+/* ------------------------------------------- */
+/* ------------------ head ------------------- */
+/* ------------------------------------------- */
+.av-smart-filter .head
+	{
+	align-items: center;
+	background: #FAFAFA;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 5px 5px 40px;
+	}
+.av-smart-filter .head .title
+	{
+	align-items: center;
+	display: flex;
+	text-transform: uppercase;
+	}
+.av-smart-filter .head .arrow
+	{
+	line-height: 24px;
+	font-size: 22px;
+	text-align: center;
+	transition: .3s;
+	width: 24px;
+	height: 24px;
+	}
+.av-smart-filter.active .head .arrow {transform: rotate(-180deg)}
+/* ------------------------------------------- */
+/* ------------------ body ------------------- */
+/* ------------------------------------------- */
+.av-smart-filter .body
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px 10px 0 10px;
+	}
+.av-smart-filter:not(.active) .body-wraper {display: none}
+
+.av-smart-filter .body .fields-block
+	{
+	display: flex;
+	font-size: calc(1em - 2px);
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: calc((100% - 10px) / 3 * 2);
+	}
+.av-smart-filter .body .fields-block .field-cell
+	{
+	margin-bottom: 10px;
+	width: calc((100% - 10px) / 2);
+	}
+.av-smart-filter .body .control-block
+	{
+	width: calc((100% - 10px) / 3);
+	}
+.av-smart-filter .body .control-block > *
+	{
+	margin-bottom: 10px;
+	}
+.av-smart-filter .body .control-block .buttons-row
+	{
+	display: flex;
+	justify-content: space-between;
+	}
+.av-smart-filter .body .control-block .buttons-row > *
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:  calc((100% - 10px) / 2);
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ field ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-smart-filter .field       {position: relative}
+.av-smart-filter .field input {display: none}
+
+.av-smart-filter .field .title-block
+	{
+	align-items: center;
+	border: 1px solid #B6C0C6;
+	border-radius: 2px;
+	cursor: pointer;
+	display: flex;
+	padding-left: 5px;
+	}
+.av-smart-filter .field .title-block .title
+	{
+	align-items: center;
+	display: flex;
+	width: calc(100% - 24px);
+	}
+.av-smart-filter .field .title-block .title .text
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+.av-smart-filter .field .title-block .title .condition
+	{
+	color: transparent;
+	font-size: 10px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width: 24px;
+	height: 24px;
+	}
+.av-smart-filter .field.applied:not(.active) .title-block .title .text      {max-width: calc(100% - 24px)}
+.av-smart-filter .field.applied:not(.active) .title-block .title .condition {color: #CC0000}
+
+.av-smart-filter .field .title-block .arrow
+	{
+	line-height: 24px;
+	font-size: 14px;
+	text-align: center;
+	transition: .3s;
+	width: 24px;
+	height: 24px;
+	}
+.av-smart-filter .field.active .title-block .arrow {transform: rotate(-180deg)}
+
+.av-smart-filter .field ul
+	{
+	background: #FFF;
+	border-left:   1px solid #B6C0C6;
+	border-right:  1px solid #B6C0C6;
+	border-bottom: 1px solid #B6C0C6;
+	border-bottom-left-radius:  2px;
+	border-bottom-right-radius: 2px;
+	margin-top: -2px;
+	width: 100%;
+	}
+.av-smart-filter .field.closed       ul {position: absolute}
+.av-smart-filter .field:not(.active) ul {display: none}
+.av-smart-filter .field:hover .title-block,
+.av-smart-filter .field:hover ul        {border-color: #868B8D}
+
+.av-smart-filter .field li
+	{
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	}
+.av-smart-filter .field li:hover
+	{
+	background: #FAFAFA;
+	}
+/* ------------------------------------------- */
+/* -------------- list multiple -------------- */
+/* ------------------------------------------- */
+.av-smart-filter .field.multiple li
+	{
+	padding: 0 5px 0 2px;
+	}
+.av-smart-filter .field.multiple li .icon
+	{
+	color: transparent;
+	font-size: 10px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width: 24px;
+	height: 24px;
+	}
+.av-smart-filter .field.multiple li.checked .icon {color: #CC0000}
+
+.av-smart-filter .field.multiple li .title
+	{
+	align-items: center;
+	display: flex;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:  calc(100% - 24px - 2px);
+	}
+/* ------------------------------------------- */
+/* --------------- list single --------------- */
+/* ------------------------------------------- */
+.av-smart-filter .field.single li         {padding: 0 5px}
+.av-smart-filter .field.single li.checked {background: #B6C0C6;color: #FFF;cursor: default}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ media ------------------------------- */
+/* -------------------------------------------------------------------- */
+@media (max-width: 767px)
+	{
+	.av-smart-filter .body .fields-block,
+	.av-smart-filter .body .control-block,
+	.av-smart-filter .body .fields-block .field-cell {width: 100%}
+	}

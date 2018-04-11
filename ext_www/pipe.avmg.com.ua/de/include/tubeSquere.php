@@ -1,0 +1,2 @@
+<h3>QUADRATROHRE</h3>
+<span>Vierkantrohre werden gemäß der Norm EN 10219-2 mit hochwertigem Stahl mit hohem Kohlenstoffgehalt S235JRH hergestellt. In der Produktion wird die Kalt- und Warmverformung eingesetzt, die die Qualität der Produkte deutlich verbessert.</span>

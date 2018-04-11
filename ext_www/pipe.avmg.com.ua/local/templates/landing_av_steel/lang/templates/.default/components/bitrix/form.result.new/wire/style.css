@@ -1,0 +1,73 @@
+.av-form-result-ok     {color: #B6C0C6;margin-top: 10px;text-align: center}
+.av-form .errors-block {color: #CC0000;margin-bottom: 10px}
+.av-form .buttons-row  {margin-top: 26px}
+
+.callback-popup,
+.wire-popup[data-partners-form] {
+    background-color: #fff;
+    box-shadow: 0 3px 0 #d2d1d1, 0 6px #a5a5a5;
+    border-radius: 4px;
+    max-width: 350px;
+}
+
+.title-form-callback span.callback-form-txt {
+    text-transform: none;
+    display: block;
+    font-size: 12px;
+}
+
+.wire-form {
+    padding: 20px;
+}
+
+.wire-btn {
+    text-align: center;
+}
+
+.wire-form .av-form-styled-input,
+.wire-form .av-form-styled-phone,
+.wire-form .av-form-styled-textarea {
+    border: 2px solid #d4d4d4;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.wire-form .av-form-styled-textarea textarea {
+    border: none;
+}
+
+.wire-form .av-form-styled-textarea.alert-input {
+    border-color: #CC0000;
+}
+
+.wire-form .av-form-styled-input label,
+.wire-form .av-form-styled-phone label{
+    padding: 6px;
+}
+
+.wire-form .av-form-styled-input input:focus,
+.wire-form .av-form-styled-phone input:focus {
+    outline: none;
+}
+
+.wire-form .form-box-inputs:first-of-type .av-form-styled-input.placeholder-on,
+.wire-form .form-box-inputs:first-of-type .av-form-styled-input.placeholder-off {
+    margin-top: 10px;
+}
+
+.wire-form.av-form .errors-block {
+    color: #CC0000;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.callback-popup .av-form-result-ok,
+.wire-popup .av-form-result-ok {
+    color: #248824;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}

@@ -1,0 +1,299 @@
+/* -------------------------------------------------------------------- */
+/* ---------------------------- clear style --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-banner-product h2
+	{
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin:  0;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ banner ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-banner-product
+	{
+	height: inherit;
+	min-height: 150px;
+	position: relative;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ slides ------------------------------ */
+/* -------------------------------------------------------------------- */
+.av-banner-product .item
+	{
+	overflow: hidden;
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	}
+.av-banner-product .item:not(.first) {display: none}
+
+.av-banner-product .item .link
+	{
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	z-index: 10;
+	}
+.av-banner-product .item .image
+	{
+	overflow: hidden;
+	position: absolute;
+	top:    0;
+	bottom: 0;
+	left:   0;
+	right:  0;
+	}
+.av-banner-product .item .image img {width: 100%}
+
+.av-banner-product .item .video
+	{
+	position: relative;
+	padding-bottom: 56.25%;
+	}
+.av-banner-product .item .video iframe
+	{
+	position: absolute;
+	width:  100%;
+	height: 100%;
+	}
+
+.av-banner-product .item .text-block
+	{
+	align-items: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top:  25%;
+	left: calc((100% - 500px) / 2);
+	width:  500px;
+	height: calc(100% - 25% - 30px - 20px - 30px);
+	z-index: 30;
+	}
+.av-banner-product .item .text-block h2,
+.av-banner-product .item .text-block .text
+	{
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	text-shadow: 1px 1px 2px black, 0 0 1em #181818;
+	width: 100%;
+	}
+.av-banner-product .item .text-block h2
+	{
+	height:      50px;
+	font-size:   45px;
+	line-height: 45px;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	}
+.av-banner-product .item .text-block .text
+	{
+	font-size:   25px;
+	line-height: 25px;
+	max-height: calc(100% - 50px - 10px - 45px - 15px);
+	margin-bottom: 15px;
+	}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ pager ------------------------------- */
+/* -------------------------------------------------------------------- */
+.av-banner-product .pager
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 5%;
+	position: absolute;
+	bottom: 30px;
+	width: 90%;
+	z-index: 20;
+	}
+.av-banner-product .pager > *
+	{
+	border: 1px solid #FFF;
+	border-radius: 14px;
+	cursor: pointer;
+	margin: 3px;
+	outline: none;
+	width:  14px;
+	height: 14px;
+	}
+.av-banner-product .pager > *:not(.selected):focus {border-color: #CC0000}
+.av-banner-product .pager > *.selected             {background: #FFF}
+
+
+/* -------------------------------------------------------------------- */
+/* ---------------------------- my styles ----------------------------- */
+/* -------------------------------------------------------------------- */
+
+.product-banner .av-banner-product .item .text-block {
+	max-width: 230px;
+	height: auto;
+	margin-bottom: 0;
+	top: auto;
+	bottom: -43px;
+	left: 21px;
+	align-items: flex-end;
+	min-height: 470px;
+}
+
+.product-banner .av-banner-product .item .text-block h2 {
+	position: absolute;
+	left: -60%;
+	text-align: left;
+	bottom: 12px;
+	text-shadow: none;
+	display: inline-block;
+	max-width: 250px;
+	text-overflow: clip;
+	white-space: normal;
+	height: auto;
+	line-height: 20px;
+	background-color: #cc0000;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	font-size: 14px;
+	border-radius: 4px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.product-banner .av-banner-product .item .text-block .text{
+	font-size: 14px;
+	text-align: left;
+	text-transform: uppercase;
+	text-shadow: none;
+	padding: 6px 20px;
+}
+
+.product-banner .av-banner-product .item {
+	overflow: visible;
+}
+
+
+/****** THIS IS SLIDER TEXT STYLE ******/
+
+.product-banner .av-banner-product .item .image {
+	width: calc(100% - 64%);
+	position: relative;
+	float: left;
+	height: 100%;
+	margin-left: 4%;
+}
+
+.product-banner .av-banner-product .item .text-block {
+	width: calc(100% - 40%);
+	max-width: 100%;
+	position: relative;
+	float: left;
+	bottom: 0;
+}
+
+.product-banner .av-banner .item .text-block .text {
+	background-color: transparent;
+}
+
+/****** /THIS IS SLIDER TEXT STYLE/ ******/
+
+
+.product-banner .av-banner-product .pager {
+	justify-content: center;
+	position: absolute;
+	width: 90%;
+	flex-direction: column;
+	height: 90%;
+	left: -55px;
+}
+
+.product-banner .av-banner-product .pager > * {
+	background-color: #dedcdc;
+	border: none;
+	margin: 6px 3px;
+	width: 12px;
+	height: 12px;
+}
+
+.product-banner .av-banner-product .pager > *.selected {
+	background-color: #d6181f;
+	border: none;
+}
+
+
+/* -------------------------------------------------------------------- */
+/* ------------------------------ media ------------------------------- */
+/* -------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+	.product-banner .av-banner-product .item {
+		position: relative;
+	}
+
+	.product-banner .av-banner-product .item .image,
+	.product-banner .av-banner-product .item .text-block {
+		width: 90%;
+	}
+
+	.product-banner .av-banner-product .item .image img {
+		width: 100%!important;
+		height: auto!important;
+	}
+
+	.product-banner .av-banner-product .item .text-block h2 {
+		left: 40px;
+		bottom: auto;
+		top: -32px;
+	}
+}
+
+@media(max-width: 767px) {
+	.av-banner-product .item .text-block
+		{
+		top: calc((100% - 35px - 10px - 45px) / 2);
+		left: 5%;
+		width: 90%;
+		height: calc(30px + 10px + 45px);
+		}
+	.av-banner-product .item .text-block h2
+		{
+		height:      35px;
+		font-size:   30px;
+		line-height: 30px;
+		}
+	.av-banner-product .item .text-block .text {display: none}
+	.av-banner-product .pager                  {bottom: 10px}
+
+	.product-banner .av-banner .pager {
+		left: 0;
+	}
+
+	.product-banner .av-banner .item .text-block .text {
+		display: block;
+	}
+
+	.product-banner .av-banner .pager {
+		top: 0;
+		bottom: 0;
+	}
+}
+
+@media (max-width: 475px) {
+
+	.product-banner .av-banner .item .text-block .text {
+		padding-left: 0;
+	}
+
+	.product-banner .av-banner .pager {
+		top: auto;
+		bottom: 50%;
+	}
+
+	.product-banner .av-banner .item .text-block h2 {
+		left: -11px;
+	}
+}

@@ -1,0 +1,113 @@
+/* -------------------------------------------------------------------- */
+/* --------------------------- clear style ---------------------------- */
+/* -------------------------------------------------------------------- */
+.pipe-ctatalog-item-tablet a,
+.pipe-ctatalog-item-tablet a:hover,
+.pipe-ctatalog-item-tablet a:focus,
+.pipe-ctatalog-item-tablet a:active,
+.pipe-ctatalog-item-tablet a:visited {color: inherit;text-decoration: none}
+/* -------------------------------------------------------------------- */
+/* ------------------------------ items ------------------------------- */
+/* -------------------------------------------------------------------- */
+.pipe-ctatalog-item-tablet
+	{
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+	transition: .3s;
+	}
+.pipe-ctatalog-item-tablet:hover {box-shadow: 0 4px 8px rgba(76, 82, 85, 0.25)}
+
+.pipe-ctatalog-item-tablet .content
+	{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	}
+.pipe-ctatalog-item-tablet .image-link
+	{
+	margin-bottom: 10px;
+	overflow: hidden;
+	width:  100%;
+	height: 150px;
+	}
+.pipe-ctatalog-item-tablet .image-link img
+	{
+	height: 100%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	}
+.pipe-ctatalog-item-tablet .element-title
+	{
+	font-weight: bold;
+	margin-bottom: 5px;
+	overflow: hidden;
+	text-align: center;
+	white-space: normal;
+	word-break: break-all;
+	padding: 0 15px;
+	width: 100%;
+	position: relative;
+	min-height: 47px;
+	}
+.pipe-ctatalog-item-tablet .element-title::after {
+	content: '';
+}
+.pipe-ctatalog-item-tablet .element-title.title-after::after {
+	content: '...';
+	display: block;
+	position: absolute;
+	bottom: -5px;
+	right: 0;
+	font-family: initial;
+}
+.pipe-ctatalog-item-tablet .price
+	{
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+	}
+.pipe-ctatalog-item-tablet .no-price {
+	color: #bec0c7;
+	display: none;
+}
+.pipe-ctatalog-item-tablet .sku-info
+	{
+	font-size: 12px;
+	width: 100%;
+	}
+.pipe-ctatalog-item-tablet .sku-info .prop-row
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+.pipe-ctatalog-item-tablet .read-more
+	{
+	align-items: center;
+	border: 1px solid #4C5255;
+	border-radius: 2px;
+	display: flex;
+	font-size: 12px;
+	justify-content: center;
+	margin-top: 15px;
+	transition: .3s;
+	width:  100px;
+	height: 30px;
+	}
+.pipe-ctatalog-item-tablet:hover .read-more
+	{
+	border-color: #CC0000;
+	color: #CC0000 !important;
+	}
+.pipe-ctatalog-item-tablet .read-more:hover
+	{
+	background: #CC0000;
+	border-color: #CC0000;
+	color: #FFF !important;
+	}

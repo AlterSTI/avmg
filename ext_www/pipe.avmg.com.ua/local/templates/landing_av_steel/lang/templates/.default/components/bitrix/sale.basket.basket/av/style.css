@@ -1,0 +1,358 @@
+.av-basket-errors
+	{
+	color: #CC0000;
+	}
+.av-basket
+	{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+/* -------------------------------------------------------------------- */
+/* ---------------------------- tabs block ---------------------------- */
+/* -------------------------------------------------------------------- */
+.av-basket .tabs-block
+	{
+	display: flex;
+	flex-wrap: wrap;
+	font-weight: bold;
+	margin-bottom: 25px;
+	width: 100%;
+	}
+.av-basket .tabs-block .tab                      {transition: .3s}
+.av-basket .tabs-block .tab:not(.selected)       {color: #B6C0C6;cursor: pointer}
+.av-basket .tabs-block .tab:not(.selected):hover {color: #CC0000}
+.av-basket .tabs-block .separator                {margin: 0 10px}
+/* -------------------------------------------------------------------- */
+/* -------------------------- items block hat ------------------------- */
+/* -------------------------------------------------------------------- */
+.av-basket .items-block-hat
+	{
+	border-bottom: 1px solid #EFEFEF;
+	color: #B6C0C6;
+	display: flex;
+	line-height: 30px;
+	width: calc(100% - 200px - 50px);
+	}
+.av-basket .items-block-hat > *:first-child {text-align: center}
+/* -------------------------------------------------------------------- */
+/* ---------------------------- items block --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-basket .items-block                {width: calc(100% - 200px - 50px)}
+.av-basket .items-block:not(.selected) {display: none}
+
+.av-basket .items-block .item
+	{
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 25px 0;
+	}
+.av-basket .items-block .item:not(:last-child) {border-bottom: 1px solid #EFEFEF}
+/* ------------------------------------------- */
+/* -------------- delete button -------------- */
+/* ------------------------------------------- */
+.av-basket .items-block .item .delete-button
+	{
+	color: #B6BDC3;
+	cursor: pointer;
+	float: right;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-basket .items-block .item .delete-button:hover,
+.av-basket .items-block .item .delete-button:active,
+.av-basket .items-block .item .delete-button:focus {color: #CC0000}
+/* ------------------------------------------- */
+/* --------------- image block --------------- */
+/* ------------------------------------------- */
+.av-basket .items-block .item .image-block
+	{
+	align-items: center;
+	display: flex;
+	width: 200px;
+	}
+.av-basket .items-block .item .image-block img {width: 100%}
+/* ------------------------------------------- */
+/* --------------- info block ---------------- */
+/* ------------------------------------------- */
+.av-basket .items-block .item .info-block
+	{
+	width: 30%;
+	}
+.av-basket .items-block .item .info-block .title
+	{
+	font-weight: bold;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+.av-basket .items-block .item .info-block .prop-value
+	{
+	font-size: calc(1em - 2px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+/* ------------------------------------------- */
+/* ----------------- counter ----------------- */
+/* ------------------------------------------- */
+.av-basket .items-block .item .counter
+	{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0 -9px;
+	}
+.av-basket .items-block .item .counter input
+	{
+	border-bottom: 1px solid #000;
+	width: 35px;
+	text-align: center;
+	}
+.av-basket .items-block .item .counter .checker
+	{
+	cursor: pointer;
+	line-height: 24px;
+	font-size: 18px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+	}
+.av-basket .items-block .item .counter .checker.disabled {visibility: hidden}
+.av-basket .items-block .item .counter .checker:hover,
+.av-basket .items-block .item .counter .checker:active,
+.av-basket .items-block .item .counter .checker:focus    {color: #CC0000}
+/* ------------------------------------------- */
+/* ------------------ price ------------------ */
+/* ------------------------------------------- */
+.av-basket .items-block .item .price
+	{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 130px;
+	}
+.av-basket .items-block .item .price > *
+	{
+	line-height: 20px;
+	padding: 5px;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
+	}
+.av-basket .items-block .item .price           > *:nth-child(1) {font-weight: bold}
+.av-basket .items-block .item .price           > *:nth-child(2) {border-top: 1px solid #000}
+.av-basket .items-block .item .price.minimized > *:nth-child(2) {display: none}
+/* ------------------------------------------- */
+/* ------------- special buttons ------------- */
+/* ------------------------------------------- */
+.av-basket .items-block .item .special-button
+	{
+	color: #868B8D;
+	cursor: pointer;
+	text-decoration: underline;
+	transition: .3s;
+	}
+.av-basket .items-block .item .special-button:hover {color: #CC0000}
+/* -------------------------------------------------------------------- */
+/* --------------------------- prices block --------------------------- */
+/* -------------------------------------------------------------------- */
+.av-basket .prices-block
+	{
+	border: 1px solid #EFEFEF;
+	border-radius: 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 15px;
+	margin-top: -30px;
+	width:  200px;
+	height: 150px;
+	}
+.av-basket .prices-block > *                  {width: 100%}
+.av-basket .prices-block > *:not(:last-child) {margin-bottom: 10px}
+
+.av-basket .prices-block .title
+	{
+	font-weight: bold;
+	text-transform: uppercase;
+	}
+.av-basket .prices-block .info
+	{
+	display: flex;
+	font-size: calc(1em - 2px);
+	justify-content: space-between;
+	}
+.av-basket .prices-block .info > *:first-child {margin-right: 5px}
+
+.av-basket .prices-block [offer-link]
+	{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 0 25px;
+	margin:  0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+/* -------------------------------------------------------------------- */
+/* ---------------------- media max-width 1199px ---------------------- */
+/* -------------------------------------------------------------------- */
+@media (max-width: 1199px)
+	{
+	.av-basket .items-block-hat,
+	.av-basket .items-block                  {width: 100%}
+	.av-basket .items-block .item:last-child {border-bottom: 1px solid #EFEFEF}
+
+	.av-basket .prices-block
+		{
+		border: none;
+		margin-top: 25px;
+		padding: 0;
+		width:  auto;
+		height: auto;
+		}
+	.av-basket .prices-block .info
+		{
+		justify-content: flex-start;
+		}
+	}
+/* -------------------------------------------------------------------- */
+/* ---------------------- media max-width 991px ----------------------- */
+/* -------------------------------------------------------------------- */
+@media (max-width: 991px)
+	{
+	.av-basket .items-block-hat {display: none}
+	/* ------------------------------------------- */
+	/* --------------- items block --------------- */
+	/* ------------------------------------------- */
+	.av-basket .items-block .item
+		{
+		margin: auto;
+		max-width: 400px;
+		}
+	.av-basket .items-block .item .special-button {order: 1}
+	.av-basket .items-block .item .delete-button  {order: 2}
+
+	.av-basket .items-block .item .image-block
+		{
+		margin-top: 25px;
+		order: 3;
+		width:  100%;
+		height: 200px;
+		}
+	.av-basket .items-block .item .image-block img
+		{
+		margin-left: 50%;
+		transform: translateX(-50%);
+		width:  auto;
+		height: 100%
+		}
+	.av-basket .items-block .item .info-block
+		{
+		margin-top: 25px;
+		order: 4;
+		width: 100%;
+		}
+	.av-basket .items-block .item .info-block .title      {margin: 0;text-align: center}
+	.av-basket .items-block .item .info-block .prop-value {display: none}
+
+	.av-basket .items-block .item .counter
+		{
+		margin: 25px 0 0 0;
+		order: 5;
+		width: 100%;
+		}
+	.av-basket .items-block .item .counter input {width: 50px}
+
+	.av-basket .items-block .item .price
+		{
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 25px;
+		order: 6;
+		width: 100%;
+		}
+	.av-basket .items-block .item .price > * {padding: 0 5px}
+	.av-basket .items-block .item .price > *:nth-child(2)
+		{
+		border-left: 1px solid #000;
+		border-top: none;
+		}
+	/* ------------------------------------------- */
+	/* --------------- prices block -------------- */
+	/* ------------------------------------------- */
+	.av-basket .prices-block
+		{
+		margin-left:  auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: 400px;
+		}
+	.av-basket .prices-block [offer-link] {max-width: 200px}
+	}
+/* -------------------------------------------------------------------- */
+/* ---------------------- media max-width 767px ----------------------- */
+/* -------------------------------------------------------------------- */
+@media (max-width: 767px)
+	{
+	/* ------------------------------------------- */
+	/* ---------------- tabs block --------------- */
+	/* ------------------------------------------- */
+	.av-basket .tabs-block
+		{
+		justify-content: space-between;
+		margin: 0 auto 10px auto;
+		width: 100%;
+		max-width: 400px;
+		}
+	.av-basket .tabs-block .tab
+		{
+		border: 1px solid;
+		border-radius: 2px;
+		font-weight: normal;
+		margin-bottom: 10px;
+		padding: 0 10px;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width:  calc((100% - 5px) / 2);
+		height: 30px;
+		}
+	.av-basket .tabs-block .tab.selected
+		{
+		border-color: #717A84;
+		color: #717A84;
+		}
+	.av-basket .tabs-block .tab:not(.selected)
+		{
+		border-color: #B6C0C6;
+		color: #B6C0C6;
+		}
+	.av-basket .tabs-block .tab:not(.selected):hover
+		{
+		border-color: #CC0000;
+		color: #CC0000;
+		}
+	.av-basket .tabs-block .separator {display: none}
+	/* ------------------------------------------- */
+	/* --------------- items block --------------- */
+	/* ------------------------------------------- */
+	.av-basket .items-block .item .image-block {height: 150px}
+	/* ------------------------------------------- */
+	/* --------------- prices block -------------- */
+	/* ------------------------------------------- */
+	.av-basket .prices-block [offer-link] {margin: auto}
+	}

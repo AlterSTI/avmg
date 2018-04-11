@@ -1,0 +1,62 @@
+.inline-flex {display: inline-flex;}
+.align-center {align-items: center;}
+.logo-wrap {text-align: center}
+.logo-wrap img { margin: 12px 20px;}
+.headder-wrap {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.33);
+}
+.left-column {
+    transition: .4s;
+}
+.page-workarea{
+    height: 100%;
+}
+.page-workarea > div.col-md-12 {
+    height: 100%;
+    background-color: lightgrey;
+}
+.page-workarea > div.col-md-12 > .col-md-9 {
+    transition: .4s;
+    margin-left: 35px;
+    width: 80%;
+    height: 90%;
+    background-color: #fff !important;
+    padding: 10px;
+}
+.page-workarea > div.col-md-12 > .col-md-2 {
+    height: 100%;
+    background-color: #fff !important;
+    border: 1px solid #B6C0C6;
+}
+.lang-switch {
+    padding: 15px 0;
+}
+.left-side-toggle{
+    z-index: 999;
+    background: url(/bitrix/templates/.default/components/bitrix/menu/av_edu-vertical-left/images/arrow.png) center no-repeat;
+    background-size: 25px;
+    transform: rotate(180deg);
+    background-position-x: unset;
+    height: 43px;
+    width: 22px;
+    position: absolute;
+    right: -23px;
+    top: calc(100% - 55%);
+    background-color: #fff;
+    border-radius: 20px 0px 0 20px;
+    cursor: pointer;
+
+}
+.left-side-toggle.active {
+    background-position-x: right;
+    transform: rotate(0deg);
+    border-radius: 0 20px 20px 0;
+}
+.discription span{
+    margin-left: 35px;
+    padding-top: 30px;
+    display: block;
+}

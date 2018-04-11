@@ -1,0 +1,64 @@
+.wizard table td,.wizard table th {
+	padding: 0 !important;
+border: none !important;
+}
+.next-btn {
+	margin: 0 10px;
+	padding: 7px 15px;
+	background: #CC0000;
+	color: #fff;
+}
+.back-btn {
+
+	padding: 7px 10px;
+	border: 1px solid #4C5255;
+
+}
+.form-wrap textarea {
+	width: 100%;
+	border: 1px solid #B6C0C6 ;
+	padding: 5px;
+}
+.wizard_errortext
+{
+	color:red;
+	font-weight:bold;
+}
+
+.wizard_oktext 
+{
+	color:green;
+	font-weight:bold;
+}
+
+.wizard_smalltext
+{
+	color:#215587;
+	font-family:Verdana;
+	font-size:9pt;
+}
+
+.wizard_title
+{
+	color:#215587;
+	font-size:14pt;
+	font-weight:bold;
+} 
+
+.wizard_step
+{
+	color:#215587;
+	font-size:12pt;
+} 
+
+.wizard_sections
+{
+	margin-top:4px;
+	margin-bottom:4px;
+}
+
+.wizard_field_name
+{
+	font-weight:bold;
+	margin-bottom:4px;
+}
