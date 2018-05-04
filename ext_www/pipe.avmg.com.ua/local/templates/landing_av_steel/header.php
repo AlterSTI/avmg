@@ -486,12 +486,14 @@ Asset::getInstance()->addString("<script>AvRequest = \"".$templateFolderHttp."aj
                         <?$APPLICATION->IncludeComponent(
                             "bitrix:main.site.selector",
                             "pipe",
-                            array(
-                                "SITE_LIST" => array(
-                                    0 => "*all*",
-                                ),
-                                "PIPE_SYTE_SELECTOR_DOMAIN" => "pipe.avmg.com.ua",
-                                "COMPONENT_TEMPLATE" => "pipe",
+                                array(
+                                    "SITE_LIST" => array(
+                                        0 => "PU",
+                                        1 => "PR",
+                                        2 => "PE",
+                                        3 => "PP",
+                                        4 => "PD"
+                                    ),
                                 "CACHE_TYPE" => "A",
                                 "CACHE_TIME" => "3600"
                             ),

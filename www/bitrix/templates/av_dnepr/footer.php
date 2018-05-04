@@ -7,10 +7,22 @@
         </div>
     </div>
 </footer>
-
+<div id="page-up-button"></div>
 </body>
 <script>
-    document.getElementsByClassName('bx-authform')[0].remove();
+    var l = document.getElementsByClassName('bx-authform');
+    if (l.length > 0) {
+        l[0].remove();
+    }
+    $('html, body').stop().animate({
+        scrollTop: 0
+    }, 0);
+</script>
+<script data-skip-moving="true">
+    (function(w,d,u){
+        var s=d.createElement('script');s.async=1;s.src=u+'?'+(Date.now()/60000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+    })(window,document,'https://corp.avmg.com.ua/upload/crm/site_button/loader_15_z9ovza.js');
 </script>
 <!-- FONT AWESOME -->
 <!--<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>-->

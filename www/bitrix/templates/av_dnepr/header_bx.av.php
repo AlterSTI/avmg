@@ -22,48 +22,139 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
     <? CJSCore::Init(["av", "fontawesome"]) ?>
     <?
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/bootstrap-grid.css');
-    //$APPLICATION->AddHeadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyA46WZQVEJSS2zf5hZPQW3-oV6P5RSCUDQ&callback=initMap');
+    $APPLICATION->AddHeadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyA46WZQVEJSS2zf5hZPQW3-oV6P5RSCUDQ&callback=initMap');
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/main.js');
     ?>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-88853738-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
         (function (d, w, c) {
-            (w[c] = w[c] || []).push(function() {
+            (w[c] = w[c] || []).push(function () {
                 try {
-                    w.yaCounter48436535 = new Ya.Metrika({
-                        id:48436535,
-                        clickmap:true,
-                        trackLinks:true,
-                        accurateTrackBounce:true,
-                        webvisor:true
+                    w.yaCounter41532584 = new Ya.Metrika({
+                        id: 41532584,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
                     });
-                } catch(e) { }
+                } catch (e) {
+                }
             });
 
             var n = d.getElementsByTagName("script")[0],
                 s = d.createElement("script"),
-                f = function () { n.parentNode.insertBefore(s, n); };
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
             s.type = "text/javascript";
             s.async = true;
-            s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
 
             if (w.opera == "[object Opera]") {
                 d.addEventListener("DOMContentLoaded", f, false);
-            } else { f(); }
-        })(document, window, "yandex_metrika_callbacks");
+            } else {
+                f();
+            }
+        })
+        (document, window, "yandex_metrika_callbacks");
     </script>
-    <!-- /Yandex.Metrika counter -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117321087-1"></script>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-88853738-1']);
+        _gaq.push(['_trackPageview']);
+        setTimeout(_gaq.push(['_trackEvent', '15_seconds', 'read']), 15000);
 
-        gtag('config', 'UA-117321087-1');
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
+        ga('create', 'UA-88853738-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter41532584 = new Ya.Metrika({
+                        id: 41532584,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })
+        (document, window, "yandex_metrika_callbacks");
+    </script>
+
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-88853738-1']);
+        _gaq.push(['_trackPageview']);
+        setTimeout(_gaq.push(['_trackEvent', '15_seconds', 'read']), 15000);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
     <? $APPLICATION->AddHeadScript('/bitrix/js/av_site/main.js'); ?>
     <? $APPLICATION->ShowPanel() ?>
 </head>
@@ -74,7 +165,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
         <div class="row">
             <div class="logo col-md-12 col-lg-8">
                 <a href="/" class="header-logo"><img src="/bitrix/images/av/logo_line_min_ru.svg" alt="Логотип в шапке"></a>
-                <a href="/" class="header-logo-mobile"><img src="/bitrix/images/av/logo_line_min_ru.svg" alt="Логотип в шапке(мобильная версия)"></a>
+                <a href="/" class="header-logo-mobile"><img src="<?=SITE_TEMPLATE_PATH?>/img/header-logo-mobile.png" alt="Логотип в шапке(мобильная версия)"></a>
             </div>
 <!--            <div class="header-lang col-6 col-sm-6 col-md-6 col-lg-3">-->
 <!--                <div class="lang-inner">-->
@@ -103,7 +194,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                             "AJAX_OPTION_STYLE" => "N",
                             "AJAX_OPTION_HISTORY" => "N",
                             "IBLOCK_TYPE" => "",
-                            "IBLOCK_ID" => "58",
+                            "IBLOCK_ID" => "134",
                             "NEWS_COUNT" => "99",
                             "SORT_BY1" => "PROPERTY_NAME",
                             "SORT_ORDER1" => "ASC",
@@ -121,43 +212,43 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                             "DISPLAY_TOP_PAGER" => "N",
                             "DISPLAY_BOTTOM_PAGER" => "Y",
 
-                            "AV_BASES_STREAMS_INFO_IBLOCK" => "114", //ID ИБ для элементов
-                            "AV_BASES_STREAMS_MANAGER_STREAM" => "2036",//ID направления для выборки менеджера из ИБ направлений
+                            "AV_BASES_STREAMS_INFO_IBLOCK" => "136", //ID ИБ для элементов
+                            "AV_BASES_STREAMS_MANAGER_STREAM" => "88074",//ID направления для выборки менеджера из ИБ направлений
                             "AV_BASES_STREAMS_NO_DISPLAY" => array (
-                                    0 => 2728,
-                                    1 => 2729,
-                                    2 => 2736,
-                                    3 => 2985,
-                                    4 => 86744
+                                    0 => 88071,
+                                    1 => 88009,
+                                    2 => 87779,
+                                    3 => 87772,
+                                    4 => 87771
                             ),
                             "AV_BASES_STREAMS_NAME_ALIAS" => array (
-                                    2731 => 'Днепр 1',
-                                    2730 => 'Днепр 2',
-                                    2735 => 'Днепр 8',
-                                    2738 => 'Днепр 11',
-                                    2732 => 'Днепр 4',
-                                    2733 => 'Днепр 5',
-                                    2734 => 'Днепр 6',
-                                    2737 => 'Днепр 10',
-                                    2740 => 'Дон. шоссе'
+                                    87774 => 'Днепр 1',
+                                    87773 => 'Днепр 2',
+                                    87778 => 'Днепр 8',
+                                    87781 => 'Днепр 11',
+                                    87775 => 'Днепр 4',
+                                    87776 => 'Днепр 5',
+                                    87777 => 'Днепр 6',
+                                    87780 => 'Днепр 10',
+                                    87783 => 'Дон. шоссе'
                             ),
 
                             "AV_BASES_STREAMS_LEFT_COAST" => array(
-                                0 => 2732,
-                                1 => 2733,
-                                2 => 2734,
-                                3 => 2737,
-                                4 => 2740
+                                0 => 87775,
+                                1 => 87776,
+                                2 => 87777,
+                                3 => 87780,
+                                4 => 87783
                             ),
 
                             "AV_BASES_STREAMS_RIGHT_COAST" => array(
-                                0 => 2731,
-                                1 => 2730,
-                                2 => 2735,
-                                3 => 2738,
+                                0 => 87774,
+                                1 => 87773,
+                                2 => 87778,
+                                3 => 87781,
                             ),
 
-                            "PARENT_SECTION" => "1338",
+                            "PARENT_SECTION" => "2458",
                             "PARENT_SECTION_CODE" => "",
                             "INCLUDE_SUBSECTIONS" => "Y",
                             "DISPLAY_DATE" => "N",
@@ -215,7 +306,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         "AJAX_OPTION_STYLE" => "N",
                         "AJAX_OPTION_HISTORY" => "N",
                         "IBLOCK_TYPE" => "",
-                        "IBLOCK_ID" => "58",
+                        "IBLOCK_ID" => "134",
                         "NEWS_COUNT" => "99",
                         "SORT_BY1" => "PROPERTY_NAME",
                         "SORT_ORDER1" => "ASC",
@@ -232,44 +323,44 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         "PAGER_TEMPLATE" => "av",
                         "DISPLAY_TOP_PAGER" => "N",
                         "DISPLAY_BOTTOM_PAGER" => "Y",
-                        "AV_BASES_STREAMS_INFO_IBLOCK_ID" => "53", //ID ИБ со свойствами направлений
-                        "AV_BASES_STREAMS_INFO_IBLOCK" => "114", //ID ИБ для элементов
-                        "AV_BASES_STREAMS_MANAGER_STREAM" => "2036",//ID направления для выборки менеджера из ИБ направлений
+                        "AV_BASES_STREAMS_INFO_IBLOCK_ID" => "135", //ID ИБ со свойствами направлений
+                        "AV_BASES_STREAMS_INFO_IBLOCK" => "136", //ID ИБ для элементов
+                        "AV_BASES_STREAMS_MANAGER_STREAM" => "88074",//ID направления для выборки менеджера из ИБ направлений
                         "AV_BASES_STREAMS_NO_DISPLAY" => array (
-                            0 => 2728,
-                            1 => 2729,
-                            2 => 2736,
-                            3 => 2985,
-                            4 => 86744
+                            0 => 88071,
+                            1 => 88009,
+                            2 => 87779,
+                            3 => 87772,
+                            4 => 87771
                         ),
                         "AV_BASES_STREAMS_NAME_ALIAS" => array (
-                            2731 => 'Днепр 1',
-                            2730 => 'Днепр 2',
-                            2735 => 'Днепр 8',
-                            2738 => 'Днепр 11',
-                            2732 => 'Днепр 4',
-                            2733 => 'Днепр 5',
-                            2734 => 'Днепр 6',
-                            2737 => 'Днепр 10',
-                            2740 => 'Дон. шоссе'
+                            87774 => 'Днепр 1',
+                            87773 => 'Днепр 2',
+                            87778 => 'Днепр 8',
+                            87781 => 'Днепр 11',
+                            87775 => 'Днепр 4',
+                            87776 => 'Днепр 5',
+                            87777 => 'Днепр 6',
+                            87780 => 'Днепр 10',
+                            87783 => 'Дон. шоссе'
                         ),
 
                         "AV_BASES_STREAMS_LEFT_COAST" => array(
-                            0 => 2732,
-                            1 => 2733,
-                            2 => 2734,
-                            3 => 2737,
-                            4 => 2740
+                            0 => 87775,
+                            1 => 87776,
+                            2 => 87777,
+                            3 => 87780,
+                            4 => 87783
                         ),
 
                         "AV_BASES_STREAMS_RIGHT_COAST" => array(
-                            0 => 2731,
-                            1 => 2730,
-                            2 => 2735,
-                            3 => 2738,
+                            0 => 87774,
+                            1 => 87773,
+                            2 => 87778,
+                            3 => 87781,
                         ),
 
-                        "PARENT_SECTION" => "1338",
+                        "PARENT_SECTION" => "2458",
                         "PARENT_SECTION_CODE" => "",
                         "INCLUDE_SUBSECTIONS" => "Y",
                         "DISPLAY_DATE" => "N",

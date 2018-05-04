@@ -2,7 +2,7 @@ function animScroll() {
     var e = $(window).height() / 1.2, o = $(this).scrollTop() + e,
         // t = $("[data-circle-first] [data-circle-1-img-1]").offset().top,
         r = $(".wire-product").offset().top,
-        m = $(".other-product").offset().top,
+        m = $(".other-product").offset().top,/home/alter/PhpstormProjects/test
         a = $(".info-box").offset().top,
         n = ($("#map_canvas").offset().top, $("#footer-wrap").offset().top, 0);
     e = $(window).height(), o >= r && $("[data-circle-first] .col-sm-6 ").each(function () {

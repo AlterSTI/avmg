@@ -230,9 +230,12 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                     "wire-fixed",
                                     array(
                                         "SITE_LIST" => array(
-                                            0 => "*all*",
+                                            0 => "WU",
+                                            1 => "WR",
+                                            2 => "WE",
+                                            3 => "WP",
+                                            4 => "WD"
                                         ),
-                                        "PIPE_SYTE_SELECTOR_DOMAIN" => "wire.avmg.com.ua",
                                         "COMPONENT_TEMPLATE" => "wire-fixed",
                                         "CACHE_TYPE" => "A",
                                         "CACHE_TIME" => "3600"
@@ -303,9 +306,12 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                                 "wire",
                                 array(
                                     "SITE_LIST" => array(
-                                        0 => "*all*",
+                                        0 => "WU",
+                                        1 => "WR",
+                                        2 => "WE",
+                                        3 => "WP",
+                                        4 => "WD"
                                     ),
-                                    "PIPE_SYTE_SELECTOR_DOMAIN" => "wire.avmg.com.ua",
                                     "COMPONENT_TEMPLATE" => "wire",
                                     "CACHE_TYPE" => "A",
                                     "CACHE_TIME" => "3600"
@@ -351,169 +357,7 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         ?>
                     </div>
                 </div>
-                <!--MOBILE-->
-                <div class="product-banner-mobile col-md-12 clearfix">
-                    <div class="sort-product-wrap">
-                        <span class="sort-product-top main-sort">
-                                <span>
-                                    <?$APPLICATION->IncludeFile(
-                                        "/".LANGUAGE_ID."/include/mobileSliderHeader1.php",
-                                        Array(),
-                                        Array(
-                                            "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_HEADER1'),
-                                            "MODE"  => "text"
-                                        )
-                                    );?>
-                                </span>
-                            </span>
-                        <div class="banner-mobile-pict-wrap">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderImg1.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_IMG1'),
-                                    "MODE"  => "html"
-                                )
-                            );?>
-                        </div>
-                        <span class="sort-product-txt">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt1.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT1'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </span>
-                        <ul class="sort-product-list">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt2.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT2'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </ul>
-                        <span class="sort-product-txt">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt3.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT3'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </span>
-                        <span class="sort-product-txt">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt4.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT4'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </span>
-                        <strong class="sort-prod-bottom-title">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt5.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT5'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </strong>
-                        <ul class="sort-product-list">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt6.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT6'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </ul>
-                    </div>
 
-                    <div class="sort-product-wrap">
-                        <span class="sort-product-top">
-                                <span>
-                                    <?$APPLICATION->IncludeFile(
-                                        "/".LANGUAGE_ID."/include/mobileSliderHeader2.php",
-                                        Array(),
-                                        Array(
-                                            "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_HEADER2'),
-                                            "MODE"  => "text"
-                                        )
-                                    );?>
-                                </span>
-                            </span>
-                        <div class="banner-mobile-pict-wrap">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderImg2.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_IMG2'),
-                                    "MODE"  => "html"
-                                )
-                            );?>
-                        </div>
-                        <ul class="sort-product-list">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt7.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT7'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </ul>
-                        <span class="sort-product-txt">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt8.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT8'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </span>
-                        <ul class="sort-product-list">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt9.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT9'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </ul>
-                        <span class="sort-product-txt">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt10.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT10'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </span>
-                        <ul class="sort-product-list">
-                            <?$APPLICATION->IncludeFile(
-                                "/".LANGUAGE_ID."/include/mobileSliderTxt11.php",
-                                Array(),
-                                Array(
-                                    "NAME" => Loc::getMessage('WIRE_INCLUDE_AREA_TOOLTIP_MOBILE_SLIDER_TXT11'),
-                                    "MODE"  => "text"
-                                )
-                            );?>
-                        </ul>
-                    </div>
-                </div>
-<!--Mobile-->
                 <div class="other-product">
                     <h3>
                         <?$APPLICATION->IncludeFile(

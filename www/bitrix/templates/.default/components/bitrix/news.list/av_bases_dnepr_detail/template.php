@@ -35,7 +35,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     <div class="container">
         <div class="row">
             <?foreach($coast as $arItem){?>
-                <div class="banks-main-wrapper-box">
+                <div class="banks-main-wrapper-box" data-item-id-base="<?=$arItem['BASE_ID']?>">
                     <div class="banks-main-inner">
                         <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 banks-first-contacts">
                             <h2><?=$arItem['NAME']?></h2>
@@ -89,7 +89,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                                 </div>
                                 <div class="btn-save-price">
                                     <?if($baseStream['PRICE'] != ''){?>
-                                        <button data-price-stream="<?=$baseStream['PRICE']?>">Скачать прайс</button>
+                                    <a href="<?=$baseStream['PRICE']?>" download><button data-price-stream="">Скачать прайс</button></a>
                                     <?}?>
                                 </div>
                             </div>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2e8f2d65-7b67-4031-8c54-6d04879ccd74" name="barabash" url="http://10.10.1.137">
+        <fileTransfer host="10.10.1.137" port="22" rootFolder="/home/bitrix" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="894bc590-3810-4911-a05c-f556506e9e0f" name="prod" url="http://10.10.1.130">
+        <fileTransfer host="10.10.1.130" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" showHiddenFiles="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="989b6038-2996-44a7-96c7-ddb81b5c7de3" name="test" url="http://10.10.1.136">
+        <fileTransfer host="10.10.1.136" port="22" rootFolder="/home/bitrix" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="3a1b0a85-1856-47b0-b0e0-4cee94b8515f" name="prod_shop_new" url="http://10.10.1.155">
+        <fileTransfer host="10.10.1.155" port="22" rootFolder="/home/bitrix" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

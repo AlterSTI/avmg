@@ -59,6 +59,10 @@ foreach ($arResult["ITEMS"] as $bases) {
         $leftCoast[$i]['cordinateY']    = $bases["PROPERTIES"]["cordinate_y"]["VALUE"];
         $leftCoast[$i]['OPEN_HOURSES']  = $bases["PROPERTIES"]['open_houres']['VALUE'];
         $leftCoast[$i]['ADDRESS']       = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
+        $leftCoast[$i]['ADDRESS']       = substr($leftCoast[$i]['ADDRESS'], strpos($leftCoast[$i]['ADDRESS'], ',')+1);
+        $leftCoast[$i]['GOOGLE_MARKER'] = 'https://'.$_SERVER['SERVER_NAME'].
+                                           CFile::GetFileArray($bases["PROPERTIES"]["icon_google_maps_dnepr"]['VALUE'])['SRC'];
+
         if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
             $leftCoast[$i]['NAME'] = $alias[$bases['ID']];
         } else {
@@ -75,6 +79,9 @@ foreach ($arResult["ITEMS"] as $bases) {
         $rightCoast[$i]['cordinateY']   = $bases["PROPERTIES"]["cordinate_y"]["VALUE"];
         $rightCoast[$i]['OPEN_HOURSES'] = $bases["PROPERTIES"]['open_houres']['VALUE'];
         $rightCoast[$i]['ADDRESS']      = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
+        $rightCoast[$i]['ADDRESS']       = substr($rightCoast[$i]['ADDRESS'], strpos($rightCoast[$i]['ADDRESS'], ',')+1);
+        $rightCoast[$i]['GOOGLE_MARKER'] = 'https://'.$_SERVER['SERVER_NAME'].
+                                            CFile::GetFileArray($bases["PROPERTIES"]["icon_google_maps_dnepr"]['VALUE'])['SRC'];
         if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
             $rightCoast[$i]['NAME'] = $alias[$bases['ID']];
         } else {
@@ -128,6 +135,28 @@ if (count($resultUserIDs) > 0) {
 
         $resultUserFields[$obUsers['ID']]['MANAGER_FIO']  = $obUsers['LAST_NAME'].' '.$obUsers['NAME'];
         $resultUserFields[$obUsers['ID']]['WORK_PHONE'] = $obUsers['WORK_PHONE'];
+        switch (strlen($obUsers['WORK_PHONE'])){
+            case '13':
+                $resultUserFields[$obUsers['ID']]['PHONE'] =
+                    '('.
+                    $obUsers['WORK_PHONE'][3].
+                    $obUsers['WORK_PHONE'][4].
+                    $obUsers['WORK_PHONE'][5].
+                    ') '.
+                    $obUsers['WORK_PHONE'][6].
+                    $obUsers['WORK_PHONE'][7].
+                    $obUsers['WORK_PHONE'][8].
+                    ' '.
+                    $obUsers['WORK_PHONE'][9].
+                    $obUsers['WORK_PHONE'][10].
+                    ' '.
+                    $obUsers['WORK_PHONE'][11].
+                    $obUsers['WORK_PHONE'][12];
+                break;
+            default:
+                $resultUserFields[$obUsers['ID']]['PHONE'] = $obUsers['WORK_PHONE'];
+                break;
+        }
 
     }
     //pre($resultUserFields);
@@ -148,8 +177,6 @@ if (count($resultUserFields) > 0){
 
 ksort($leftCoast);
 ksort($rightCoast);
-/*pre($leftCoast);
-pre($rightCoast);*/
 }
 
 
@@ -160,6 +187,3 @@ pre($rightCoast);*/
 $arResult['ITEMS']                   = [];
 $arResult['ITEMS']['LEFT_COAST']     = $leftCoast;
 $arResult['ITEMS']['RIGHT_COAST']    = $rightCoast;
-$GLOBALS['AV_BASES_FILTER_DNEPR_IDS'] = $arResult['ITEMS'];
-
-//pre($arResult['ITEMS']);

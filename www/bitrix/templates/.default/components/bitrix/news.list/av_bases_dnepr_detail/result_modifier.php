@@ -32,7 +32,6 @@ $alias                      = array_diff($alias, ['']);
 $noDisplayItems             = array_map(function ($val){return (int)$val;}, $arParams['AV_BASES_STREAMS_NO_DISPLAY']);
 $noDisplayItems             = array_diff($noDisplayItems, [0]);
 
-
 $leftCoustItems             = array_map(function ($val){return (int)$val;}, $arParams['AV_BASES_STREAMS_LEFT_COAST']);
 $leftCoustItems             = array_diff($leftCoustItems, [0]);
 
@@ -68,6 +67,12 @@ foreach ($arResult["ITEMS"] as $j=>$bases) {
         $leftCoast[$i]['cordinateY']    = $bases["PROPERTIES"]["cordinate_y"]["VALUE"];
         $leftCoast[$i]['OPEN_HOURSES']  = $bases["PROPERTIES"]['open_houres']['VALUE'];
         $leftCoast[$i]['ADDRESS']       = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
+        if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
+            $leftCoast[$i]['NAME'] = $alias[$bases['ID']];
+        } else {
+            $leftCoast[$i]['NAME'] = $bases['NAME'];
+        }
+
         if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
             $leftCoast[$i]['NAME'] = $alias[$bases['ID']];
         } else {
@@ -288,7 +293,5 @@ ksort($rightCoast);
  ***********************************************************************************************************************/
 
 $arResult['ITEMS']                   = [];
-$arResult['ITEMS']['LEFT_COAST']     = $leftCoast;
 $arResult['ITEMS']['RIGHT_COAST']    = $rightCoast;
-//$GLOBALS['AV_BASES_FILTER_DNEPR_IDS'] = $arResult['ITEMS'];
-//pre($arResult['ITEMS']);
+$arResult['ITEMS']['LEFT_COAST']     = $leftCoast;

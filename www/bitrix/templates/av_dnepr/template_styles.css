@@ -183,6 +183,14 @@ h6 {
     left: 0;
 }
 
+header .header-logo > img{
+    height: 36px;
+}
+header .header-logo-mobile > img{
+    height:17px;
+}
+
+
 /* -------------------------------------------------------------------- */
 /* ------------------------------ links ------------------------------- */
 /* -------------------------------------------------------------------- */
@@ -269,7 +277,7 @@ p {
 }
 
 .header .phone {
-    text-align: left;
+    text-align: right;
     font-size: calc(1rem + 6px);
     padding-left: 6px;
 }
@@ -318,8 +326,13 @@ p {
 .base-top-data {
     display: flex;
     margin-top: 20px;
-    height: 700px;
     width: 100%;
+    margin-bottom: 70px;
+}
+
+.base-top-data .base-top-data-inner {
+    display: flex;
+    flex-direction: column;
 }
 
 .base-top-data .base-top-data-inner:first-child,
@@ -333,11 +346,6 @@ p {
 
 .dropdown-top {
     display: none;
-}
-
-.base-top-data .base-top-data-inner img {
-    max-width: 100%;
-    height: auto;
 }
 
 .address-box span {
@@ -370,12 +378,14 @@ p {
     position: relative;
 }
 
-.banks-address-box .banks-main-address-box,
-.banks-address-box .banks-address-inner:hover .address-more {
-    display: none;
+.banks-address-box .banks-address-popup {
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
 }
 
-.banks-address-box .banks-address-inner:hover {
+.banks-address-box:hover .banks-address-popup {
     border: 1px solid #e0e0e0;
     box-shadow: 2px 3px 16px 0px rgba(0, 0, 0, 0.05);
     cursor: pointer;
@@ -387,18 +397,16 @@ p {
     left: -10px;
     z-index: 1;
     width: 105%;
+    transition: transform 0.5s ease;
 }
 
-.banks-address-box .banks-address-inner:hover .banks-main-address-box {
-    display: block;
+.banks-address-box:hover .banks-address-inner {
+    position: relative;
+    z-index: -1;
 }
 
 .base-top-data .base-top-data-inner .banks-address-box:nth-child(2) {
     margin-top: 30px;
-}
-
-.banks-address-box .banks-address-inner .address-box {
-    max-width: 200px;
 }
 
 /* -------------------------------------------------------------------- */
@@ -430,7 +438,8 @@ p {
 
 .banks-main-address-box {
     margin-top: 15px;
-    max-width: 300px;
+    max-width: 600px;
+    word-break: break-word;
 }
 
 .banks-main-wrapper-box .bank-map-data img {
@@ -531,6 +540,19 @@ p {
     margin: 15px auto;
 }
 
+#page-up-button {
+    background: url(/bitrix/templates/visit-site/up_button.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    left: 3%;
+    width: 48px;
+    height: 48px;
+    z-index: 9999;
+}
+
 /* -------------------------------------------------------------------- */
 /* ------------------ MOBILE STYLE IN DESCTOP ------------------------- */
 /* -------------------------------------------------------------------- */
@@ -575,12 +597,36 @@ p {
 
     .header {
         box-shadow: none;
+        background-color: #fafafa;
+        padding: 0;
+    }
+
+    .header .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .header-logo {
+        display: none;
+    }
+    .header-logo-mobile {
+        display: block;
+        background-color: #fff;
+        box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.07);
+        padding: 10px 0;
     }
 
     .logo {
         text-align: center;
         order: 2;
         margin-top: 15px;
+    }
+
+    .header .phone {
+        font-size: calc(1rem);
+        text-align: center;
+        padding-left: 0;
+        margin-top: 10px;
     }
 
     .breadcrumbs {
@@ -629,6 +675,15 @@ p {
         display: block;
     }
 
+    .banks-address-popup .banks-main-address-box {
+        display: none;
+    }
+
+    .banks-address-popup {
+        border-bottom: 1px solid rgba(133, 146, 154, 0.45);
+        padding-bottom: 10px;
+    }
+
     .address-box span {
         text-align: left;
     }
@@ -652,13 +707,24 @@ p {
 
     .base-top-data .base-top-data-inner:nth-child(odd),
     .main-title-side-dash,
-    .banks-main-inner .banks-first-contacts h2,
     .banks-main-contact-title,
     .base-top-data .title-banks::after,
     .address-box .banks-cord,
     .banks-main-wrapper-box .banks-main-inner .bank-map-data,
-    .banks-main-wrapper-box .type-metall-block {
+    .banks-main-wrapper-box .type-metall-block,
+    .banks-address-inner {
         display: none;
+    }
+
+    .banks-main-inner .banks-first-contacts h2 {
+        font-size: 1rem;
+        color: #85929a;
+        font-weight: normal;
+        margin: 15px 0 0;
+    }
+
+    .address-box .banks-main-address-box {
+        margin-top: 0;
     }
 
     .dropdown-top {
@@ -672,12 +738,12 @@ p {
 
     .dropdown-top-variant {
         border-radius: 3px 3px 0 0;
-        background-color: #fafafa;
+        background-color: #fff;
         width: 90%;
         border: 1px solid #b7b7b7;
         border-bottom: none;
         z-index: 2;
-        font-size: calc(1rem + 6px);
+        font-size: calc(1rem + 2px);
         text-align: center;
         margin: auto;
     }
@@ -700,10 +766,18 @@ p {
         transform: rotate(0deg);
     }
 
+    .address-box .address-more {
+        transform: rotate(0deg);
+        transition: transform 0.5s linear;
+        pointer-events: none;
+        color: #ED1C24;
+    }
+
     .dropdown-top .address-more.rotate,
     .address-box .address-more.rotate {
         transform: rotate(180deg);
         transition: transform 0.5s linear;
+        color: #85929a;
     }
 
     .address-box .address-more {
@@ -718,11 +792,12 @@ p {
         width: 100%;
         text-align: center;
         justify-content: center;
+        margin-bottom: 20px;
     }
 
     .dropdown-top + .base-top-data.dropdown-top-variant {
         border-radius: 0 0 3px 3px ;
-        background-color: #fafafa;
+        background-color: #fff;
         width: 90%;
         border: 1px solid #b7b7b7;
         border-top: none;
@@ -731,10 +806,6 @@ p {
         z-index: 2;
         max-height: 900px;
         overflow: auto;
-    }
-
-    .header .phone {
-        font-size: calc(1rem + 3px);
     }
 
     .mob-title {
@@ -820,19 +891,31 @@ p {
         display: block;
         margin: 15px auto;
     }
+
+    .banks-address-box .banks-address-popup {
+        display: block;
+        position: relative;
+        top: 0;
+        transform: scale(1);
+    }
+
+    .banks-address-box:hover .banks-address-popup {
+        transform: scale(1);
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+        padding: 0 0 10px;
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(133, 146, 154, 0.45);
+    }
 }
 
 @media screen and (max-width: 767px) {
     body, html {
         font-size: 12px;
-    }
-
-    .header-logo {
-        display: none;
-    }
-
-    .header-logo-mobile {
-        display: block;
     }
 
     .breadcrumbs {
@@ -861,6 +944,10 @@ p {
     .type-metall-block .type-metall-wrap .type-metall-inner {
         border-right: 0;
     }
+
+    .btn-save-price {
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -884,7 +971,7 @@ p {
     }
 
     .banks-main-address-box {
-        max-width: 240px;
+        max-width: 230px;
     }
 
     .address-more {
@@ -893,5 +980,9 @@ p {
 
     .type-metall-block .type-metall-data {
         max-width: 160px;
+    }
+
+    .banks-main-inner .banks-first-contacts h2 {
+        margin: 0;
     }
 }
