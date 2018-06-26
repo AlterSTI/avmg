@@ -51,7 +51,7 @@ $APPLICATION->IncludeComponent
 		"DETAIL_STRICT_SECTION_CHECK" => "N",
 		"ADD_SUBSECTIONS_CHAIN"       => "N",
 
-		"PARENT_SECTION"            => 763,
+		"PARENT_SECTION"            => 772,
 		"LIST_FIELD_CODE"           => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE"),
 		"LIST_PROPERTY_CODE"        => array(),
 		"LIST_TEMPLATE"             => "av",

@@ -5,6 +5,11 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/about/blog/#",
 		"PATH"      => "/about/blog/index.php"
 		),
+    array
+    (
+        "CONDITION" => "#^/job/#",
+        "PATH"      => "/job/index.php"
+    ),
 	array
 		(
 		"CONDITION" => "#^/certificats/#",

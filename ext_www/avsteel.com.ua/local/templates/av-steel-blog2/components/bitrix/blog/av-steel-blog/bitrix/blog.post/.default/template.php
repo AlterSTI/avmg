@@ -110,7 +110,7 @@ else
 						</svg><span class="blog-post-link-counter"><?=IntVal($arResult["Post"]["VIEWS"])?></span> <span class="blog-post-link-caption text-uppercase"><?=GetMessage("BLOG_BLOG_BLOG_VIEWS")?></span></a></span>
 					<?if($arResult["Post"]["ENABLE_COMMENTS"] == "Y"):?>
 
-						<!--<a href="#commentLink"><span class="blog-post-comments-link hidden-xs"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-
+						<a href="#commentLink"><span class="blog-post-comments-link hidden-xs"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <g>
 	<path fill="#36505B" d="M102.4,145.1h128c4.7,0,8.5-3.8,8.5-8.5s-3.8-8.5-8.5-8.5h-128c-4.7,0-8.5,3.8-8.5,8.5
@@ -125,7 +125,7 @@ else
 		l-42.5-49.4c-3.1-3.6-8.4-4-12-0.9c-3.6,3.1-4,8.5-0.9,12l30.5,35.5H51.2c-18.5,0-34.1-15.6-34.1-34.1V68.3
 		c0-18.5,15.6-34.1,34.1-34.1h409.6c18.5,0,34.1,15.6,34.1,34.1V349.9z"/>
 </g>
-							</svg><span class="blog-post-link-counter"><?=IntVal($arResult["Post"]["NUM_COMMENTS"])?></span> <span class="blog-post-link-caption text-uppercase"><?=GetMessage("BLOG_BLOG_BLOG_COMMENTS")?></span></span></a>-->
+							</svg><span class="blog-post-link-counter"><?=IntVal($arResult["Post"]["NUM_COMMENTS"])?></span> <span class="blog-post-link-caption text-uppercase"><?=GetMessage("BLOG_BLOG_BLOG_COMMENTS")?></span></span></a>
 					<?endif;?>
 				</div>
 			</div>

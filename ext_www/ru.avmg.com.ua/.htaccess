@@ -18,6 +18,7 @@ Redirect 301 /uslugi/metal-cutting-belt-saw-machine/ /uslugi/rezka-na-lentopilno
 Redirect 301 /uslugi/longitudinal-cutting/           /uslugi/prodolnaya-rezka-metalla/
 Redirect 301 /uslugi/cargo-transportation/           /uslugi/dostavka/
 Redirect 301 /uslugi/gruzoperevozka/                 /uslugi/dostavka/
+Redirect 301 /about/partnersavmg/                    /
 
 Options -Indexes
 ErrorDocument 404 /404.php

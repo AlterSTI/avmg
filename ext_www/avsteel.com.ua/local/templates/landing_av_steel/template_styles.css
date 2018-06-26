@@ -490,9 +490,27 @@ margin: 0 auto;
 }
 
 .main-wrap [data-main-logo] a {
-    font-size: 28px;
+    font-size: 23px;
     font-weight: 700;
     color: #FFF
+}
+
+.main-wrap [data-main-logo] .calc-link {
+    font-size: 18px;
+    font-weight: normal;
+    border: 3px solid #fff;
+    text-transform: uppercase;
+    padding: 4px 10px 2px;
+    display: inline-block;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.main-wrap [data-main-logo] .calc-link:hover {
+    border: 3px solid #ED1C24;
+    background-color: #ED1C24;
+    transition: .3s;
 }
 
 @media (max-width:768px) {
@@ -1179,8 +1197,7 @@ margin: 0 auto;
 .main-wrap #ral-color-wrap .ral-color-btn {
     background-color: #00f;
     border-radius: 12px;
-    /*border: 3px solid #FFF;*/
-    border: 3px solid transparent;
+    border: 3px solid #FFF;
     padding: 5px;
     margin: 25px 0;
     width: 120px;

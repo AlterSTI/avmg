@@ -26,10 +26,10 @@ $APPLICATION->IncludeComponent
 		"USE_FILTER"                => "Y",
 		"FILTER_NAME"               => "AV_BASES_FILTER",
 		"FILTER_FIELD_CODE"         => array("SECTION_ID", "SUBSECTION"),
-		"FILTER_PROPERTY_CODE"      => array("type_bases", "streams"),
+		"FILTER_PROPERTY_CODE"      => array("type_bases", "STREAMS"),
 		"FILTER_TEMPLATE"           => "av",
-		"FILTER_FIELDS_SORT"        => array("SECTION_ID", "SUBSECTION", "type_bases", "streams"),
-		"FILTER_FIELDS_CHANGE_TYPE" => array("streams" => "SELECT_MULTIPLE"),
+		"FILTER_FIELDS_SORT"        => array("SECTION_ID", "SUBSECTION", "type_bases", "STREAMS"),
+		"FILTER_FIELDS_CHANGE_TYPE" => array("STREAMS" => "SELECT_MULTIPLE"),
 		"FILTER_SUBSECTION_TITLE"   => "Город",
 
 		"SORT_BY1"    => "PROPERTY_NAME",
@@ -50,7 +50,7 @@ $APPLICATION->IncludeComponent
 			"subsection_filter" => "#PARENT_SECTION_CODE#/#SECTION_CODE#/list/filter/#FILTER_PARAMS#/apply/"
 			),
 
-		"CACHE_TYPE"   => "A",
+		"CACHE_TYPE"   => "N",
 		"CACHE_TIME"   => 108000,
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
@@ -64,7 +64,7 @@ $APPLICATION->IncludeComponent
 		"AV_BASES_STREAMS_INFO_IBLOCK" => 114,
 
 		"LIST_FIELD_CODE"           => array(),
-		"LIST_PROPERTY_CODE"        => array("address", "phone", "closed", "cordinate_x", "cordinate_y", "streams"),
+		"LIST_PROPERTY_CODE"        => array("address", "phone", "closed", "cordinate_x", "cordinate_y", "STREAMS"),
 		"LIST_TEMPLATE"             => "av_bases",
 		"MARKUP_TYPE"               => "STANDART",
 		"SHOW_INCLUDE_AREA_PAGE"    => "N",
@@ -74,7 +74,7 @@ $APPLICATION->IncludeComponent
 
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_FIELD_CODE"        => array(),
-		"DETAIL_PROPERTY_CODE"     => array("address", "phone", "open_houres", "current_action", "price_file", "additional_title", "closed", "cordinate_x", "cordinate_y", "streams"),
+		"DETAIL_PROPERTY_CODE"     => array("address", "phone", "open_houres", "current_action", "price_file", "additional_title", "closed", "cordinate_x", "cordinate_y", "STREAMS"),
 		"DETAIL_TEMPLATE"          => "av_bases",
 
 		"PAGER_TEMPLATE"       => "av",

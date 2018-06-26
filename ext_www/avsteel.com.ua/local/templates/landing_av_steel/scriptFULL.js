@@ -268,7 +268,6 @@ $(function() {
         }]
     });
 
-
 });
 
 function CreateAvAlertPopup2(html, type) {
