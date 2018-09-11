@@ -46,7 +46,7 @@ $APPLICATION->IncludeComponent
 			"filter" => "filter/#FILTER_PARAMS#/apply/"
 			),
 
-		"CACHE_TYPE"   => "A",
+		"CACHE_TYPE"   => "N",
 		"CACHE_TIME"   => 360000,
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",

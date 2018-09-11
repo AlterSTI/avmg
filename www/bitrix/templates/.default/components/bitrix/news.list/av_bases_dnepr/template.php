@@ -90,7 +90,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             <h1>Металлобазы в г. Днепр</h1>
             <span>Продажа металлопроката и профнастила от 1м.</span>
         </div>
-        <div id = "dnepr_bases_map"></div>
+        <div id = "dnepr_bases_map" data-here-map-app-id ="<?=$arParams['HERE_MAP_APP_ID']?>" data-here-map-app-code ="<?=$arParams['HERE_MAP_APP_CODE']?>"></div>
     </div>
     <div class="base-top-data-inner col-md-12 col-lg-3">
         <div class="title-banks">

@@ -84,7 +84,11 @@ $APPLICATION->IncludeComponent
 		"SET_STATUS_404" => "Y",
 		"SHOW_404"       => "Y",
 		"MESSAGE_404"    => "",
-		"FILE_404"       => ""
+		"FILE_404"       => "",
+        "REQUEST_PRICE_WEBFORM_ID"              => 24,
+        "REQUEST_PRICE_WEBFORM_TEMPLATE"        => "av-ajax-metal",
+        "REQUEST_PRICE_WEBFORM_FIELD_CURRENT_URL_NAME" => 'urlCurrent',
+        "REQUEST_PRICE_WEBFORM_FIELD_BASE_NAME" => 'metalWarehouse',
 		)
 	);
 

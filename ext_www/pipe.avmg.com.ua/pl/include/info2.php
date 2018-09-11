@@ -1,4 +1,4 @@
-<span><b>ZASTOSOWANIE RUR PROFILOWANYCH</b></span>
+<span><b>ZASTOSOWANIE RUR PROFILOWYCH</b></span>
     <p>
-Dzięki swoim zaletom rury profilowane zyskały szerokie zastosowanie w budownictwie budynków przemysłowych i mieszkalnych, w przemyśle maszynowym, przy wznoszeniu konstrukcji stalowych różnego przeznaczenia, i w innych branżach. 
+Dzięki swoim zaletom rury profilowe zyskały szerokie zastosowanie w budownictwie obiektów przemysłowych i mieszkalnych, w przemyśle maszynowym, przy wznoszeniu konstrukcji stalowych różnego przeznaczenia i w innych branżach.  
     </p>

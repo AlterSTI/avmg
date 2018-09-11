@@ -1,1 +1,1 @@
-Werden Anforderungen in jeder Komplexität mit jeden Forderungen für chemischen Inhalt, mechanische Eigenschaften, für die Verpackung, geometrischen Messungen des Rings angenommen. Wir produzieren die Drahtdurchmesser, die nicht zur Normalreihe der Nomenklatur gehören.
+Wir nehmen auch Anträge aller Arten mit beliebigen Anforderungen an die chemische Zusammensetzung, mechanische Eigenschaften, Verpackung, geometrische Abmessungen der Bucht an. Wir fertigen Draht mit besonderem Durchmesser an, der nicht zur Normalreihe gehört.

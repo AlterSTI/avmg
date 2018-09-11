@@ -1,14 +1,14 @@
 <ul>
-            <li>leichte Montage in verschiedenen Konstruktionen</li>
-            <li>quadratisches oder rechteckiges Form erleichtert die Zusammenbildung, Belastung und Transport der Kantrohre</li>
+            <li>Einfache Montage in verschiedenen Konstruktionen</li>
+            <li>Quadratische oder rechteckige  Form, welche die Lagerung, Beladung und Beförderung der Kantrohre erleichtert</li>
         </ul>
         <ul>
-            <li>Resistenz zu wesentliche statischen Belastungen und hohe Kräftigkeit und Biege</li>
-            <li>Metallersparnis bei dem Bau der Gebäude</li>
+            <li>Beständigkeit gegen solide stationäre Belastungen und Biegefestigkeit</li>
+            <li>Metallersparnis beim Bau von Gebäuden</li>
         </ul>
         <ul>
-            <li>Resistenz zu Deformität und Änderungen der Temperatur</li>
-            <li>die ungewöhnliche Architekturentscheidungen sind möglich</li>
+            <li>Verformungs- und Temperaturverlaufsbeständigkeit</li>
+            <li>Die Möglichkeit, gestalterische Sonderlösungen zu finden</li>
         </ul>
 <br>
 <br>

@@ -1,7 +1,16 @@
 <?
+use Bitrix\Main\Application,
+    Bitrix\Main\Web\Uri;
+
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
-
+/** **********************************************************************
+ ********************************* vars **********************************
+ ************************************************************************/
+$context       = Application::getInstance()->getContext();
+$server        = $context->getServer();
+$request       = $context->getRequest();
+$uri           = new Uri($request->getRequestUri());
+$protocol      = $request->isHttps() ? 'https' : $uri->getScheme();
 /** ********************************************************************************************************************
 ******************************************************variables*********************************************************
 ***********************************************************************************************************************/
@@ -60,7 +69,7 @@ foreach ($arResult["ITEMS"] as $bases) {
         $leftCoast[$i]['OPEN_HOURSES']  = $bases["PROPERTIES"]['open_houres']['VALUE'];
         $leftCoast[$i]['ADDRESS']       = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
         $leftCoast[$i]['ADDRESS']       = substr($leftCoast[$i]['ADDRESS'], strpos($leftCoast[$i]['ADDRESS'], ',')+1);
-        $leftCoast[$i]['GOOGLE_MARKER'] = 'https://'.$_SERVER['SERVER_NAME'].
+        $leftCoast[$i]['GOOGLE_MARKER'] = $protocol.'://'.$_SERVER['SERVER_NAME'].
                                            CFile::GetFileArray($bases["PROPERTIES"]["icon_google_maps_dnepr"]['VALUE'])['SRC'];
 
         if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
@@ -80,7 +89,7 @@ foreach ($arResult["ITEMS"] as $bases) {
         $rightCoast[$i]['OPEN_HOURSES'] = $bases["PROPERTIES"]['open_houres']['VALUE'];
         $rightCoast[$i]['ADDRESS']      = $bases["PROPERTIES"]['address']['VALUE']['TEXT'];
         $rightCoast[$i]['ADDRESS']       = substr($rightCoast[$i]['ADDRESS'], strpos($rightCoast[$i]['ADDRESS'], ',')+1);
-        $rightCoast[$i]['GOOGLE_MARKER'] = 'https://'.$_SERVER['SERVER_NAME'].
+        $rightCoast[$i]['GOOGLE_MARKER'] = $protocol.'://'.$_SERVER['SERVER_NAME'].
                                             CFile::GetFileArray($bases["PROPERTIES"]["icon_google_maps_dnepr"]['VALUE'])['SRC'];
         if ($alias[$bases['ID']] && $alias[$bases['ID']] != ''){
             $rightCoast[$i]['NAME'] = $alias[$bases['ID']];

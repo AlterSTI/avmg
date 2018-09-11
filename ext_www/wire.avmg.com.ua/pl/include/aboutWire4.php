@@ -1,1 +1,1 @@
-Przyjmujemy do produkcji wyroby o dowolnej złożoności oraz dowolnych wymogach pod względem składu chemicznego, właściwości mechanicznych, opakowania, geometrycznych wymiarów kręgu. Wykonujemy średnice drutu, które nie wchodzą w standardowy szereg nomenklatury.
+Przyjmujemy zamówienia na produkcję wyrobów o dowolnej złożoności oraz dowolnych wymogach względem składu chemicznego, właściwości mechanicznych, opakowania, wymiarów zwojów. Wykonujemy również druty o niestandardowych średnicach.

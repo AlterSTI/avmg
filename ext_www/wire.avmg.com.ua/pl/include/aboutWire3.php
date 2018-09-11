@@ -1,1 +1,1 @@
-Na życzenie możemy wysłać certyfikaty na wszelkie produkty. Także gwarantujemy jakość naszych produktów.
+Możemy wysłać certyfikaty na każdy produkt na prośbę klienta, ponadto gwarantujemy jakość naszych produktów.

@@ -9,7 +9,7 @@ $APPLICATION->IncludeComponent
         "AJAX_OPTION_HISTORY" => "N",
 
         "SEF_MODE"    => "N",
-        "WEB_FORM_ID" => 70,
+        "WEB_FORM_ID" => 66,
 
         "START_PAGE"     => "new",
         "SHOW_LIST_PAGE" => "N",

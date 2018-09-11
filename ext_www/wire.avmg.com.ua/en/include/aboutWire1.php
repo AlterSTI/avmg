@@ -1,1 +1,1 @@
-All wire is stored only in the covered warehouses. We also have rackes for storing the wire, which facilitates access to each coil, accelerates shipment, prevents damage to products.
+The wire is stored only in sheltered storage facilities. We also have racks for wire storing that facilitates access to every coil, speeds up shipping, prevents damage to products.

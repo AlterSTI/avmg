@@ -1,4 +1,5 @@
 User-Agent: *
+DIsallow: /job/
 Disallow: /certificats/
 Disallow: */index.php
 Disallow: /bitrix/

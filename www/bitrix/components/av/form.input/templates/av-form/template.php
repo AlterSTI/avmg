@@ -4,6 +4,7 @@
 	data-av-form-library="av-styled"
 	class="
 		av-form-styled-input
+		<?if($arParams['HIDDEN'])?><?=$arParams['HIDDEN'] == 'Y'?'hidden':''?>
 		<?if($arResult["REQUIRED"]):?>required<?endif?>
 		<?if($arResult["TITLE"] && !$arResult["VALUE"]):?>placeholder-on<?endif?>
 		<?if($arResult["TITLE"] &&  $arResult["VALUE"]):?>placeholder-off<?endif?>

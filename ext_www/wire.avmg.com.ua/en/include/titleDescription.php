@@ -1,1 +1,1 @@
-‘AV Metal Group’ Company offers a great variety of products, a wide range of additional services, as well as processing and preparation of products in accordance with the individual wishes of the client.
+AV Metal Group offers a wide range of products as well as a wide range of additional services, including processing and preparation of products in accordance with the individual wishes of the customers.

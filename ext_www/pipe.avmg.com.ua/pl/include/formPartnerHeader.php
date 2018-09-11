@@ -1,2 +1,2 @@
-<span>aplikacja do wyrobów metalowych</span>
-<p>wypełnij formularz, a my skontaktujemy się z<br> Tobą tak szybko, jak to możliwe</p>
+<span>ZAMÓWIENIE NA WYROBY METALICZNE WALCOWANE</span>
+<p>WYPEŁNIJ FORMULARZ I CZEKAJ NA NASZ KONTAKT W NAJBLIŻSZYM CZASIE</p>

@@ -1,1 +1,1 @@
-Rapid manufacturing and delivery of orders
+Fast manufacturing and delivery

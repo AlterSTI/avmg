@@ -1,1 +1,1 @@
-The whole standard range is included in the GOST. Flexibility of production. We have collected for you the optimal assortment - big enough to choose exactly what you need.
+The entire standard range is included in the GOST. The production is flexible. We have gathered an optimum mix for you – big enough to choose exactly what you need.

@@ -1,2 +1,2 @@
-<h3><b>Siedziba</b></h3>
+<h3><b>ADRES SIEDZIBY</b></h3>
  <br>

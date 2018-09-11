@@ -1,26 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /* -------------------------------------------------------------------- */
+    /* ---------------------------- HERE MAP ---------------------------- */
+    /* -------------------------------------------------------------------- */
+    /**
+     * Boilerplate map initialization code starts below:
+     */
+    function greateHereMap($item, defaultLayers) {
+//Step 2: initialize a map - this map is centered.
+        var map = new H.Map(document.getElementById('base_' + $item.dataset.baseId),
+            defaultLayers.normal.map, {
+                center: {lat: $item.dataset.cordinateX, lng: $item.dataset.cordinateY},
+                zoom: 11
+            });
 
-    function greateGoogleMap($item) {
+        var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+        ui.removeControl('mapsettings');
+        //console.log($item.dataset.marker);
+        var icon = new H.map.Icon($item.dataset.marker,
+            {
+                size:{
+                    w:30,
+                    h:45
+                }
+            }
+        );
 
-        var center = new google.maps.LatLng($item.dataset.cordinateX,$item.dataset.cordinateY);
-        var mapOptions = {
-            zoom: 11,
-            center: center
-        };
-        var map = new google.maps.Map(document.getElementById('base_'+$item.dataset.baseId), mapOptions);
+        var Marker = new H.map.Marker({
+                lat: $item.dataset.cordinateX,
+                lng: $item.dataset.cordinateY
+            },
+            {icon:icon}
+        );
+        map.addObject(Marker);
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
-        new google.maps.Marker({
-            position: new google.maps.LatLng($item.dataset.cordinateX, $item.dataset.cordinateY),
-            title:coordinates[i].dataset.title
-        }).setMap(map);
     }
-    var coordinates = document.getElementsByClassName('banks-cord');
 
-    for(var i=0; i < coordinates.length; i++){
-        greateGoogleMap(coordinates[i]);
+    var coordinates = document.getElementsByClassName('banks-cord'),
+       container  = document.querySelector('.av-bases-list-detail-container');
+
+//Step 1: initialize communication with the platform
+    var platform = new H.service.Platform({
+        app_id: container.dataset.dataHereMapAppId,
+        app_code: container.dataset.dataHereMapAppCode,
+        useHTTPS: true
+    });
+    var defaultLayers = platform.createDefaultLayers('', '', 'RUS');
+
+
+    for (var i = 0; i < coordinates.length; i++) {
+        greateHereMap(coordinates[i], defaultLayers);
     }
+
 });
-
 
 
 

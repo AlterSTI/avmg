@@ -1,5 +1,2 @@
 <h3>OUR PRODUCTS</h3>
-<p>
-Electric welded round and profile pipes are manufactured according to the European standard EN <br>
-     10219 with quality carbon steel of the brand S235JRH.
-</p>
+<p>Electric welded circular and shaped pipes are manufactured of S235JRH high quality carbon steel according to the EN 10219 standard. Square pipes EN 10219-1, EN 10219-2. Wall thickness | steel grade | dimensions, mm 2-3 mm	 | S 235JRH   | from 15х15 to 60х60. </p>

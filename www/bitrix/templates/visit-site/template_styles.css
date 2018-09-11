@@ -187,6 +187,51 @@
 .job-info {
 	padding-left: 40px;
 }
+/* -------------------------------------------------------------------- */
+/* ----------------------- header call back form ---------------------- */
+/* -------------------------------------------------------------------- */
+#page-header-call-back-form{
+	position: absolute;
+	z-index: 1100;
+	top: 160px;
+	left: 755px;
+	right: 0px;
+	background: #FFF;
+	display: none;
+	padding: 20px;
+	width: 400px;
+	min-height: 200px;
+}
+#page-header-call-back-form > .title
+{
+	font-weight: bold;
+	line-height: 24px;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:  calc(100% - 24px);
+}
+#page-header-call-back-form > .separator
+{
+	background: #EFEFEF;
+	margin: 6px auto;
+	width: 70%;
+	height: 1px;
+}
+#page-header-call-back-form > .close
+{
+	color: #B6BDC3;
+	cursor: pointer;
+	float: right;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+	transition: .3s;
+	width:  24px;
+	height: 24px;
+}
+#page-header-call-back-form .close:hover {color: #CC0000}
 
 /* -------------------------------------------------------------------- */
 /* ------------------------------ media ------------------------------- */
@@ -252,4 +297,18 @@
 	{
 	#page-footer .contacts-cell {margin: 0 0 26px 0;padding: 0;text-align: center;width: 100%}
 	#page-footer .subscibe-cell {padding: 0;width: 200px}
+	#page-workarea              {min-height: auto}
+	.title-back-arrow {
+		display: block;
+		position: absolute;
+		left: 20px;
+	}
+
+	.title-back-arrow:hover {
+		cursor: pointer;
+	}
+
+	.title-back-arrow .arrow {
+		font-size: 30px;
+	}
 	}

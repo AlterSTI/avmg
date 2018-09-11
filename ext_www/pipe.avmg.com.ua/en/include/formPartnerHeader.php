@@ -1,2 +1,2 @@
-<span>application for metal products</span>
-<p>fill out the form and we will <br> contact you as soon as possible</p>
+<span>ROLLED METAL PRODUCT ORDER</span>
+<p>FLEAVE YOUR CONTACT DETAILS AND THE MANAGER WILL SPECIFY THE PRODUCT PRICE</p>

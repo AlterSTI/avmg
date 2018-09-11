@@ -1,14 +1,14 @@
 <ul>
-            <li>łatwość montażu w różnych konstrukcjach</li>
-            <li>kwadratowy lub prostokątny kształt, który ułatwia magazynowanie, załadunek, transport rur profilowanych</li>
+            <li>Łatwość w montażu w różnych konstrukcjach.</li>
+            <li>Kwadratowy lub prostokątny kształt, który ułatwia magazynowanie, załadunek, transport rur profilowych.</li>
         </ul>
         <ul>
-            <li>dporność na poważne obciążenia statyczne i wysoka wytrzymałość na zginanie</li>
-            <li>oszczędność materiału przy budowie budynków</li>
+            <li>Odporność na poważne obciążenia statyczne i wysoka wytrzymałość na zginanie.</li>
+            <li>Oszczędność metalu przy budowie budynków.</li>
         </ul>
         <ul>
-            <li>odporność na odkształcenia i zmiany temperatury</li>
-            <li>możliwość znaleźć innowacyjne rozwiązania architektoniczne</li>
+            <li>Odporność na odkształcenia i zmiany temperatury.</li>
+            <li>Możliwość zastosowania innowacyjnych rozwiązań architektonicznych</li>
         </ul>
 <br>
 <br>

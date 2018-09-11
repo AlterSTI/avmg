@@ -1,12 +1,12 @@
 <p>
-     <b>BREITES SORTIMENT </b> <br>
-     <span> Im Sortiment unserer Gesellschaft finden Sie das umfassende Angebot von den Kantrohre, Elektroschweißrohre und Kreisrohre.</span>
+     <b>BREITES ANGEBOT  </b> <br>
+     <span> Im Sortiment unseres Unternehmens können Sie eine reiche Auswahl an  Kant-, elektrogeschweißten und kreisförmigen Rohren finden. </span>
 </p>
 <p>
-     <b> GROSSHANDEL UND EINZELHANDEL FÜR JEDEN </b> <br>
-     <span> Wir geben eine Möglichkeit in den passenden Umfänge und Größen zu kaufen, dabei werden die Bedürfnisse und die Interesse der Kunden berücksichtigt. </span>
+     <b> GROSS- UND EINZELHANDEL </b> <br>
+     <span> Wir bieten Ihnen die Möglichkeit, unsere Produkte im gewünschten Umfang und der Menge unter Berücksichtigung der Bedürfnisse und Interessen unserer Kunden zu kaufen. </span>
 </p>
 <p>
-     <b> QUALITÄTSSTANDARDS  </b> <br>
-     <span> Wir garantieren die ausgezeichnete Qualität unserer Erzeugnisse, die mit den gültigen Standards bestätigt ist. </span>
+     <b> QUALITÄTSSTANDARDS</b> <br>
+     <span> Wir garantieren Ihnen eine ausgezeichnete und dem geltenden Standard entsprechende Qualität der Produkte </span>
 </p>

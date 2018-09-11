@@ -1,14 +1,14 @@
 <ul>
-            <li>Ease of installation in various designs</li>
-            <li>square or rectangular shape that facilitates the storage, loading, transport of profile tubes</li>
+            <li>easy to install in various structures</li>
+            <li>square or rectangular shape that facilitates the storage, loading, and transportation of shaped pipes</li>
 </ul>
         <ul>
-            <li>Resilience to severe static loads and high bending strength</li>
-            <li>economy of metal in the construction of buildings</li>
+            <li>resistance to hard dead-weight loads and high bending strength</li>
+            <li>saving metal in a building construction</li>
         </ul>
         <ul>
-            <li>resistance to deformation and temperature changes</li>
-            <li> the ability to find non-standard architectural solutions</li>
+            <li>resistance to deformation and changes of temperature conditions</li>
+            <li>the opportunity to find non-standard architectural concepts</li>
         </ul>
 <br>
 <br>

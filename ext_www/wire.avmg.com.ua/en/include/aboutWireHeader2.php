@@ -1,1 +1,1 @@
-Wide variety of products
+Large variety

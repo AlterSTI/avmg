@@ -19,7 +19,7 @@ $APPLICATION->SetPageProperty("description", "Хочете працювати в
                 "AJAX_OPTION_HISTORY" => "N",
 
                 "SEF_MODE"    => "N",
-                "WEB_FORM_ID" => 60,
+                "WEB_FORM_ID" => 88,
 
                 "START_PAGE"     => "new",
                 "SHOW_LIST_PAGE" => "N",

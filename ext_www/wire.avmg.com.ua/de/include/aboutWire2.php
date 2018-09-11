@@ -1,1 +1,1 @@
-Die ganze Normalreihe nach GOST. Flexibilisierung der Produktion. Wir haben für Sie das optimale Sortiment - ziemlich große gesammelt, damit Sie gerade das wählen können, was Sie brauchen.
+Die gesamte Normalreihe gehört zu GOST. Produktionsflexibilität. Wir verfügen über ein optimales, ziemlich großes Sortiment, damit Sie immer genau das Produkt, was Sie brauchen, erhalten.

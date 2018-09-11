@@ -1,1 +1,1 @@
-Cały standardowy szereg spełnia normę GOST. Elastyczność produkcji. Zebraliśmy dla Państwa optymalny asortyment - jest on na tyle szeroki, że możliwe wybrać dokładnie to, czego Państwo potrzebują.
+Cała standardowa oferta spełnia normę GOST. Elastyczność oferty. Przedstawiamy optymalny asortyment — jest on na tyle szeroki, aby umożliwić wybranie tego, czego potrzebuje klient.

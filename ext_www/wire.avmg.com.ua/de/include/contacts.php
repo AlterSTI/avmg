@@ -1,12 +1,12 @@
-<h2>KONTAKTE</h2>
+<h2>UNSERE KONTAKTANGABEN</h2>
 <ul>
-    <li><span><i>Dnipro, 49000, Scholom-Alejchem-Strasse, 5</i></span></li>
+    <li><span><i>Ukraine, Dnipro, 49000, Scholom-Alejchem-Strasse, 5</i></span></li>
     <li>
         <span>
             <div>
                 <i>
-                    <a href="tel:+38 (056) 790-01-22 ">+38 (056) 790-01-22 </a>
-                    <a href="tel:+38 (056) 790-73-00 ">+38 (056) 790-73-00 </a>
+                    <a href="tel:+38 (097) 809 89 09 ">+38 (097) 809 89 09 </a>
+                    <a href="tel:+38 (067) 238 11 83 ">+38 (067) 238 11 83 </a>
                 </i>
             </div>
         </span>

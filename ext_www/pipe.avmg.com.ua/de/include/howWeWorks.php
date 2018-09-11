@@ -1,3 +1,2 @@
-<h3><b>WIE ARBEITEN WIR</b></h3>
-    <p>Leichte Bestellung auf der Seite spart  die Zeit und die Bemühungen der Kunden,
-und wenn Sie Fragen haben, stehen wir gerne Ihnen zur Verfügung.</p>
+<h3><b>UNSERE ARBEITSWEISE</b></h3>
+    <p>Die einfache Vorgehensweise für Bestellungen auf der Webseite spart Kunden Zeit und Mühe. Falls Sie weitere Fragen haben, stehen wir Ihnen gerne zur Verfügung.</p>

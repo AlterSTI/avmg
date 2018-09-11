@@ -55,7 +55,7 @@ ob_end_clean();
 
 $hasLeftColumn = $leftMenu || (file_exists($_SERVER["DOCUMENT_ROOT"].$currentDirectory."sect_inc.php") && $dirProperty["NOT_SHOW_LEFT_MENU"] != "Y") ? true : false;
 
-$clientBrowserIsOld = false;
+/*$clientBrowserIsOld = false;
 try{
     $ClientInfo = new ClientInfo();
     $ClientInfo->setBrowserChecking('firefox', 50.0);
@@ -71,7 +71,7 @@ try{
 }
 catch (Exception $e){
 
-}
+}*/
 /* ============================================================================================= */
 /* ========================================== DOCUMENT ========================================= */
 /* ============================================================================================= */

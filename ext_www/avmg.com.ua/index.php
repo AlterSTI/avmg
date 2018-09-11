@@ -9,6 +9,7 @@ $APPLICATION->SetPageProperty("description", "АВ метал груп ™ на�
 
 CJSCore::Init(["bootstrap"]);
 Asset::getInstance()->addCss("/bitrix/css/av-site/pages/index.css");
+Asset::getInstance()->addJs ('/bitrix/js/av-site/pages/main_page.js');
 /* -------------------------------------------------------------------- */
 /* ------------------------------ banner ------------------------------ */
 /* -------------------------------------------------------------------- */
@@ -48,8 +49,23 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/index.css");
 				)
 			);
 		?>
+        <div class="active-button-add-price">
+            <a href="#add-price-to" class="active-button-cell"><?
+            $APPLICATION->IncludeComponent
+            (
+                "av:form.button", "av",
+                array(
+                    "BUTTON_TYPE" => "label",
+                    "TITLE"       => "Заказать прайс",
+                    "ATTR"        => ["active-button-add-price"]
+                ),
+                false, array("HIDE_ICONS" => "Y")
+            );
+            ?></a>
+        </div>
+
 		<div class="active-button-cell">
-			<?
+			<?/*
 			$APPLICATION->IncludeComponent
 				(
 				"av:form.button", "av",
@@ -61,7 +77,7 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/index.css");
 					),
 				false, array("HIDE_ICONS" => "Y")
 				);
-			?>
+			*/?>
 		</div>
 	</div>
 </div>
@@ -83,21 +99,21 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/index.css");
 		</div>
 		<div>
 			<picture>
-				<source srcset="/upload/av_site/index/uslugi.jpg"     media="(min-width: 992px)">
-				<source srcset="/upload/av_site/index/uslugi_med.jpg" media="(min-width: 768px) and (max-width: 991px)">
-				<source srcset="/upload/av_site/index/uslugi_sm.jpg"  media="(max-width: 767px)">
-				<img src="/upload/av_site/index/uslugi.jpg" alt="Послуги" title="Послуги">
+				<source srcset="/upload/medialibrary/83e/services.jpg"      media="(min-width: 992px)">
+				<source srcset="/upload/medialibrary/c69/services_md.jpg"   media="(min-width: 768px) and (max-width: 991px)">
+				<source srcset="/upload/medialibrary/a1e/services_sm.jpg"   media="(max-width: 767px)">
+				<img src="/upload/medialibrary/83e/services.jpg" alt="Послуги" title="Послуги">
 			</picture>
 			<a href="/uslugi/">Послуги</a>
 		</div>
 		<div>
 			<picture>
-				<source srcset="/upload/av_site/index/partnerstvo.jpg"     media="(min-width: 992px)">
-				<source srcset="/upload/av_site/index/partnerstvo_med.jpg" media="(min-width: 768px) and (max-width: 991px)">
-				<source srcset="/upload/av_site/index/partnerstvo_sm.jpg"  media="(max-width: 767px)">
+				<source srcset="/upload/av_site/index/metall-partner.jpg"     media="(min-width: 992px)">
+				<source srcset="/upload/av_site/index/metall-partner-med.jpg" media="(min-width: 768px) and (max-width: 991px)">
+				<source srcset="/upload/av_site/index/metall-partner-sm.jpg"  media="(max-width: 767px)">
 				<img src="/upload/av_site/index/partnerstvo.jpg" alt="Партнерство" title="Партнерство">
 			</picture>
-			<a href="/about/partnersavmg/">Партнерство</a>
+			<a href="/metallobaza/">Металлобазы</a>
 		</div>
 		<div>
 			<picture>
@@ -250,7 +266,7 @@ Asset::getInstance()->addCss("/bitrix/css/av-site/pages/index.css");
 /* ------------------------------- form ------------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
-<div class="av-index-block">
+<div id="add-price-to" class="av-index-block">
 	<div class="container">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
 			<div class="av-page-title">Замовити прайс-лист</div>

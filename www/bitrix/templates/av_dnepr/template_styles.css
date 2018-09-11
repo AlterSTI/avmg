@@ -466,7 +466,7 @@ p {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .type-metall-block .type-metall-wrap,
@@ -488,7 +488,7 @@ p {
     text-align: left;
     margin-left: 15px;
     max-width: 115px;
-    word-wrap: break-word;
+    word-wrap: normal;
     height: 72px;
 }
 

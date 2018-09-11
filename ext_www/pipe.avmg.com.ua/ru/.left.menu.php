@@ -1,14 +1,14 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Ми производители",
+		"Мы производители", 
 		"#weUse", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Продукция",
+		"Продукция", 
 		"#product", 
 		Array(), 
 		Array(), 
@@ -22,14 +22,14 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Как мы работаем",
+		"Как мы работаем", 
 		"#howWeWork", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Контакты",
+		"Контакты", 
 		"#contacts", 
 		Array(), 
 		Array(), 

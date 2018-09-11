@@ -1,1 +1,2 @@
-Availability of certificates and guarantees
+Certificates and warranties
+

@@ -1,1 +1,1 @@
-<h3><b>Zalety stosowania rur profilowanych</b></h3>
+<h3><b>ZALETY STOSOWANIA RUR PROFILOWYCH</b></h3>

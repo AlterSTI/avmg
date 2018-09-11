@@ -1,12 +1,12 @@
-<h2>NASZE KONTAKTY</h2>
+<h2>KONTAKT Z NAMI</h2>
 <ul>
-    <li><span><i>Dniepr, 49000, ul. Shalom Alejchema, 5</i></span></li>
+    <li><span><i>Ukraina, Dniepr, 49000, ul. Shalom Alejchema, 5</i></span></li>
     <li>
         <span>
             <div>
                 <i>
-                    <a href="tel:+38 (056) 790-01-22 ">+38 (056) 790-01-22 </a>
-                    <a href="tel:+38 (056) 790-73-00 ">+38 (056) 790-73-00 </a>
+                    <a href="tel:+38 (097) 809 89 09 ">+38 (097) 809 89 09 </a>
+                    <a href="tel:+38 (067) 238 11 83 ">+38 (067) 238 11 83 </a>
                 </i>
             </div>
         </span>

@@ -1,1 +1,1 @@
-Zertifikate und Garantien
+Vorhandensein von Zertifikaten und Garantien 

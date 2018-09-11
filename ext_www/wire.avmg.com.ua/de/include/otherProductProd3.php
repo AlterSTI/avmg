@@ -1,6 +1,6 @@
-<span>WARMES HALBZEUG</span>
+<span>WARMWALZGUT</span>
 <ul>
-    <li>Streife GK (3х12 :12х6)</li>
-    <li>Quadrat GK 8 mm</li>
-    <li>Quadrat GK 6,5 mm</li>
+    <li>Stahlband, warmgewalzt (3х12 : 12х6),</li>
+    <li>Vierkantstahl, warmgewalzt 8 mm,</li>
+    <li>Vierkantstahl, warmgewalzt 6,5 mm.</li>
 </ul>

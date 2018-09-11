@@ -1,7 +1,7 @@
-<span>NETZ</span>
+<span>GITTER</span>
 <ul>
-    <li>Baunetz in allen Größen</li>
-    <li>Riffelgewebe</li>
-    <li>Rabitzgewebe</li>
-    <li>Zaunsysteme</li>
+    <li>Baugitter aller Größen,</li>
+    <li>Geriffeltes Gitter,</li>
+    <li>Maschendraht,</li>
+    <li>Absperrungssysteme.</li>
 </ul>

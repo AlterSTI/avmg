@@ -1,5 +1,5 @@
 <ul>
-        <li><b>Export sales department</b></li>
+        <li><b>Department of export sales</b></li>
         <li><span>Khorunzhy Vladislav:</span></li>
         <li>
             <i><a href="tel:+38(050) 888-89-09">+38(050) 888-89-09</a></i><br>
@@ -16,25 +16,22 @@
         <li>
             <address>
                 <div class="footer-data-wrapper">
-                    <div>Ukraine, Dnipro,</div>
-                    <div>Sholom-Aleikhema str, 5 </div>
-                </div>
+                    <div>Dnipro, Ukraine</div>
+                    <div>5 Sholem Aleichem St.,</div>
             </address>
         </li>
         <li>
             <i>
                 <div class="footer-data-wrapper">
                     <a href="tel:+38(056) 376-79-94">+38(056) 376-79-94</a><br>
-                    <div><a href="tel:+38(067) 485-53-73">+38(067) 485-53-73</a></div>
-                </div>
+                                    </div>
             </i>
         </li>
         <li>
             <u>
                 <div class="footer-data-wrapper">
-                    <a href="mailto: office@avmg.com.ua">office@avmg.com.ua</a><br>
-                    <div><a href="mailto: s.kireev@avmg.com.ua">s.kireev@avmg.com.ua</a></div>
-                </div>
+                    <a href="mailto: pipe@avmg.com.ua">pipe@avmg.com.ua</a><br>
+                                   
             </u>
         </li>
     </ul>

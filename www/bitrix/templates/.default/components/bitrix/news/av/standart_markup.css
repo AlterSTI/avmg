@@ -27,6 +27,9 @@
 	margin-right: 10px;
 	text-transform: uppercase;
 	}
+.av-news-standart-markup .active-button-back-to {
+	display: none;
+}
 /* -------------------------------------------------------------------- */
 /* ------------------------------- media ------------------------------ */
 /* -------------------------------------------------------------------- */
@@ -44,4 +47,9 @@
 @media (max-width: 767px)
 	{
 	.av-news-standart-markup .share-block > span {display: none}
+	.av-news-standart-markup .active-button-back-to {
+		display: block;
+		margin-top: 40px;
+		text-align: center;
+	}
 	}

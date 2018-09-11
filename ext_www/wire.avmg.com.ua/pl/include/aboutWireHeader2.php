@@ -1,1 +1,1 @@
-Szeroki asortyment
+Szeroka gama

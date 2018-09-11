@@ -1,1 +1,1 @@
-Breiter Sortiment
+Großes Sortiment

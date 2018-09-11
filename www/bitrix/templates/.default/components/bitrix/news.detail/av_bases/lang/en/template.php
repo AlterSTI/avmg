@@ -2,6 +2,7 @@
 $MESS["AV_BASES_ELEMENT_CLOSED_PREFIX"]      = "[Closed]";
 $MESS["AV_BASES_ELEMENT_INFO"]               = "Contacts";
 $MESS["AV_BASES_ELEMENT_PRICE_LINK"]         = "Upload price";
+$MESS["AV_BASES_ELEMENT_ORDER_PRICE_LINK"]   = "Order price";
 $MESS["AV_BASES_ELEMENT_MAP"]                = "Path map";
 $MESS["AV_BASES_ELEMENT_STREAMS_INFO"]       = "Warehouse products types";
 $MESS["AV_BASES_ELEMENT_STREAMS_INFO_SHORT"] = "Products types";

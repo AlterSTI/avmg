@@ -1,35 +1,35 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Jesteśmy producenci",
+		"Jesteśmy producenci", 
 		"#weUse", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Produkty",
+		"Produkty", 
 		"#product", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Galeria",
+		"Galeria", 
 		"#gallery", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Jak pracujemy",
+		"Jak pracujemy", 
 		"#howWeWork", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Kontakt",
+		"Kontakty", 
 		"#contacts", 
 		Array(), 
 		Array(), 

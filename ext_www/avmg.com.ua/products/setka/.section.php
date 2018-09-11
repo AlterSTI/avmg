@@ -1,5 +1,5 @@
 <?
-$sSectionName    = "Сітка і огорожі";
+$sSectionName    = "Сітка та огорожі";
 $arDirProperties = array
 	(
    "TITLE_BACKGROUND_ALT"  => "/upload/medialibrary/6fe/setka.png",

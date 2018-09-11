@@ -1,2 +1,2 @@
-<h3><b>SITZANSCHRIFT</b></h3>
+<h3><b>ANSCHRIFT DES ZENTRALBÜROS</b></h3>
  <br>

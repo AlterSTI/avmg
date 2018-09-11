@@ -6,7 +6,6 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $cordinateX  = $arResult["PROPERTIES"]["cordinate_x"]["VALUE"];
 $cordinateY  = $arResult["PROPERTIES"]["cordinate_y"]["VALUE"];
 $pricesArray = [];
-
 foreach($arResult["BASE_STREAMS_INFO"] as $streamInfo)
 	if($streamInfo["PRICE"])
 		$pricesArray[] =
@@ -90,6 +89,62 @@ if(count($arParams["CATEGORY_APPLIED_FILTER"]))
 /* ------------------------------- page ------------------------------- */
 /* -------------------------------------------------------------------- */
 ?>
+<div id="page-header-call-back-form" data-page-url="<?=$arResult['LIST_PAGE_URL'].
+                                                       $arResult['ROOT_SECTION_INFO']['CODE'].'/'.
+                                                       $arResult['SECTION_INFO']['CODE'].'/'.
+                                                       $arResult['CODE'].'/'
+                                                    ?>">
+    <i class="close fa fa-times"></i>
+    <div class="title">
+        <?=Loc::getMessage("AV_SHOP_CALL_BACK_FORM_TITLE")?>
+    </div>
+    <div class="separator"></div>
+    <div class="body">
+        <?$APPLICATION->IncludeComponent
+        (
+            "bitrix:form.result.new", $arParams['REQUEST_PRICE_WEBFORM_TEMPLATE'],
+            array(
+                "AJAX_MODE"           => "Y",
+                "AJAX_OPTION_JUMP"    => "N",
+                "AJAX_OPTION_STYLE"   => "N",
+                "AJAX_OPTION_HISTORY" => "N",
+                "PAGE_QUEST"          => [
+                        'URL'  => $arResult['LIST_PAGE_URL'].
+                                  $arResult['ROOT_SECTION_INFO']['CODE'].'/'.
+                                  $arResult['SECTION_INFO']['CODE'].'/'.
+                                  $arResult['CODE'].'/',
+                        'NAME' => $arResult['ROOT_SECTION_INFO']['NAME'].' / '.
+                                  $arResult['SECTION_INFO']['NAME'].' / '.
+                                  $arResult['NAME'],
+                        ],
+
+                "SEF_MODE"    => "N",
+                "WEB_FORM_ID" => $arParams['REQUEST_PRICE_WEBFORM_ID'],
+
+
+                "START_PAGE"     => "new",
+                "SHOW_LIST_PAGE" => "N",
+                "SHOW_EDIT_PAGE" => "N",
+                "SHOW_VIEW_PAGE" => "N",
+                "SUCCESS_URL"    => "",
+
+                "SHOW_ANSWER_VALUE"      => "N",
+                "SHOW_ADDITIONAL"        => "N",
+                "SHOW_STATUS"            => "N",
+                "EDIT_ADDITIONAL"        => "N",
+                "EDIT_STATUS"            => "N",
+                "IGNORE_CUSTOM_TEMPLATE" => "N",
+                "USE_EXTENDED_ERRORS"    => "N",
+                "REQUEST_PRICE_WEBFORM_FIELD_CURRENT_URL_NAME" => $arParams['REQUEST_PRICE_WEBFORM_FIELD_CURRENT_URL_NAME'],
+                "REQUEST_PRICE_WEBFORM_FIELD_BASE_NAME" => $arParams['REQUEST_PRICE_WEBFORM_FIELD_BASE_NAME'],
+
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => 360000
+            )
+        );?>
+    </div>
+    </div>
+</div>
 <div class="av-bases-detail<?if($arResult["PROPERTIES"]["closed"]["VALUE_XML_ID"]):?> closed<?endif?><?if(!$cordinateX || !$cordinateY):?> no-map<?endif?>">
 	<?
 	$buttonsArray = CIBlock::GetPanelButtons
@@ -159,6 +214,20 @@ if(count($arParams["CATEGORY_APPLIED_FILTER"]))
 						<?endforeach?>
 					</div>
 				</div>
+            <?elseif(count($pricesArray) < 1):?>
+                <?
+                    $APPLICATION->IncludeComponent
+                    (
+                        "av:form.button", "av",
+                        [
+                            "BUTTON_TYPE" => "button",
+                            "NAME"        => "orderPrice",
+                            "TITLE"       => Loc::getMessage("AV_BASES_ELEMENT_ORDER_PRICE_LINK"),
+                            "ATTR"        => ["data-order-price" => ""]
+                        ],
+                        false, ["HIDE_ICONS" => "Y"]
+                    );
+                ?>
 			<?endif?>
 		</div>
 	</div>

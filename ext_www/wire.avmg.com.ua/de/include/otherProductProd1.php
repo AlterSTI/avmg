@@ -1,5 +1,5 @@
-<span>RUNDES METALL-HALBZEUG</span>
+<span>RUNDWALZGUT</span>
 <ul>
-    <li>Rund 5-12 mm</li>
-    <li>Stange ВР-1 2,5-5 mm</li>
+    <li>Stabstahl  von 5-12 mm,</li>
+    <li>Draht VR-1 von 2,5-5 mm.</li>
 </ul>

@@ -1,7 +1,20 @@
 <?
-use \Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Application,
+    Bitrix\Main\Web\Uri,
+    \Bitrix\Main\Localization\Loc;
+
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+/** **********************************************************************
+ ********************************* vars **********************************
+ ************************************************************************/
+$context       = Application::getInstance()->getContext();
+$server        = $context->getServer();
+$request       = $context->getRequest();
+$uri           = new Uri($request->getRequestUri());
+$protocol      = $request->isHttps() ? 'https' : $uri->getScheme();
+$url           = base64_encode($protocol.'://'.$server->getServerName().$this->GetFolder().'/ajax_handler.php');
+$urlCurrent    = $protocol.'://'.$server->getServerName().$request->getRequestUri();
 /* -------------------------------------------------------------------- */
 /* --------------------------- form sended ---------------------------- */
 /* -------------------------------------------------------------------- */
@@ -21,7 +34,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 	<?endif?>
 
 	<?=$arResult["FORM_HEADER"]?>
-		<?foreach($arResult["FIELDS"] as $fieldInfo):?>
+		<?foreach($arResult["FIELDS"] as $fieldName => $fieldInfo):?>
 		<div>
 			<?
 			/* ------------------------------------------- */
@@ -153,9 +166,10 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 					"av:form.input", "av-form",
 						[
 						"NAME"     => $fieldInfo["NAME"],
-						"VALUE"    => $fieldInfo["VALUE"],
+                        "VALUE"    => $fieldName == 'urlCurrent' ? $urlCurrent : ($fieldName == 'metalWarehouse'? $arParams["PAGE_QUEST"]["NAME"] :$fieldInfo["VALUE"]),
 						"TITLE"    => $fieldInfo["TITLE"],
-						"REQUIRED" => $fieldInfo["REQUIRED"]
+						"REQUIRED" => $fieldInfo["REQUIRED"],
+                        "HIDDEN" =>   $fieldName == 'urlCurrent' || $fieldName == 'metalWarehouse' ? 'Y' : 'N'
 						],
 					false, ["HIDE_ICONS" => "Y"]
 					);

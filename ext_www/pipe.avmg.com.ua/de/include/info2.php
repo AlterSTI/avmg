@@ -1,4 +1,4 @@
-<span><b>DER EINSATZ DER KANTROHRE</b></span>
+<span><b>VERWENDUNG VON KANTROHREN</b></span>
     <p>
-        Dank seinen Vorteilen hat das Kantrohr einen breiten Einsatz im Bau der Industrie- und Wohngebäuden, im Maschinenbau, im Bau der Metallkonstruktionen für verschiedene Zwecke und in anderen Bereichen.
+        Aufgrund seiner Vorteile wird das Kantrohr stets breiter  und für verschiedene Zwecke beim Industrie- und Wohngebäude-, Maschinen- und Metallbau und in anderen Branchen verwendet. 
     </p>

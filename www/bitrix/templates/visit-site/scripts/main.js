@@ -198,4 +198,10 @@ $(function()
 			AvHeaderBehavior();
 			AvUpButtonBehavior();
 			});
+
+        $('#page-header-call-back-form').on('aSintezAjaxFormOk aSintezAjaxFormError', function () {
+            setTimeout(function () {
+                $('#page-header-call-back-form').find('.close').click();
+            },3000);
+        });
 	});

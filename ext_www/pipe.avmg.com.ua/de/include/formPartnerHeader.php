@@ -1,2 +1,2 @@
-<span>Anwendung für Metallprodukte</span>
-<p>Füllen Sie das Formular aus und wir werden uns so schnell <br> wie möglich mit Ihnen in Verbindung setzen</p>
+<span>ANFRAGE VON WALZERZEUGNISSEN</span>
+<p>FÜLLEN SIE DAS FORMULAR AUS UND WIR KONTAKTIEREN SIE SO SCHNELL WIE MÖGLICH</p>

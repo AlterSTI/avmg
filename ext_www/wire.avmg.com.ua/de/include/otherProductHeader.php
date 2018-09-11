@@ -1,1 +1,1 @@
-gmbh „av metal group“ bietet den konsumenten auch die breite auswahl anderer erzeugnisse des Metall-Halbzeugs an
+DIE "АВ METALL GROUP" GMBH ÜBERLÄSST DEN VERBRAUCHERN AUCH EINE BREITE AUSWAHL AN ANDEREN WALZERZEUGNISSEN

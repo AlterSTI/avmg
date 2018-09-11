@@ -1,1 +1,1 @@
-© 2009-2018 АВ Metal Group. Alle Rechte sind geschützt.
+© 2009-2018 АВ metal group. Alle Rechte sind geschützt.

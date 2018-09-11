@@ -8,5 +8,5 @@ $aMenuLinks = array
 	array("Профнастил і металочерепиця", "/products/profnastil-metallocherepitsa/"),
 	array("Будівельне кріплення",        "/products/building-hardware/"),
 	array("Електроди зварювальні",       "/products/elektrody-svarochnye/"),
-	array("Сітка і огорожі",             "/products/setka/")
+	array("Сітка та огорожі",            "/products/setka/")
 	);

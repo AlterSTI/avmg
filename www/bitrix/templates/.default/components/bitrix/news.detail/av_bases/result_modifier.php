@@ -16,9 +16,9 @@ if($arResult["SECTION_INFO"]["ID"]) $arResult["ROOT_SECTION_INFO"] = CIBlockSect
 /* --------------------------- streams info --------------------------- */
 /* -------------------------------------------------------------------- */
 $arResult["BASE_STREAMS_INFO"] = [];
-if($arParams["AV_BASES_STREAMS_INFO_IBLOCK"] && $arResult["PROPERTIES"]["streams"]["VALUE"][0])
+if($arParams["AV_BASES_STREAMS_INFO_IBLOCK"] && $arResult["PROPERTIES"]["STREAMS"]["VALUE"][0])
 	{
-	$streamsIblockId  = CIBlockProperty::GetList([], ["IBLOCK_ID" => $arParams["IBLOCK_ID"], "ACTIVE" => 'Y', "CODE" => 'streams'])->GetNext()["LINK_IBLOCK_ID"];
+	$streamsIblockId  = CIBlockProperty::GetList([], ["IBLOCK_ID" => $arParams["IBLOCK_ID"], "ACTIVE" => 'Y', "CODE" => 'STREAMS'])->GetNext()["LINK_IBLOCK_ID"];
 	$streamsInfoArray = [];
 	/* ------------------------------------------- */
 	/* -------------- streams info --------------- */
@@ -30,7 +30,7 @@ if($arParams["AV_BASES_STREAMS_INFO_IBLOCK"] && $arResult["PROPERTIES"]["streams
 			["SORT" => 'ASC'],
 				[
 				"IBLOCK_ID" => $streamsIblockId,
-				"ID"        => $arResult["PROPERTIES"]["streams"]["VALUE"],
+				"ID"        => $arResult["PROPERTIES"]["STREAMS"]["VALUE"],
 				"ACTIVE"    => 'Y'
 				],
 			false, false,
@@ -72,12 +72,12 @@ if($arParams["AV_BASES_STREAMS_INFO_IBLOCK"] && $arResult["PROPERTIES"]["streams
 		[],
 			[
 			"IBLOCK_ID"       => $arParams["AV_BASES_STREAMS_INFO_IBLOCK"],
-			"PROPERTY_base"   => $arResult["ID"],
-			"PROPERTY_stream" => $arResult["PROPERTIES"]["streams"]["VALUE"],
+			"PROPERTY_BASE"   => $arResult["ID"],
+			"PROPERTY_STREAM" => $arResult["PROPERTIES"]["STREAMS"]["VALUE"],
 			"ACTIVE"          => 'Y'
 			],
 		false, false,
-		["ID", "PROPERTY_stream", "PROPERTY_manager", "PROPERTY_phone", "PROPERTY_price"]
+		["ID", "PROPERTY_STREAM", "PROPERTY_manager", "PROPERTY_phone", "PROPERTY_price"]
 		);
 	while($queryElement = $queryList->GetNext())
 		if(count($streamsInfoArray[$queryElement["PROPERTY_STREAM_VALUE"]]))

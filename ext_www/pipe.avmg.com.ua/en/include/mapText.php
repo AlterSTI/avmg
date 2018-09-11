@@ -1,2 +1,2 @@
-<h3><b>PARTNERSHIP</b></h3>
+<h3><b>HEAD OFFICE ADDRESS</b></h3>
  <br>

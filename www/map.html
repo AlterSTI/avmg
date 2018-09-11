@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+    <link rel='stylesheet' href='http://js.api.here.com/v3/3.0/mapsjs-ui.css'/>
+
+</head>
+<body>
+<div style="width: 640px; height: 480px" id="mapContainer0"></div>
+<div style="width: 640px; height: 480px" id="mapContainer1"></div>
+<div style="width: 640px; height: 480px" id="mapContainer2"></div>
+<div style="width: 640px; height: 480px" id="mapContainer3"></div>
+<div style="width: 640px; height: 480px" id="mapContainer4"></div>
+<div style="width: 640px; height: 480px" id="mapContainer5"></div>
+
+<script>
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'LLECS0lJzLLtMRe728wJ ',
+        'app_code': 'l-9gCp2kS44G2_dlfsNvNw ',
+        'useHTTPS': true
+    });
+    var defaultLayers = platform.createDefaultLayers('','','RUS');
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+        document.getElementById('mapContainer0'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 34.9997243, lat: 48.3944 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+     map = new H.Map(
+        document.getElementById('mapContainer1'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 34.9645302, lat: 48.4881 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+     map = new H.Map(
+        document.getElementById('mapContainer2'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 34.9587015, lat: 48.4415 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+     map = new H.Map(
+        document.getElementById('mapContainer3'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 34.9995327, lat: 48.4206 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+     map = new H.Map(
+        document.getElementById('mapContainer4'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 35.0284458, lat: 48.5305 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+     map = new H.Map(
+        document.getElementById('mapContainer5'),
+        maptypes.normal.map,
+        {
+            zoom: 11,
+            center: { lng: 34.9528825, lat: 48.519 }
+        });
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+</script>
+</body>
+</html>

@@ -197,7 +197,10 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                             ),
                             "CHECK_DATES" => "N",
                             "PREVIEW_TRUNCATE_LEN" => "",
-                            "ACTIVE_DATE_FORMAT" => "d.m.Y"
+                            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                            "HERE_MAP_APP_ID" => 'LLECS0lJzLLtMRe728wJ',
+                            "HERE_MAP_APP_CODE" => 'l-9gCp2kS44G2_dlfsNvNw'
+
                         ),
                         false
                     );
@@ -309,7 +312,9 @@ CJSCore::RegisterExt("fontawesome", ["css" => "/bitrix/css/av/font-awesome/css/s
                         ),
                         "CHECK_DATES" => "N",
                         "PREVIEW_TRUNCATE_LEN" => "",
-                        "ACTIVE_DATE_FORMAT" => "d.m.Y"
+                        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                        "HERE_MAP_APP_ID" => 'LLECS0lJzLLtMRe728wJ',
+                        "HERE_MAP_APP_CODE" => 'l-9gCp2kS44G2_dlfsNvNw'
                     ),
                     false
                 );

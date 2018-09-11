@@ -4,12 +4,14 @@ $(function()
 	/* ---------------------------- google map ---------------------------- */
 	/* -------------------------------------------------------------------- */
 	var
-		$googleMap  = $(".av-bases-detail .map-col .google-map"),
-		coordinateX = parseFloat($googleMap.attr("data-cordinate-x")),
-		coordinateY = parseFloat($googleMap.attr("data-cordinate-y")),
-		map;
+		//$googleMap  = $(".av-bases-detail .map-col .google-map"),
+		$mapBlock = document.querySelector('.av-bases-detail .map-col .google-map'),
+		coordinateX = parseFloat($mapBlock.dataset.cordinateX),
+		coordinateY = parseFloat($mapBlock.dataset.cordinateY),
+        $callBackForm      = $("#page-header-call-back-form");
+		//map;
 
-	if($googleMap.length)
+	/*if($googleMap.length)
 		{
 		map = new google.maps.Map
 			(
@@ -27,8 +29,51 @@ $(function()
 			position: {lat: coordinateX, lng: coordinateY},
 			title   : $googleMap.attr("data-store-name")
 			});
-		}
+		}*/
+
+
 	/* -------------------------------------------------------------------- */
+	/* ---------------------------- H$mapBlockERE MAP ---------------------------- */
+	/* -------------------------------------------------------------------- */
+        /**
+         * Boilerplate map initialization code starts below:
+         */
+
+//Step 1: initialize communication with the platform
+        var platform = new H.service.Platform({
+            app_id: 'LLECS0lJzLLtMRe728wJ',
+            app_code: 'l-9gCp2kS44G2_dlfsNvNw',
+            /*useCIT: true,*/
+            useHTTPS: true
+        });
+        var defaultLayers = platform.createDefaultLayers('','','UKR');
+
+//Step 2: initialize a map - this map is centered.
+    var map = new H.Map($mapBlock,
+        defaultLayers.normal.map,{
+            center: {lat:coordinateX, lng:coordinateY},
+            zoom: 12
+        });
+
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+    //marker
+
+    var Marker = new H.map.Marker({
+        lat:coordinateX,
+        lng:coordinateY
+    });
+    map.addObject(Marker);
+
+
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+
+
+		/* -------------------------------------------------------------------- */
 	/* ---------------------------- price list ---------------------------- */
 	/* -------------------------------------------------------------------- */
 	$(".av-bases-detail .info-col")
@@ -89,4 +134,48 @@ $(function()
 			else if(!$(this).is(".open")) $(this).find(".body").hide();
 			});
 		});
+        /* -------------------------------------------------------------------- */
+        /* -------------------------- call back form -------------------------- */
+        /* -------------------------------------------------------------------- */
+        $(document)
+            .on("vclick", "[data-order-price]", function()
+            {
+                var smoothScrolling  = $(window).width() > 767 ? "Y" : "N";
+                AvBlurScreen("on", 1000);
+                $callBackForm
+                    .show()
+                    .positionCenter(1100, smoothScrolling, smoothScrolling)
+                    .onClickout(function()
+                    {
+                        $callBackForm.find(".close").click();
+                    })
+                    .on("vclick", ".close", function()
+                    {
+                        $callBackForm.hide();
+                        AvBlurScreen("off");
+                    });
+            })
+            .on("keyup", function(event)
+            {
+                if(event.keyCode == 27 && $callBackForm.is(":visible"))
+                    $callBackForm
+                        .find(".close")
+                        .click();
+            })
+            .on("keyup", "form input", function()
+            {
+                if($(this).val()) {
+                    $(this).closest('.av-form-styled-input').removeClass('alert-input');
+                }
+                console.log($(this).val());
+            });
+		$(document.body).on('AjaxFormOk AjaxFormError', function () {
+            var $result = $callBackForm.addClass("well-done");
+            $result.positionCenter(1100, "Y", "Y");
+			setTimeout(function () {
+				$callBackForm
+					.find(".close")
+					.click();
+			}, 3000);
+        });
 	});

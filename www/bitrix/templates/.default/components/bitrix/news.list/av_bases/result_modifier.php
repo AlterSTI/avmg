@@ -32,9 +32,9 @@ if(substr_count($arParams["DETAIL_URL"], '#PARENT_SECTION_ID#') || substr_count(
 /* ------------------------------ streams ----------------------------- */
 /* -------------------------------------------------------------------- */
 $arResult["STREAMS_INFO"] = [];
-if(in_array('streams', $arParams["PROPERTY_CODE"]))
+if(in_array('STREAMS', $arParams["PROPERTY_CODE"]))
 	{
-	$streamsIblockId = CIBlockProperty::GetList([], ["IBLOCK_ID" => $arParams["IBLOCK_ID"], "ACTIVE" => 'Y', "CODE" => 'streams'])->GetNext()["LINK_IBLOCK_ID"];
+	$streamsIblockId = CIBlockProperty::GetList([], ["IBLOCK_ID" => $arParams["IBLOCK_ID"], "ACTIVE" => 'Y', "CODE" => 'STREAMS'])->GetNext()["LINK_IBLOCK_ID"];
 	if($streamsIblockId)
 		{
 		$queryList = CIBlockElement::GetList(["SORT" => 'ASC'], ["IBLOCK_ID" => $streamsIblockId, "ACTIVE" => 'Y'], false, false, ["ID", "NAME", "PROPERTY_icon"]);

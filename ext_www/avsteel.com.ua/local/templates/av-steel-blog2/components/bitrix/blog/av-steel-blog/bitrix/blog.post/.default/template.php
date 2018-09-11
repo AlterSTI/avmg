@@ -263,9 +263,26 @@ else
 					<?
 				}
 				?>
-						<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-						<script src="//yastatic.net/share2/share.js"></script>
-						<br class="hidden-lg hidden-md"><span class="pull-right text-uppercase" id="share-social" style="align-items: center;display:flex;"><b>поделиться:</b><div class="ya-share2 " data-services="facebook,gplus,twitter">  </div></span><br><br>
+<!--						<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+						<script src="//yastatic.net/share2/share.js"></script>-->
+						<br class="hidden-lg hidden-md"><span class="pull-right text-uppercase" id="share-social" style="align-items: center;display:flex;"><b>поделиться:</b>
+                            <div class="socnet-buttons-inne">
+                                <?
+                                $APPLICATION->IncludeComponent(
+                                    "bitrix:main.share",
+                                    "av",
+                                    [
+                                        "HIDE" => "N",
+                                        "HANDLERS" => [
+                                            "facebook",
+                                            "twitter",
+                                            "gplus"
+                                        ]
+                                    ]
+                                );
+                                ?>
+                                </div>
+                        </span><br><br>
 					</div>
 
 

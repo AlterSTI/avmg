@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var marker = [];
+    /*var marker = [];
     var infowindow = [];
     var content= '';
     var DneprCenter = new google.maps.LatLng(48.464717,35.046183);
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         bazes[i].addEventListener('click', function (){
             var element = $('[data-item-id-base="' + this.dataset.itemId + '"]');
             if (window.innerWidth <= 991) {
-                /*element.click();*/
             }
             $('html, body').animate({scrollTop:element.offset().top}, 1000);
 
@@ -54,7 +53,79 @@ document.addEventListener("DOMContentLoaded", function () {
         bazes[i].addEventListener('mouseleave', function (e) {
             marker[this.dataset.itemId].setAnimation(null);
         })
+    }*/
+    var coordinates = document.getElementsByClassName('google-maps-coordinate-bases'),
+    $mapBlock = document.querySelector('#dnepr_bases_map'),
+        Marker;
+/*    console.log(coordinates);*/
+    /* -------------------------------------------------------------------- */
+    /* ---------------------------- HERE MAP ---------------------------- */
+    /* -------------------------------------------------------------------- */
+    /**
+     * Boilerplate map initialization code starts below:
+     */
+
+//Step 1: initialize communication with the platform
+    var platform = new H.service.Platform({
+        app_id: $mapBlock.dataset.dataHereMapAppId,
+        app_code: $mapBlock.dataset.dataHereMapAppCode,
+        useHTTPS: true
+    });
+    var defaultLayers = platform.createDefaultLayers('','','RUS');
+
+//Step 2: initialize a map - this map is centered.
+   var map = new H.Map($mapBlock,
+        defaultLayers.normal.map,{
+            center: {lat:48.464717, lng:35.046183},
+            zoom: 11
+        });
+
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+    ui.removeControl('mapsettings');
+    //markers
+
+
+    for(var i=0; i < coordinates.length; i++){
+        //console.log(coordinates[i].querySelector('.banks-address-inner'));
+        var icon = new H.map.Icon(coordinates[i].dataset.marker,
+            {
+                size:{
+                    w:70,
+                    h:70
+                }
+            }
+        );
+        Marker = new H.map.Marker({
+            lat: coordinates[i].dataset.cordinateX,
+            lng: coordinates[i].dataset.cordinateY
+        },
+            {icon:icon}
+        );
+        var content = document.createElement('div');
+        content.classList.add('hereMapPopup');
+        content.innerHTML = coordinates[i].querySelector('.banks-address-inner').innerHTML;
+        Marker.setData(content);
+        //console.log(Marker);
+        Marker.addEventListener('tap', function (evt) {
+            var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+                // read custom data
+                content: evt.target.getData()
+            });
+            // show info bubble
+            ui.getBubbles().forEach(function (item) {
+                    item.close();
+                });
+            ui.addBubble(bubble);
+        }, false);
+        map.addObject(Marker);
+
+
     }
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
 });
 
 

@@ -1,1 +1,1 @@
-© 2009-2017 AV Metal Group.All rights reserved.
+© 2009-2017 AV metal group. All rights reserved.

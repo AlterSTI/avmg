@@ -1,7 +1,7 @@
 <?
 require $_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php";
 
-$APPLICATION->SetTitle("Сітка і огорожі");
+$APPLICATION->SetTitle("Сітка та огорожі");
 $APPLICATION->SetPageProperty("title",       "Сітка ► купити сітку металеву в Україні: Дніпро, Київ, Харків, Львів, Одеса, опт, роздріб | Напрямок АВ метал груп ™ avmg.com.ua");
 $APPLICATION->SetPageProperty("description", "Сітка асортимент і ціни ▻ АВ метал груп ™ ✓Шірокій вибір ✓Металлобази і доставка по всій Україні ☎ (056) 790-01-22");
 

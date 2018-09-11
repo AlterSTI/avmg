@@ -65,7 +65,7 @@ class AvBases {
     private function getBaseFields (){
         $i = 0;
         $arFilter = array("IBLOCK_ID" => $this->basesIbID, /*"PROPERTY_1145_VALUE" => "Да"*/);
-        $arSelect = array("ID", "IBLOCK_ID", "NAME","ACTIVE", "IBLOCK_SECTION_ID", "CODE", "PROPERTY_1145", "PROPERTY_1146", "PROPERTY_1148", "PROPERTY_1149", "PROPERTY_1150");
+        $arSelect = array("ID", "IBLOCK_ID", "NAME","ACTIVE", "IBLOCK_SECTION_ID", "CODE", "PROPERTY_CLOSED", "PROPERTY_ADDRESS", "PROPERTY_OPEN_HOURES", "PROPERTY_CORDINATE_X", "PROPERTY_CORDINATE_Y");
 
         $res = CIBlockElement::GetList(array('SORT' => 'ASC'), $arFilter, false, false, $arSelect);
 
@@ -77,9 +77,9 @@ class AvBases {
             $this->addToBaseList($i,'REGION', $resultArray['REGION']);
             $this->addToBaseList($i,'CITY', $resultArray['CITY']);
             $this->addToBaseList($i,'NAME', $ob['NAME']);
-            $this->addToBaseList($i,'ADDRESS', $ob['PROPERTY_1146_VALUE']['TEXT']);
-            $this->addToBaseList($i,'COORDINATES', $ob['PROPERTY_1149_VALUE'].', '.$ob['PROPERTY_1150_VALUE']);
-            $this->addToBaseList($i,'WORKTIME', implode(', ',$ob['PROPERTY_1148_VALUE']));
+            $this->addToBaseList($i,'ADDRESS', $ob['PROPERTY_ADDRESS_VALUE']['TEXT']);
+            $this->addToBaseList($i,'COORDINATES', $ob['PROPERTY_CORDINATE_X_VALUE'].', '.$ob['PROPERTY_CORDINATE_Y_VALUE']);
+            $this->addToBaseList($i,'WORKTIME', implode(', ',$ob['PROPERTY_OPEN_HOURES_VALUE']));
 
             $this->addToBaseListUrl($i, 'URL', $resultArray['REGION_CODE']);
             $this->addToBaseListUrl($i, 'URL', $resultArray['CITY_CODE']);
@@ -105,13 +105,13 @@ class AvBases {
     private function getTelephones (){
         $result = array();
         foreach ($this->ids as $iblockID => $value) {
-            $arFilter = array("IBLOCK_ID" => $this->basesDirectionIbID, "PROPERTY_1155" => $value);
+            $arFilter = array("IBLOCK_ID" => $this->basesDirectionIbID, "PROPERTY_BASE" => $value);
             $arSelect = array("ID", "IBLOCK_ID", "NAME", "IBLOCK_SECTION_ID", "PROPERTY_*");
             $res = CIBlockElement::GetList(array('SORT' => 'ASC'), $arFilter, false, false, $arSelect);
             while ($ob = $res->Fetch()) {
                 $result[] = $ob;
-                $this->getTelephonesByID($ob['PROPERTY_1157'], $iblockID);
-                $this->addToBaseList($iblockID,'1C_CODE', $ob['PROPERTY_1160']);
+                $this->getTelephonesByID($ob['PROPERTY_MANAGER'], $iblockID);
+                $this->addToBaseList($iblockID,'1C_CODE', $ob['PROPERTY_CODE_1C']);
             }
         }
     }
@@ -128,7 +128,7 @@ class AvBases {
     }
 }
 
-    $bases = new AvBases(IntVal(134), IntVal(136));
+    $bases = new AvBases(IntVal(58), IntVal(114));
     $bases->getBases();
 
 

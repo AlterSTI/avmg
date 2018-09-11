@@ -25,16 +25,14 @@
             <i>
                 <div class="footer-data-wrapper">
                     <a href="tel:+38(056) 376-79-94">+38(056) 376-79-94</a><br>
-                    <div><a href="tel:+38(067) 485-53-73">+38(067) 485-53-73</a></div>
-                </div>
+                                    </div>
             </i>
         </li>
         <li>
             <u>
                 <div class="footer-data-wrapper">
-                    <a href="mailto: office@avmg.com.ua">office@avmg.com.ua</a><br>
-                    <div><a href="mailto: s.kireev@avmg.com.ua">s.kireev@avmg.com.ua</a></div>
-                </div>
+                    <a href="mailto: pipe@avmg.com.ua">pipe@avmg.com.ua</a><br>
+                                    </div>
             </u>
         </li>
     </ul>

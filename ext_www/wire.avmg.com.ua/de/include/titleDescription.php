@@ -1,1 +1,1 @@
-Die Gesellschaft АВ Metal Group bietet abwechslungsreicher Sortiment der Erzeugnisse, breite Auswahl der zusätzlichen Dienstleistungen, und auch die Bearbeitung und Vorbereitung der Erzeugnisse entsprechend den individuellen Wünschen des Kunden an.
+Die Gesellschaft "AB Metall Group" bietet ein breites Sortiment an Erzeugnissen, eine reiche Palette an zusätzlichen Dienstleistungen sowie die Produktionsbehandlung und -aufbereitung entsprechend den individuellen Kundenwünschen.

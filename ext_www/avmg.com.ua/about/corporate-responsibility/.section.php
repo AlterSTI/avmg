@@ -1,5 +1,5 @@
 <?
-$sSectionName    = "Корпоративная ответственность";
+$sSectionName    = "Корпоративна відповідальність";
 $arDirProperties = array
 	(
 	"FULL_SCREEN_WORKAREA" => "N",

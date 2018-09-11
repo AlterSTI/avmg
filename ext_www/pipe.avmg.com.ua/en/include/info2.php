@@ -1,4 +1,4 @@
-<span><b>APPLICATION OF PROFESSIONAL PIPES</b></span>
+<span><b>APPLICATION OF SHAPED PIPES</b></span>
     <p>
-        Due to its advantages, the profile pipe has been widely used in the construction of industrial and residential buildings, in mechanical engineering, in the construction of metal structures for various purposes, and in other industries.
+        Due to their advantages, shaped pipes have been widely used in the construction of industrial and residential buildings, mechanical engineering, the construction of metal structures for various purposes, as well as in other industries.
     </p>

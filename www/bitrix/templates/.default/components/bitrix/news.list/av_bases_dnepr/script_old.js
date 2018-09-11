@@ -13,7 +13,6 @@ alert(1111);
             position: new google.maps.LatLng($item.dataset.cordinateX, $item.dataset.cordinateY),
             title:coordinates[i].dataset.title
         }).setMap(map);*/
-        console.log('base_'+$item.dataset.baseId);
     }
 /******************/
 
