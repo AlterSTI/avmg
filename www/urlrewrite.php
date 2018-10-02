@@ -676,6 +676,10 @@ $arUrlRewrite = array(
         "CONDITION" => "#^/company/baza/#",
         "PATH" => "/company/baza/index.php",
     ),
+    array(
+        "CONDITION" => "#^/correspondence/#",
+        "PATH" => "/correspondence/index.php",
+    ),
 );
 
 ?>

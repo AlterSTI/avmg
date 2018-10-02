@@ -34,6 +34,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="a3e6b52d-1993-418f-87fe-41d1e6e9f01b" name="fmc" url="http://192.168.6.51">
+        <fileTransfer host="192.168.6.51" port="22" rootFolder="/home/bitrix" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

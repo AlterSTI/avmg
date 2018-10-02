@@ -681,8 +681,8 @@ if ($isEnoughFiltered) $t=1; else $t=0;
                 }
             }
 			$structure = CIntranetUtils::getStructure();
-			$this->arResult['DEPARTMENTS'] = $structure['DATA'];
-            /*заполнение названий департаментов*/
+			$this->arResult['DEPARTMENTS'] = $structure['DATA']
+			;
 			$this->setDepWhereUserIsHead();
 
 			$arAdmins = array();
@@ -694,8 +694,6 @@ if ($isEnoughFiltered) $t=1; else $t=0;
 			}
 
 			$displayPhoto = $this->displayPersonalPhoto();
-
-
 			foreach ($this->arResult['USERS'] as $key => &$arUser)
 			{
 				// cache optimization

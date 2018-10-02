@@ -24,9 +24,12 @@ CModule::AddAutoloadClasses
 	(
 	"", 
 		array(
-		"AvComponentsIncludings"                           => "/bitrix/php_interface/av_classes/components_includings/AvComponentsIncludings.php",
-        "av\image_processing\watermarks\WatermarkAdding"   => "/bitrix/php_interface/av_classes/image_processing/watermarks/WatermarkAdding.php",
-        "Av\\Client\\ClientInfoInterface"                  => "/bitrix/php_interface/av_classes/client/ClientInfoInterface.php",
-		"Av\\Client\\ClientInfo"                           => "/bitrix/php_interface/av_classes/client/ClientInfo.php"
+            "AvComponentsIncludings"                           => "/bitrix/php_interface/av_classes/components_includings/AvComponentsIncludings.php",
+            "av\image_processing\watermarks\WatermarkAdding"   => "/bitrix/php_interface/av_classes/image_processing/watermarks/WatermarkAdding.php",
+            "Av\\Client\\ClientInfoInterface"                  => "/bitrix/php_interface/av_classes/client/ClientInfoInterface.php",
+            "Av\\Client\\ClientInfo"                           => "/bitrix/php_interface/av_classes/client/ClientInfo.php",
+            "Av\GSM\SMS\SMSInterface"                          => "/bitrix/php_interface/av_classes/sms/SMSInterface.php",
+            "Av\GSM\SMS\AbstractSMS"                           => "/bitrix/php_interface/av_classes/sms/AbstractSMS.php",
+            "Av\GSM\SMS\Vodaphone"                             => "/bitrix/php_interface/av_classes/sms/Vodafone.php",
         )
 	);

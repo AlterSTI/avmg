@@ -28,6 +28,20 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
+    Array(
+		"Корреспонденция",
+		"/correspondence/",
+		Array(),
+		Array(),
+		""
+	),
+    Array(
+		"Прием на работу",
+		"/hr/",
+		Array(),
+		Array(),
+		""
+	),
 	Array(
 		"Диски", 
 		"/docs/", 

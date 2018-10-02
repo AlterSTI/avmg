@@ -1,7 +1,7 @@
 window.onload = function () {
     /*AvPhoneSearchRefresh объявлена в component_epilog.php*/
 
-    Reqest = new Reqest(AvPhoneSearchRefresh);
+    Reqest = new MsRequest(AvPhoneSearchRefresh);
     var peopleSearch = document.getElementById('peopleSearch');
     var page;
     var telephoneSearch,resultTable, res, resetFilter  = false;
@@ -110,35 +110,35 @@ window.onload = function () {
     }
 }
 
-function search(telephoneSearchValue, resultTable, activeUser, input, page, filterOption) {
-    activeUser=activeUser || true;
-    page = page || 1;
-    filterOption = filterOption || false;
-    input = input || false;
+function search(telephoneSearchValueInt, resultTableInt, activeUserInt, inputInt, pageInt, filterOptionInt){
+    let
+    activeUser              = activeUserInt || true,
+    page                    = pageInt || 1,
+    input                   = inputInt || {},
+    telephoneSearchValue    = telephoneSearchValueInt || '',
+    resultTable             = resultTableInt || {},
+    filterOption            = typeof filterOptionInt !== 'undefined'? filterOptionInt : '',
+    dataArray = {
+        ARPARAMS            : resultTable.dataset.componentParams,
+        VIEW                : resultTable.dataset.view,
+        COMPONENT           : resultTable.dataset.component,
+        SEARCH              : telephoneSearchValue,
+        I_NUM_PAGE          : page,
+        ACTIVE_USER         : activeUser,
+        DATA_FILTER_OPTION  : filterOption
+    };
 
     if (input.dataset.searching == 'N'){
         input.readOnly = true;
         input.dataset.searching = 'Y';
-
-        data = 'ARPARAMS=' + resultTable.dataset.componentParams;
-        data+= '&VIEW=' + resultTable.dataset.view;
-        data+= '&COMPONENT=' + resultTable.dataset.component;
-        data+= '&SEARCH=' + telephoneSearchValue;
-        data+= '&I_NUM_PAGE=' + page;
-        if (typeof filterOption !== 'undefined'){
-            data+= '&DATA_FILTER_OPTION=' + filterOption;
-        }
-        data+='&ACTIVE_USER='+activeUser;
         AvWaitingScreen('on');
-        Reqest.async(data,function () {
+        Reqest.async(dataArray,function () {
             resultTable.innerHTML = '';
-            var obj = this;
-            resultTable.innerHTML = obj;
+            //let obj = this;
+            resultTable.innerHTML = this;
             AvWaitingScreen('off');
             input.readOnly = false;
             input.dataset.searching = 'N';
         });
-    } else {
-        return;
     }
 }
