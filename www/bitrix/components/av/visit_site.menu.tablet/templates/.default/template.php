@@ -22,7 +22,7 @@ foreach($arResult["MENU_ARRAY"] as $index => $menuInfo)
 					title="<?=$menuInfo["TITLE"]?>"
 				>
 			</a>
-			<a href="<?=$menuInfo["LINK"]?>">
+			<a href="<?=$menuInfo["LINK"]?>" title="<?=$menuInfo["TITLE"]?>">
 				<?=$menuInfo["TITLE"]?>
 			</a>
 		</div>
@@ -30,5 +30,6 @@ foreach($arResult["MENU_ARRAY"] as $index => $menuInfo)
 
 		<div class="border-hider-vertical"></div>
 		<div class="border-hider-horizontal"></div>
+
 	</div>
 <?endforeach?>

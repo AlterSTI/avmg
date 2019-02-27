@@ -37,7 +37,7 @@ $aMenuLinks = Array(
 	),
     Array(
 		"Прием на работу",
-		"/hr/",
+		"/hr/357/view/0/",
 		Array(),
 		Array(),
 		""

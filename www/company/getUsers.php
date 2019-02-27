@@ -1,7 +1,7 @@
 <?php
-//require $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php";
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+$APPLICATION->SetTitle('Отчет по структуре');
 ?>
 
 <style>
@@ -12,16 +12,16 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
         text-align: center;
     }
 </style>
-<?$arFilter = Array (
+<?$arFilter = [
     "ACTIVE" => "Y",
     "UF_DEPARTMENT" => false,
-    "EMAIL" => '%@avmg.com.ua',
-    "GROUPS_ID" => array('12')//группа пользователей домена
-);
+    "EMAIL" => '%avmg.com.ua',
+    "GROUPS_ID" => ['12']//группа пользователей домена
+];
 
-$arParameters = array(
-    'FIELDS' => array('ID','LAST_NAME','NAME','DATE_REGISTER', 'EMAIL', 'WORK_COMPANY', 'WORK_DEPARTMENT', 'WORK_POSITION', 'WORK_PHONE')
-);
+$arParameters = [
+    'FIELDS' => ['ID','LAST_NAME','NAME','DATE_REGISTER', 'EMAIL', 'WORK_COMPANY', 'WORK_DEPARTMENT', 'WORK_POSITION', 'WORK_PHONE']
+];
 
 $rsUsers = CUser::GetList($by="LAST_NAME", $order="asc", $arFilter, $arParameters);
 

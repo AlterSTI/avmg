@@ -17,6 +17,8 @@ define("GOOGLE_RECAPTCHA_SECRETKEY", "6LdWqCkTAAAAAM_AshmUWM-yG1IWAicM8oAgmK6-")
 /* -------------------------------------------------------------------- */
 include "js_libaries_registration.php";
 include "av_functions.php";
+include "corp_business_process.php";
+include "mobile/mobile_corp_form_to_ib.php";
 /* -------------------------------------------------------------------- */
 /* ------------------------ classes autoloader ------------------------ */
 /* -------------------------------------------------------------------- */

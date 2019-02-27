@@ -1,7 +1,13 @@
-.calc-inner-content {
+.calc-component .calc-inner-content {
     background-color:  #f9f9f9;
-    margin: 30px 0 80px;
-    padding: 40px 0 0 0;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.calculate-result-container .calc-done-block .calc-inner-block h1 {
+    bottom: 0;
 }
 
 .calc-inner-content .calc-right-side img {
@@ -13,18 +19,10 @@
     display: none;
 }
 
-/*.calc-inner-content .calculate-result-container.hide {*/
-    /*display: block !important;*/
-    /*opacity: 0;*/
-    /*position: absolute;*/
-    /*bottom: -150%;*/
-/*}*/
-
 .calc-inner-content .calculate-result-container:not(.hide){
     width: 100%;
     background-color: #fff;
-    padding-top: 40px;
-    /*display: block;*/
+    padding-top: 70px;
 }
 
 .calc-inner-content .calculate-result-container:not(.hide).animate-show {
@@ -129,7 +127,6 @@
 
 .calc-inner-content .length-wall.warning,
 .calc-inner-content .height-wall.warning,
-.calc-inner-content .price.warning,
 .calc-inner-content .calc-list-dropdown .calc-dropdown-title.warning {
     border: 1px solid #ff202a;
     border-radius: 5px;
@@ -148,33 +145,6 @@
 .calc-inner-content .calc-done-rezult .col-md-3{
     padding: 0;
 }
-
-/*.calc-inner-content .calc-list-dropdown .calc-dropdown-title.warning::-webkit-input-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-
-/*.calc-inner-content .calc-list-dropdown .calc-dropdown-title.warning::-moz-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-
-/*.calc-inner-content .length-wall.warning::-webkit-input-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-
-/*.calc-inner-content .length-wall.warning::-moz-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-/*.calc-inner-content .height-wall.warning::-webkit-input-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-
-/*.calc-inner-content .height-wall.warning::-moz-placeholder {*/
-    /*color: #ff202a;*/
-/*}*/
-
-/*.calc-inner-content .calc-input-title-selected.warning{*/
-    /*color: #ff202a;*/
-/*}*/
 
 .calc-inner-content .calc-input-title-selected {
     text-transform: uppercase;
@@ -195,30 +165,10 @@
     margin-top: 45px;
 }
 
-    /*.calc-inner-content .calc-dropdown-icon img {*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*left: auto;*/
-    /*right: 20px;*/
-    /*margin: auto;*/
-    /*text-align: center;*/
-    /*transition: all 0.4s linear;*/
-/*}*/
-
-/*.calc-inner-content .calc-dropdown-icon img:hover {*/
-    /*cursor: pointer;*/
-/*}*/
-
-/*.calc-inner-content .calc-dropdown-icon img.appear {*/
-    /*z-index: 2;*/
-    /*transform: rotate(180deg);*/
-    /*transition: all 0.5s linear;*/
-/*}*/
-
 .calc-inner-content .calculate-btn-block {
     text-align: center;
     margin-top: 40px;
+    padding-bottom: 40px;
 }
 
 .calc-inner-content .calculate-btn-block button {
@@ -265,7 +215,7 @@
 }
 
 .calc-inner-content .working-width-variants,
-.calc-inner-content .total-width-variants{
+.calc-inner-content .total-width-variants {
     display: none;
 }
 
@@ -273,17 +223,24 @@
     border: 3px solid red;
     border-radius: 8px;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-done-block .calc-inner-block {
+    position: relative;
+    bottom: 40px;
+    text-align: center;
 }
 
 .calc-done-block .calc-inner-block h1 {
     display: inline-block;
     background-color: #fff;
-    position: relative;
-    bottom: 40px;
     padding: 0 20px;
 }
 
-.calc-done-block .calc-done-list {
+.calc-done-block .calc-done-list,
+.calc-inner-block {
     text-align: center;
 }
 
@@ -319,7 +276,6 @@
     font-size: 14px;
     background-color: #fdfdd3;
     border: 1px solid #ccc;
-    /*display: inline-block;*/
     padding: 3px 8px;
     border-radius: 5px;
     box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.05);
@@ -436,7 +392,7 @@
         top: 0;
         bottom: 0;
         left: auto;
-        right: 0;
+        right: 10px;
         margin: auto;
     }
 
@@ -447,5 +403,15 @@
 
     .calc-left-side {
         width: 100%;
+    }
+
+    .calc-done-block .calc-done-txt,
+    .calc-done-block .calc-done-num {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .calc-done-block .calc-done-list {
+        margin-bottom: 10px;
     }
 }

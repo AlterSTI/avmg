@@ -1,0 +1,122 @@
+.bases {
+    display: table;
+}
+
+.bases div {
+    margin: 5px;
+    padding: 5px;
+}
+
+.bases input[type="text"] {
+    min-width: 253px;
+    box-sizing: border-box;
+}
+.bases select {
+    min-width: 270px;
+    box-sizing: border-box;
+}
+
+.bases select {
+    border: none;
+}
+
+.bases textarea {
+    width: 480px;
+    height: 40px;
+    resize: none;
+}
+
+.bases .table {
+    display: table;
+    border: 1px dotted #3a87ad;
+    background-color: #d9edf7;
+}
+
+.bases .row {
+    display: table-row;
+    border: 1px dotted #b94a48;
+    background-color: #f2dede;
+    width: 100%;
+}
+
+.bases .cell {
+    display: table-cell;
+    border: 1px dotted #c09853;
+    background-color: #fbeed5;
+    max-width: 500px;
+}
+.bases .cell .warning {
+    color: #C00;
+}
+.bases .cell .hide-base {
+    display: none;
+}
+
+.bases .cell input:checked ~.text{
+    font-weight: bold;
+    color:#000;
+
+}
+.bases .cell input:not(checked) ~.text{
+    color:#545C6A;
+}
+
+.bases .cell .input-add,.bases .cell .input-del {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: center;
+    color: #FFF;
+    border-radius: 10px;
+}
+.bases .cell .input-add {
+    background: #2B542C;
+}
+.bases .cell .input-del {
+    background: #C00;
+}
+.bases .error {
+    background-color: #C00;
+    color: #FFF;
+}
+.bases .error.success {
+    background-color: #2B542C;
+    color: #FFF;
+}
+.bases .hide-error {
+    display: none;
+}
+.bases .select-wrap {
+    max-width: 250px;
+    overflow: hidden;
+    border: 1px solid rgb(169, 169, 169);
+    margin: 0 10px;
+    padding: 0;
+    position: relative;
+    background-color: #fff;
+    z-index: 0;
+}
+
+.bases .select-wrap select {
+    max-width: 285px;
+    background-color: transparent;
+    padding-right: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bases .select-wrap::after {
+    content: '\f0dd';
+    font-family: FontAwesome;
+    color: rgb(169, 169, 169);
+    font-size: 16px;
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    z-index: -1;
+}
+.bases .row .cell .title{
+    text-align: center;
+}

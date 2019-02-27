@@ -110,24 +110,24 @@ $(function() {
                 target = e.target,
                 result = {},
                 parent = this.closest('.calc-inner-content'),
-                lengthWall = parseFloat(parent.querySelector('.length-wall').value.replace('.', ',')),
-                heightWall = parseFloat(parent.querySelector('.height-wall').value.replace('.', ',')),
-                price = parseFloat(parent.querySelector('.price').value.replace('.', ',')),
+                lengthWall = parseFloat(parent.querySelector('.length-wall').value.replace(',', '.')),
+                heightWall = parseFloat(parent.querySelector('.height-wall').value.replace(',', '.')),
+                price = parseFloat(parent.querySelector('.price').value.replace(',', '.')),
                 // price = parent.querySelector('.price').value,
                 workingWidth = parent.querySelector('.working-width .calc-dropdown-title').dataset.value,
                 totalWidth = parent.querySelector('.total-width .calc-dropdown-title').dataset.value;
-
             result = catalogCalculatorDeckingCalculate(lengthWall, heightWall, workingWidth, totalWidth, price);
             parent.querySelector('.calculate-result-container').classList.remove('hide');
             parent.querySelector('.calculate-result-container').classList.add('animate-show');
-            parent.querySelector('.number-of-sheets').textContent = result['numberOfSheets']+' шт';
+            parent.querySelector('.number-of-sheets').textContent = result['numberOfSheets'];
             parent.querySelector('.total-area').textContent = result['totalArea'].toString().replace('.', ',')+' м²';
             parent.querySelector('.number-of-screws').textContent = result['numberOfScrews']+' шт';
             parent.querySelector('.price-result').textContent = result['priceResult'].toString().replace('.', ',') +' грн';
         });
     });
-    catalogCalculatorDeckingValidationInput('.calc-component .length-wall', /\d+(\.\d+)?$/, 1, 10000, 'calc-input-title-selected');
-    catalogCalculatorDeckingValidationInput('.calc-component .height-wall', /\d+(\.\d+)?$/, 0.5, 12, 'calc-input-title-selected');
+    catalogCalculatorDeckingValidationInput('.calc-component .length-wall', /[0-9,.]/, 1, 10000, 'calc-input-title-selected');
+    catalogCalculatorDeckingValidationInput('.calc-component .height-wall', /[0-9,.]/, 0.5, 12, 'calc-input-title-selected');
+    catalogCalculatorDeckingValidationInput('.calc-component .price', /\d+(\.\d+)?$/, 0.5, 12, 'calc-input-title-selected');
 
     document.body.addEventListener('click', function (e) {
         let
@@ -149,9 +149,11 @@ $(function() {
         let rezultTxt = findTextField[i];
         rezultTxt.onkeyup = function() {
             let
-                rezNum = this.value = this.value.replace(/\D/, ''),
+                rezNum = this.value = this.value.replace(/[^0-9,.]/, ''),
+                rezNumPoint = this.value.replace(/,/g, '.'),
                 min = 0,
                 max = 0;
+                console.log(rezNumPoint);
             if (this.classList.contains('length-wall')) {
                 min = 1;
                 max = 10000;
@@ -159,7 +161,7 @@ $(function() {
                 min = 0.5;
                 max = 12;
             }
-            if (rezNum >= min && rezNum <= max || rezNum == '') {
+            if (rezNumPoint >= min && rezNumPoint <= max || rezNumPoint == '') {
                 this.parentNode.firstChild.nextSibling.style.display = 'none';
             } else {
                 this.parentNode.firstChild.nextSibling.style.display = 'inline-block';
@@ -251,7 +253,7 @@ function catalogCalculatorDeckingActiveResult(element) {
             heightWall      : parent.querySelector('.calc-component .height-wall'),
             // workingWidth    : parent.querySelector('.working-width .calc-dropdown-title'),
             // totalWidth      : parent.querySelector('.total-width .calc-dropdown-title'),
-            //price           : parent.querySelector('.calc-component .price')
+            // price           : parent.querySelector('.calc-component .price')
         };
         for (let key in obj){
             if (obj.hasOwnProperty(key)){
@@ -322,7 +324,7 @@ function catalogCalculatorDeckingValidationInput(selector, regExp, valueMin, val
 function catalogCalculatorDeckingCalculate(lengthWall, heightWall, workingWidth, totalWidth, price) {
     let
         numberOfSheets  = Math.ceil(lengthWall/(workingWidth/1000)),
-        totalArea       = (numberOfSheets * totalWidth * heightWall/1000).toFixed(1),
+        totalArea       = (numberOfSheets * heightWall * (totalWidth/1000)).toFixed(2),
         numberOfScrews  = Math.ceil(totalArea * 7),
         priceResult     = Math.ceil(price * totalArea);
     if (isNaN(priceResult)) priceResult = 0;

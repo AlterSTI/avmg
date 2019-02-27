@@ -55,10 +55,7 @@
 .av-form-select-corp .list [data-list-value]
 	{
 	border-left: 1px solid #B6CBD0;
-	overflow: hidden;
 	padding: 6px 7px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	}
 .av-form-select-corp.alert-input .list,
 .av-form-select-corp.alert-input .list             [data-list-value]          {border-color: #CC0000}

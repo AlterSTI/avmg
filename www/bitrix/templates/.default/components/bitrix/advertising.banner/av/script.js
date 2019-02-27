@@ -106,7 +106,7 @@ $(function()
 	{
 	$(".av-banner")
 		.runAvSliderAutoplay(5000)
-		.on("vclick", ".pager > *", function()
+		.on("vclick", ".pager > *, .sort-prod-top-wrap > span", function()
 			{
 			$(this).closest(".av-banner")
 				.showAvSliderSlide($(this).index() + 1);

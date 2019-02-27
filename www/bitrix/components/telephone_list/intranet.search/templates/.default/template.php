@@ -30,7 +30,7 @@ $arParams['USER_PROPERTY'] = $arParams['CURRENT_VIEW'] == 'list' ?
 /*echo '<pre>'; print_r($arParams); echo '</pre>';
 /**/
 ?>
-<div id = "resultTable" data-component-params="<?=base64_encode(serialize($arParams))?>" data-view = "<?=$arParams['TABLE_VIEW']?>" data-component = "<?=$component?>" data-search="" data-filter-option="">
+<div id = "resultTable" data-component-params="<?=base64_encode(serialize($arParams))?>" data-view = "<?=$arParams['TABLE_VIEW']?>" data-search="" data-filter-option="">
 
 <?
 

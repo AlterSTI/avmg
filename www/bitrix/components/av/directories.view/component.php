@@ -158,7 +158,7 @@ if
 	/* ------------------------------------------- */
 	$arResult =
 		[
-		"IBLOCK_TYPE_INFO"          => CIBlockType::GetByIdLang($iblockInfo["IBLOCK_TYPE_ID"]),
+		"IBLOCK_TYPE_INFO"          => CIBlockType::GetByIdLang($iblockInfo["IBLOCK_TYPE_ID"], LANG),
 		"IBLOCK_INFO"               => $iblockInfo,
 		"ELEMENT_INFO"              => $elementInfo,
 		"SEO_INFO"                  => $seoInfo,

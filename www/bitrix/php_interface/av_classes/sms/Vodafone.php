@@ -277,6 +277,6 @@ class Vodafone extends AbstractSMS {
     private $transId            = '';
     private $receptUrl          = 'https://avmg.com.ua';
     private $receptFlag         = 0;
-    private $creator            = 'avmetalgroup';
+    private $creator            = '003142';
     private $VodafoneRequestUrl = 'http://businessmessaging.in.ua:8319/sag/services/task/';
 }

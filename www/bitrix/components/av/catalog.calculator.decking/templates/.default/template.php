@@ -4,7 +4,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
 <div class="calc-inner-content">
                 <div class="container">
-                    <div class="col-md-5 calc-left-side">
+                    <div class="col-xs-7 col-sm-7 col-md-5 calc-left-side">
                         <div class="calc-list">
                             <div class="calc-dropdown-title-selected"></div>
                             <div class="calc-list-dropdown product">
@@ -94,7 +94,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                             </div>
                             <div class="field-write-block">
                                 <span class="calc-input-title-selected"></span>
-                                <input type="text" placeholder="Цена грн. за кв.м.:" data-title="Цена грн. за кв.м.:" class="field-write price" data-value="">
+                                <input type="text" placeholder="Цена грн. за кв.м.:" data-title="Цена грн. за кв.м.:" class="field-write price change-txt" data-value="">
                             </div>
                         </div>
                     </div>

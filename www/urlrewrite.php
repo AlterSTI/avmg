@@ -680,6 +680,10 @@ $arUrlRewrite = array(
         "CONDITION" => "#^/correspondence/#",
         "PATH" => "/correspondence/index.php",
     ),
+    array(
+        "CONDITION" => "#^/hr/#",
+        "PATH" => "/hr/index.php",
+    ),
 );
 
 ?>

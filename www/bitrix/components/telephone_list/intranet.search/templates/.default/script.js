@@ -121,7 +121,6 @@ function search(telephoneSearchValueInt, resultTableInt, activeUserInt, inputInt
     dataArray = {
         ARPARAMS            : resultTable.dataset.componentParams,
         VIEW                : resultTable.dataset.view,
-        COMPONENT           : resultTable.dataset.component,
         SEARCH              : telephoneSearchValue,
         I_NUM_PAGE          : page,
         ACTIVE_USER         : activeUser,
